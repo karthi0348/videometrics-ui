@@ -1,6 +1,7 @@
 "use client";
 
 import React, { JSX, useState, useEffect } from "react";
+import Image from "next/image";
 import "../styles/IndustriesSection.css";
 
 interface Industry {
@@ -55,10 +56,13 @@ export default function IndustriesSection() {
       bgGradient: "blue-indigo",
       image: (
         <div className={`industry-image-container ${screenClass}`}>
-          <img
+          <Image
             src="https://media.istockphoto.com/id/492500467/photo/cctv-camera-or-surveillance-operating-inside-industrial-factory.jpg?s=612x612&w=0&k=20&c=Urst5wE44Zj6NhofWFRuL9sATA-iaOaJI5bydZi1evQ="
             alt="Industrial Security Camera"
             className="industry-image"
+            width={612}
+            height={408}
+            priority
           />
           <div className={`live-indicator ${screenClass}`}>
             <div className="live-dot"></div>
@@ -82,10 +86,13 @@ export default function IndustriesSection() {
       bgGradient: "orange-red",
       image: (
         <div className={`industry-image-container ${screenClass}`}>
-          <img
+          <Image
             src="https://www.shutterstock.com/image-photo/cctv-system-security-inside-restaurantsurveillance-600nw-1064540882.jpg"
             alt="Restaurant Security Camera"
             className="industry-image"
+            width={600}
+            height={400}
+            priority
           />
           <div className={`live-indicator ${screenClass}`}>
             <div className="live-dot"></div>
@@ -109,10 +116,13 @@ export default function IndustriesSection() {
       bgGradient: "red-pink",
       image: (
         <div className={`industry-image-container ${screenClass}`}>
-          <img
+          <Image
             src="https://www.shutterstock.com/image-photo/closed-circuit-television-camera-monitoring-600nw-413548441.jpg"
             alt="Retail Security Camera"
             className="industry-image"
+            width={600}
+            height={400}
+            priority
           />
           <div className={`live-indicator ${screenClass}`}>
             <div className="live-dot"></div>
@@ -136,10 +146,13 @@ export default function IndustriesSection() {
       bgGradient: "green-emerald",
       image: (
         <div className={`industry-image-container ${screenClass}`}>
-          <img
+          <Image
             src="https://cdn.prod.website-files.com/665dad178b155b8948cea817/67a0e7ca5a94b2185a5e65cd_card-sensor.webp"
             alt="Agriculture Sensor"
             className="industry-image"
+            width={600}
+            height={400}
+            priority
           />
           <div className={`live-indicator ${screenClass}`}>
             <div className="live-dot"></div>

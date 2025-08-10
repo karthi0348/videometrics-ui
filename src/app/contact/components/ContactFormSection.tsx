@@ -35,7 +35,7 @@ export default function ContactFormSection({
           <div className={styles.formWrapper}>
             <h2 className={styles.formTitle}>Send Us a Message</h2>
             <p className={styles.formDescription}>
-              Fill out the form below and we'll get back to you as soon as possible.
+              Fill out the form below and we will get back to you as soon as possible.
             </p>
 
             <form action={apiEndpoint} method="POST" className={styles.contactForm}>

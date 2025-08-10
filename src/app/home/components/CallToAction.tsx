@@ -21,7 +21,7 @@ const CallToAction: React.FC = () => {
           </h2>
           <p className="cta-paragraph">
             Make smarter, faster decisions with AI-powered video analytics. Whether 
-            you're in retail, manufacturing, agriculture, or events—<strong>VideoMetrics.ai</strong> helps 
+            you are in retail, manufacturing, agriculture, or events—<strong>VideoMetrics.ai</strong> helps 
             you unlock hidden insights, cut costs, and scale confidently.
           </p>
 
