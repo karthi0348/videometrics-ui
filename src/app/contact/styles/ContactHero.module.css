@@ -1,0 +1,335 @@
+
+.contactHeroSection {
+  padding: 8rem 1.5rem 4rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+  margin-top: 4rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  position: relative;
+  contain: layout style;
+  font-kerning: normal;
+  font-variant-ligatures: none;
+  font-display: swap;
+}
+
+.contactHeroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 0%, rgba(20, 184, 166, 0.02) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-synthesis: none;
+  font-kerning: normal;
+  font-variant-ligatures: none;
+  font-display: swap;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+.highlight {
+  color: #14b8a6;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #14b8a6, #0d9488);
+  border-radius: 2px;
+  opacity: 0.3;
+  width: 0;
+  animation: underline-expand 0.8s ease-out 0.5s forwards;
+}
+
+.subtitle {
+  color: #6b7280;
+  max-width: 32rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-synthesis: none;
+  font-kerning: normal;
+  font-variant-ligatures: none;
+  font-display: swap;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0.7;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underline-expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.title {
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.subtitle {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+
+@media (max-width: 479px) {
+  .contactHeroSection {
+    padding: 4rem 0.75rem 2rem 0.75rem; 
+    margin-top: 2rem; 
+  }
+  
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .subtitle {
+    font-size: 0.875rem;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 575px) {
+  .contactHeroSection {
+    padding: 4rem 1rem 3rem 1rem; 
+    margin-top: 2rem;
+  }
+  
+  .title {
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .contactHeroSection {
+    padding: 4rem 1.5rem;
+    margin-top: 4rem;
+  }
+  
+  .title {
+    font-size: 2.25rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contactHeroSection {
+    padding: 4rem 2rem;
+    margin-top: 5rem;
+  }
+  
+  .title {
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+    max-width: 36rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .contactHeroSection {
+    padding: 5rem 2rem;
+    margin-top: 6rem;
+  }
+  
+  .title {
+    font-size: 3.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    max-width: 40rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contactHeroSection {
+    padding: 6rem 2rem;
+    margin-top: 7rem;
+  }
+  
+  .title {
+    font-size: 3.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.375rem;
+    max-width: 44rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .contactHeroSection {
+    padding: 7rem 2rem;
+    margin-top: 8rem;
+  }
+  
+  .title {
+    font-size: 4rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    max-width: 48rem;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .contactHeroSection {
+    padding: 3rem 1.5rem; 
+    margin-top: 1rem; 
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .contactHeroSection {
+    padding: 4rem 2rem;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .highlight {
+    color: #0d9488;
+  }
+  
+  .highlight::after {
+    opacity: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title,
+  .subtitle {
+    animation: none;
+  }
+  
+  .highlight::after {
+    animation: none;
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .contactHeroSection {
+    background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(20, 184, 166, 0.12) 0%, transparent 50%);
+  }
+  
+  .contactHeroSection::before {
+    background: linear-gradient(45deg, transparent 0%, rgba(20, 184, 166, 0.05) 50%, transparent 100%);
+  }
+  
+  .title {
+    color: #f9fafb;
+  }
+  
+  .subtitle {
+    color: #d1d5db;
+  }
+}
+
+@media print {
+  .contactHeroSection {
+    background: none;
+    padding: 2rem 1rem;
+    margin-top: 0;
+  }
+  
+  .contactHeroSection::before {
+    display: none;
+  }
+  
+  .highlight {
+    color: #000;
+  }
+  
+  .highlight::after {
+    display: none;
+  }
+  
+  .title,
+  .subtitle {
+    animation: none;
+  }
+}
+
+.contact-item:focus-within {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}

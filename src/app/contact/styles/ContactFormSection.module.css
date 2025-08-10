@@ -1,0 +1,393 @@
+.contactFormSection {
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+}
+
+.contactContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.formWrapper {
+  order: 2;
+}
+
+.formCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.formCard:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: hsl(180, 3%, 6%);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-family: inherit;
+}
+
+.formDescription {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-family: inherit;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: #9ca3af;
+  font-family: inherit;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formSubmitBtn {
+  width: 100%;
+  background-color: #14b8a6;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.65rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.formSubmitBtn:hover:not(:disabled) {
+  background-color: #0f766e;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.formSubmitBtn:disabled {
+  background-color: #6ee7b7;
+  cursor: not-allowed;
+  transform: translateY(0);
+}
+
+.formSubmitBtn.loading {
+  background-color: #6ee7b7;
+}
+
+.loadingContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid transparent;
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.infoWrapper {
+  order: 1;
+}
+
+.infoStickyContainer {
+  position: relative;
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: hsl(180, 3%, 6%);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-family: inherit;
+}
+
+.infoDescription {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-family: inherit;
+}
+
+.infoCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  background-color: #ccfbf1;
+  color: #14b8a6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.infoContent {
+  flex: 1;
+}
+
+.infoItemTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+}
+
+.infoDetails {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+.detailLineSpacing {
+  margin-top: 0.25rem;
+}
+
+.additionalInfo {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.additionalInfoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.infoBadge {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+}
+
+.badgeIcon {
+  width: 2rem;
+  height: 2rem;
+  background-color: #ccfbf1;
+  color: #14b8a6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+}
+
+.iconSm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.badgeTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.25rem;
+  font-family: inherit;
+}
+
+.badgeSubtitle {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-family: inherit;
+}
+
+
+@media (min-width: 576px) {
+  .contactFormSection {
+    padding: 4rem 1.5rem;
+  }
+  
+  .formCard,
+  .infoCard {
+    padding: 1.5rem;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .additionalInfoGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .formTitle,
+  .infoTitle {
+    font-size: 1.875rem;
+  }
+  
+  .formDescription,
+  .infoDescription {
+    font-size: 1.125rem;
+  }
+  
+  .formSubmitBtn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contactFormSection {
+    padding: 5rem 2rem;
+  }
+  
+  .formTitle,
+  .infoTitle {
+    font-size: 2.25rem;
+  }
+  
+  .formCard,
+  .infoCard {
+    padding: 2rem;
+  }
+  
+  .contactGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  
+  .formWrapper {
+    order: 1;
+  }
+  
+  .infoWrapper {
+    order: 2;
+  }
+
+  .infoStickyContainer {
+    position: sticky;
+    top: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .contactFormSection {
+    gap: 4rem;
+  }
+  
+  .formTitle,
+  .infoTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contactFormSection {
+    padding: 8rem 2rem;
+  }
+  
+  .formCard,
+  .infoCard {
+    padding: 2.5rem;
+  }
+  
+  .formTitle,
+  .infoTitle {
+    font-size: 3rem;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .formInput,
+  .formTextarea,
+  .formSubmitBtn {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
