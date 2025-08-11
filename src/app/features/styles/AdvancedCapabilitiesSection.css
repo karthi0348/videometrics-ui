@@ -1,10 +1,12 @@
 .advanced-capabilities-section {
-  padding: 4rem 1.5rem;
-  background-color: #ffffff;
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+  border-radius: 40px;
+  margin-bottom: 40px;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -14,172 +16,321 @@
 }
 
 .title {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-weight: 500;
+  color: #111827;
   margin-bottom: 1rem;
-  color: #1f2937;
+  line-height: 1;
 }
 
 .subtitle {
+  font-size: 1.25rem;
   color: #6b7280;
-  max-width: 42rem;
+  max-width: 48rem;
   margin: 0 auto;
   line-height: 1.6;
-  font-size: 1.1rem;
 }
 
 .capabilities-grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .capability-card {
   background: #ffffff;
   border-radius: 0.75rem;
   padding: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-  border: 1px solid #f3f4f6;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .capability-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
+  box-shadow: 0 25px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-8px);
 }
 
-.icon-wrapper {
-  color: #14b8a6;
-  margin-bottom: 1.5rem;
+.icon-container {
+  width: 4rem;
+  height: 4rem;
+  background-color: #14b8a6;
+  border-radius: 0.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.capability-card:hover .icon-container {
+  transform: scale(1.1);
 }
 
 .capability-icon {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
 }
 
 .capability-title {
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0d9488;
   margin-bottom: 1rem;
-  color: #1f2937;
-  font-size: 1.125rem;
-  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.capability-card:hover .capability-title {
+  color: #0f766e;
 }
 
 .capability-description {
   color: #6b7280;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  flex-grow: 1;
+  line-height: 1.75;
+  font-size: 1rem;
 }
 
+/* Responsive Design */
 
-@media (min-width: 576px) {
-  .advanced-capabilities-section {
-    padding: 4rem 2rem;
-  }
-  
-  .capability-card {
-    padding: 2.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .capabilities-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  
-  .title {
-    font-size: 2.5rem;
-  }
-  
-  .subtitle {
-    font-size: 1.125rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .capabilities-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .capability-card {
-    padding: 2rem;
-  }
-}
-
+/* Large Desktop */
 @media (min-width: 1200px) {
-  .capabilities-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-  
   .advanced-capabilities-section {
-    padding: 5rem 2rem;
+    padding: 6rem 2rem;
   }
-  
-  .header {
-    margin-bottom: 5rem;
-  }
-  
+
   .title {
     font-size: 3rem;
   }
+
+  .subtitle {
+    font-size: 1.375rem;
+  }
+
+  .header {
+    margin-bottom: 5rem;
+  }
 }
 
-@media (max-width: 480px) {
+/* Desktop */
+@media (min-width: 1024px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
   .advanced-capabilities-section {
     padding: 3rem 1rem;
   }
-  
-  .capability-card {
-    padding: 1.5rem;
-  }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
-  
-  .capability-title {
-    font-size: 1rem;
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  
-  .capability-description {
-    font-size: 0.9rem;
+
+  .capability-card {
+    padding: 1.5rem;
   }
-  
-  .capability-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+
+  .header {
+    margin-bottom: 3rem;
   }
 }
 
-@media (prefers-contrast: high) {
-  .capability-card {
-    border: 2px solid #374151;
+/* Mobile */
+@media (max-width: 480px) {
+  .advanced-capabilities-section {
+    padding: 2rem 0.75rem;
   }
-  
-  .capability-card:hover {
-    border-color: #14b8a6;
+
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .capability-card {
+    padding: 1.25rem;
+  }
+
+  .icon-container {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .capability-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .capability-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .capability-description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .header {
+    margin-bottom: 2rem;
   }
 }
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .advanced-capabilities-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .capability-card {
+    padding: 1rem;
+  }
+
+  .capabilities-grid {
+    gap: 1rem;
+  }
+}
+
+/* Accessibility Preferences */
 
 @media (prefers-reduced-motion: reduce) {
   .capability-card {
     transition: none;
   }
-  
+
   .capability-card:hover {
     transform: none;
+  }
+
+  .icon-container {
+    transition: none;
+  }
+
+  .capability-card:hover .icon-container {
+    transform: none;
+  }
+
+  .capability-title {
+    transition: none;
+  }
+}
+
+/* High Contrast */
+@media (prefers-contrast: high) {
+  .capability-card {
+    border: 2px solid #374151;
+  }
+
+  .capability-card:hover {
+    border-color: #14b8a6;
+  }
+
+  .capability-title {
+    color: #1f2937;
+  }
+
+  .capability-card:hover .capability-title {
+    color: #111827;
+  }
+
+  .icon-container {
+    background-color: #0d9488;
+    border: 2px solid #065f46;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .advanced-capabilities-section {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  }
+
+  .capability-card {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+      0 4px 6px -2px rgba(0, 0, 0, 0.15);
+  }
+
+  .capability-card:hover {
+    box-shadow: 0 25px 25px -5px rgba(0, 0, 0, 0.4),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  .title {
+    color: #f1f5f9;
+  }
+
+  .subtitle {
+    color: #94a3b8;
+  }
+
+  .capability-title {
+    color: #06b6d4;
+  }
+
+  .capability-card:hover .capability-title {
+    color: #0891b2;
+  }
+
+  .capability-description {
+    color: #94a3b8;
+  }
+
+  .icon-container {
+    background-color: #0891b2;
+  }
+}
+
+/* Focus Styles for Accessibility */
+.capability-card:focus-within {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .advanced-capabilities-section {
+    background: white !important;
+    padding: 2rem 0;
+  }
+
+  .capability-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+
+  .capability-card:hover {
+    transform: none;
+  }
+
+  .icon-container {
+    background-color: #666 !important;
   }
 }

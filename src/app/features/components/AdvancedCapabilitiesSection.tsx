@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  Users, 
   Eye, 
   Calendar, 
   Shield, 
@@ -11,6 +10,7 @@ import {
   Settings,
   TrendingUp
 } from 'lucide-react';
+import '../styles/AdvancedCapabilitiesSection.css';
 
 export default function AdvancedCapabilitiesSection() {
   const advancedCapabilities = [
@@ -57,31 +57,29 @@ export default function AdvancedCapabilitiesSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Advanced Capabilities</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+    <section className="advanced-capabilities-section">
+      <div className="container">
+        <div className="header">
+          <h2 className="title">Advanced Capabilities</h2>
+          <p className="subtitle">
             Explore the powerful features that are sophisticated and apart from traditional video 
             analytics solutions.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="capabilities-grid">
           {advancedCapabilities.map((capability, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
+              className="capability-card"
             >
-              <div className="w-16 h-16 bg-teal-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <div className="text-white text-2xl">
-                  {capability.icon}
-                </div>
+              <div className="icon-container">
+                {capability.icon}
               </div>
-              <h3 className="text-xl font-semibold text-teal-700 mb-4 group-hover:text-teal-600 transition-colors duration-300">
+              <h3 className="capability-title">
                 {capability.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="capability-description">
                 {capability.description}
               </p>
             </div>

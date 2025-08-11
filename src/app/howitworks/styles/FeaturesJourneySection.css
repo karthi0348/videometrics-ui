@@ -1,6 +1,8 @@
 .features-section {
   padding: 5rem 1.5rem;
-  background-color: #f9fafb;
+  background-color: #ffffff;
+  border-radius: 40px;
+  margin-bottom: 40px;
 }
 
 .features-container {
@@ -16,7 +18,7 @@
 
 .features-title {
   font-size: clamp(2.5rem, 6vw, 3rem);
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 1.5rem;
   color: #111827;
   line-height: 1.1;
@@ -109,6 +111,7 @@
   margin: 0;
 }
 
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -143,7 +146,9 @@
   animation-delay: 0.6s;
 }
 
-/* Responsive breakpoints */
+/* Responsive Design */
+
+/* Small Tablets and Large Mobile */
 @media (min-width: 640px) {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -159,6 +164,7 @@
   }
 }
 
+/* Desktop */
 @media (min-width: 1024px) {
   .features-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -174,6 +180,7 @@
   }
 }
 
+/* Tablet */
 @media (max-width: 768px) {
   .features-section {
     padding: 4rem 1rem;
@@ -192,6 +199,7 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
   .features-section {
     padding: 3rem 0.75rem;
@@ -221,11 +229,13 @@
   }
 }
 
-.feature-card:focus {
+/* Accessibility */
+.feature-card:focus-visible {
   outline: 2px solid #14b8a6;
   outline-offset: 2px;
 }
 
+/* High Contrast Mode */
 @media (prefers-contrast: high) {
   .features-section {
     background: #ffffff;
@@ -252,6 +262,7 @@
   }
 }
 
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .feature-card,
   .feature-icon,
@@ -273,6 +284,50 @@
   }
 }
 
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .features-section {
+    background-color: #1f2937;
+  }
+
+  .features-title {
+    color: #f9fafb;
+  }
+
+  .features-description {
+    color: #d1d5db;
+  }
+
+  .feature-card {
+    background: #374151;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .feature-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
+      0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-icon {
+    background-color: #0d9488;
+    color: #e6fffa;
+  }
+
+  .feature-card:hover .feature-icon {
+    background-color: #14b8a6;
+    color: #ffffff;
+  }
+
+  .feature-title {
+    color: #f3f4f6;
+  }
+
+  .feature-description {
+    color: #9ca3af;
+  }
+}
+
+/* Print Styles */
 @media print {
   .features-section {
     background: white !important;

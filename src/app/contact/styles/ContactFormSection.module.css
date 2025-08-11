@@ -1,8 +1,11 @@
 .contactFormSection {
   padding: 3rem 1rem;
-  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  background: linear-gradient(135deg, #eff1f2 0%, #e5edec 100%);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   line-height: 1.6;
+  border-radius: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .contactContainer {
@@ -23,21 +26,21 @@
 }
 
 .formCard {
-  background: #ffffff;
+  background: #2d3748;
   border-radius: 1rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   transition: box-shadow 0.3s ease;
 }
 
 .formCard:hover {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .formTitle {
   font-size: 1.5rem;
   font-weight: 500;
-  color: hsl(180, 3%, 6%);
+  color: #010610db;
   margin-bottom: 1rem;
   line-height: 1.2;
   font-family: inherit;
@@ -45,7 +48,7 @@
 
 .formDescription {
   font-size: 1rem;
-  color: #6b7280;
+  color: #36383a;
   margin-bottom: 1.5rem;
   line-height: 1.6;
   font-family: inherit;
@@ -71,7 +74,7 @@
 .formLabel {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #374151;
+  color: #353638;
   margin-bottom: 0.5rem;
   font-family: inherit;
 }
@@ -80,19 +83,20 @@
 .formTextarea {
   width: 100%;
   padding: 0.5rem 1rem;
-  border: 2px solid #d1d5db;
+  border: 2px solid #4b5563;
   border-radius: 0.5rem;
   font-size: 1rem;
   font-family: inherit;
   transition: all 0.2s ease;
-  background-color: #ffffff;
+  background-color: #4b5563;
+  color: #f9fafb;
 }
 
 .formInput:focus,
 .formTextarea:focus {
   outline: none;
   border-color: #14b8a6;
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
 }
 
 .formInput::placeholder,
@@ -124,18 +128,18 @@
 
 .formSubmitBtn:hover:not(:disabled) {
   background-color: #0f766e;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
 .formSubmitBtn:disabled {
-  background-color: #6ee7b7;
+  background-color: #0f766e;
   cursor: not-allowed;
   transform: translateY(0);
 }
 
 .formSubmitBtn.loading {
-  background-color: #6ee7b7;
+  background-color: #0f766e;
 }
 
 .loadingContent {
@@ -170,7 +174,7 @@
 .infoTitle {
   font-size: 1.5rem;
   font-weight: 500;
-  color: hsl(180, 3%, 6%);
+  color: #010610db;
   margin-bottom: 1rem;
   line-height: 1.2;
   font-family: inherit;
@@ -178,16 +182,16 @@
 
 .infoDescription {
   font-size: 1rem;
-  color: #6b7280;
+  color: #3a3c3e;
   margin-bottom: 2rem;
   line-height: 1.6;
   font-family: inherit;
 }
 
 .infoCard {
-  background: #ffffff;
+  background: #2d3748;
   border-radius: 1rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
 }
 
@@ -201,8 +205,8 @@
   flex-shrink: 0;
   width: 3rem;
   height: 3rem;
-  background-color: #ccfbf1;
-  color: #14b8a6;
+  background-color: #14b8a6;
+  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -221,14 +225,14 @@
 .infoItemTitle {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #111827;
+  color: #f3f4f6;
   margin-bottom: 0.5rem;
   font-family: inherit;
 }
 
 .infoDetails {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #9ca3af;
   line-height: 1.5;
   font-family: inherit;
 }
@@ -240,7 +244,7 @@
 .additionalInfo {
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #4b5563;
 }
 
 .additionalInfoGrid {
@@ -252,15 +256,15 @@
 .infoBadge {
   text-align: center;
   padding: 1rem;
-  background-color: #f9fafb;
+  background-color: #2d3748;
   border-radius: 0.5rem;
 }
 
 .badgeIcon {
   width: 2rem;
   height: 2rem;
-  background-color: #ccfbf1;
-  color: #14b8a6;
+  background-color: #14b8a6;
+  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -276,14 +280,14 @@
 .badgeTitle {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #374151;
+  color: #d1d5db;
   margin-bottom: 0.25rem;
   font-family: inherit;
 }
 
 .badgeSubtitle {
   font-size: 0.75rem;
-  color: #6b7280;
+  color: #9ca3af;
   font-family: inherit;
 }
 
@@ -389,5 +393,179 @@
   .formSubmitBtn {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .contactFormSection {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  }
+  
+  .formCard {
+    background: #2d3748;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  .formCard:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .formTitle {
+    color: #f3f4f6;
+  }
+  
+  .formDescription {
+    color: #d1d5db;
+  }
+
+  .formLabel {
+    color: #d1d5db;
+  }
+  
+  .formInput,
+  .formTextarea {
+    background-color: #4b5563;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+  
+  .formInput:focus,
+  .formTextarea:focus {
+    border-color: #14b8a6;
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
+  }
+
+  .formInput::placeholder,
+  .formTextarea::placeholder {
+    color: #9ca3af;
+  }
+
+  .formSubmitBtn:disabled {
+    background-color: #0f766e;
+  }
+
+  .formSubmitBtn.loading {
+    background-color: #0f766e;
+  }
+  
+  .infoTitle {
+    color: #f3f4f6;
+  }
+  
+  .infoDescription {
+    color: #d1d5db;
+  }
+
+  .infoCard {
+    background: #2d3748;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .infoIcon {
+    background-color: #14b8a6;
+    color: #ffffff;
+  }
+  
+  .infoItemTitle {
+    color: #f3f4f6;
+  }
+  
+  .infoDetails {
+    color: #9ca3af;
+  }
+
+  .additionalInfo {
+    border-top: 1px solid #4b5563;
+  }
+
+  .infoBadge {
+    background-color: #2d3748;
+  }
+
+  .badgeIcon {
+    background-color: #14b8a6;
+    color: #ffffff;
+  }
+
+  .badgeTitle {
+    color: #d1d5db;
+  }
+
+  .badgeSubtitle {
+    color: #9ca3af;
+  }
+}
+
+/* Add high contrast and reduced motion support for dark mode */
+@media (prefers-color-scheme: dark) and (prefers-contrast: high) {
+  .contactFormSection {
+    background: #d7d4d4;
+  }
+
+  .formCard,
+  .infoCard,
+  .infoBadge {
+    background: #000000;
+    border: 2px solid #ffffff;
+    box-shadow: none;
+  }
+
+  .formCard:hover {
+    box-shadow: none;
+    border-color: #14b8a6;
+  }
+
+  .formTitle,
+  .formDescription,
+  .formLabel,
+  .infoTitle,
+  .infoDescription,
+  .infoItemTitle,
+  .infoDetails,
+  .badgeTitle,
+  .badgeSubtitle,
+  .formInput,
+  .formTextarea {
+    color: #ffffff;
+  }
+
+  .formInput,
+  .formTextarea {
+    border-color: #ffffff;
+    background: #000000;
+  }
+
+  .formInput:focus,
+  .formTextarea:focus {
+    border-color: #14b8a6;
+    box-shadow: none;
+  }
+
+  .formInput::placeholder,
+  .formTextarea::placeholder {
+    color: #aaaaaa;
+  }
+  
+  .formSubmitBtn {
+    background-color: #14b8a6;
+    color: #000000;
+    border: 2px solid #14b8a6;
+  }
+
+  .formSubmitBtn:hover:not(:disabled) {
+    background-color: #1f2937;
+    color: #14b8a6;
+  }
+  
+  .formSubmitBtn:disabled {
+    background-color: #1f2937;
+    color: #9ca3af;
+    border-color: #9ca3af;
+  }
+
+  .infoIcon,
+  .badgeIcon {
+    background: #14b8a6;
+    color: #000000;
   }
 }

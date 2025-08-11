@@ -1,41 +1,47 @@
 "use client";
 
-import React, { JSX, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import "@/app/home/styles/IndustriesSection.css";
+import styles from '@/app/home/styles/IndustriesSection.module.css';
 
 interface Industry {
   id: string;
   title: string;
   description: string;
   features: string[];
-  image: JSX.Element;
+  image: React.ReactNode;
   color: string;
   bgGradient: string;
 }
 
-export default function IndustriesSection() {
+type ScreenSize = 'small' | 'medium' | 'large' | 'xlarge';
+
+interface IndustriesSectionProps {
+  className?: string;
+}
+
+export default function IndustriesSection({ className = '' }: IndustriesSectionProps) {
   const [activeIndustry, setActiveIndustry] = useState<string>("manufacturing");
-  const [screenSize, setScreenSize] = useState({
-    width: typeof window !== "undefined" ? window.innerWidth : 1024,
+  const [screenSize, setScreenSize] = useState<{ width: number }>({
+    width: typeof window !== 'undefined' ? window.innerWidth : 1024
   });
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = (): void => {
       setScreenSize({ width: window.innerWidth });
     };
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
     }
   }, []);
 
-  const getScreenClass = () => {
-    if (screenSize.width < 640) return "small";
-    if (screenSize.width < 768) return "medium";
-    if (screenSize.width < 1024) return "large";
-    return "xlarge";
+  const getScreenClass = (): ScreenSize => {
+    if (screenSize.width < 640) return 'small';
+    if (screenSize.width < 768) return 'medium';
+    if (screenSize.width < 1024) return 'large';
+    return 'xlarge';
   };
 
   const screenClass = getScreenClass();
@@ -52,20 +58,20 @@ export default function IndustriesSection() {
         "Analyze equipment utilization rates",
         "Optimize workforce allocation and scheduling",
       ],
-      color: "teal-500",
-      bgGradient: "blue-indigo",
+      color: "teal500",
+      bgGradient: "blueIndigo",
       image: (
-        <div className={`industry-image-container ${screenClass}`}>
+        <div className={`${styles.industryImageContainer} ${styles[screenClass]}`}>
           <Image
             src="https://media.istockphoto.com/id/492500467/photo/cctv-camera-or-surveillance-operating-inside-industrial-factory.jpg?s=612x612&w=0&k=20&c=Urst5wE44Zj6NhofWFRuL9sATA-iaOaJI5bydZi1evQ="
             alt="Industrial Security Camera"
-            className="industry-image"
+            className={styles.industryImage}
             width={612}
             height={408}
             priority
           />
-          <div className={`live-indicator ${screenClass}`}>
-            <div className="live-dot"></div>
+          <div className={`${styles.liveIndicator} ${styles[screenClass]}`}>
+            <div className={styles.liveDot}></div>
             <span>LIVE</span>
           </div>
         </div>
@@ -82,20 +88,20 @@ export default function IndustriesSection() {
         "Improve host station efficiency and reduce wait times",
         "Analyze customer flow for optimal seating arrangements",
       ],
-      color: "teal-500",
-      bgGradient: "orange-red",
+      color: "teal500",
+      bgGradient: "orangeRed",
       image: (
-        <div className={`industry-image-container ${screenClass}`}>
+        <div className={`${styles.industryImageContainer} ${styles[screenClass]}`}>
           <Image
             src="https://www.shutterstock.com/image-photo/cctv-system-security-inside-restaurantsurveillance-600nw-1064540882.jpg"
             alt="Restaurant Security Camera"
-            className="industry-image"
+            className={styles.industryImage}
             width={600}
             height={400}
             priority
           />
-          <div className={`live-indicator ${screenClass}`}>
-            <div className="live-dot"></div>
+          <div className={`${styles.liveIndicator} ${styles[screenClass]}`}>
+            <div className={styles.liveDot}></div>
             <span>LIVE</span>
           </div>
         </div>
@@ -112,20 +118,20 @@ export default function IndustriesSection() {
         "Track customer patterns and peak service hours",
         "Improve staff allocation during peak hours",
       ],
-      color: "teal-500",
-      bgGradient: "red-pink",
+      color: "teal500",
+      bgGradient: "redPink",
       image: (
-        <div className={`industry-image-container ${screenClass}`}>
+        <div className={`${styles.industryImageContainer} ${styles[screenClass]}`}>
           <Image
             src="https://www.shutterstock.com/image-photo/closed-circuit-television-camera-monitoring-600nw-413548441.jpg"
             alt="Retail Security Camera"
-            className="industry-image"
+            className={styles.industryImage}
             width={600}
             height={400}
             priority
           />
-          <div className={`live-indicator ${screenClass}`}>
-            <div className="live-dot"></div>
+          <div className={`${styles.liveIndicator} ${styles[screenClass]}`}>
+            <div className={styles.liveDot}></div>
             <span>LIVE</span>
           </div>
         </div>
@@ -142,20 +148,20 @@ export default function IndustriesSection() {
         "Optimize equipment utilization and maintenance",
         "Enhance security and theft prevention",
       ],
-      color: "teal-500",
-      bgGradient: "green-emerald",
+      color: "teal500",
+      bgGradient: "greenEmerald",
       image: (
-        <div className={`industry-image-container ${screenClass}`}>
+        <div className={`${styles.industryImageContainer} ${styles[screenClass]}`}>
           <Image
             src="https://cdn.prod.website-files.com/665dad178b155b8948cea817/67a0e7ca5a94b2185a5e65cd_card-sensor.webp"
             alt="Agriculture Sensor"
-            className="industry-image"
+            className={styles.industryImage}
             width={600}
             height={400}
             priority
           />
-          <div className={`live-indicator ${screenClass}`}>
-            <div className="live-dot"></div>
+          <div className={`${styles.liveIndicator} ${styles[screenClass]}`}>
+            <div className={styles.liveDot}></div>
             <span>LIVE</span>
           </div>
         </div>
@@ -168,31 +174,32 @@ export default function IndustriesSection() {
     industries[0];
 
   return (
-    <section className={`industries-section ${screenClass}`}>
-      <div className={`industries-container ${screenClass}`}>
-        <div className={`industries-header ${screenClass}`}>
-          <h2 className={`industries-title ${screenClass}`}>
+    <section className={`${styles.industriesSection} ${styles[screenClass]} ${className}`}>
+      <div className={`${styles.industriesContainer} ${styles[screenClass]}`}>
+        <div className={`${styles.industriesHeader} ${styles[screenClass]}`}>
+          <h2 className={`${styles.industriesTitle} ${styles[screenClass]}`}>
             Transforming{" "}
-            <span className="title-highlight">Various Industries</span>
+            <span className={styles.titleHighlight}>
+              Various Industries
+            </span>
           </h2>
-          <p className={`industries-subtitle ${screenClass}`}>
+          <p className={`${styles.industriesSubtitle} ${styles[screenClass]}`}>
             See how VideoMetrics.ai delivers value across different operational
             environments.
           </p>
         </div>
 
         {/* Industry tabs */}
-        <div className={`industry-tabs ${screenClass}`}>
+        <div className={`${styles.industryTabs} ${styles[screenClass]}`}>
           {industries.map((industry) => (
             <button
               key={industry.id}
               onClick={() => setActiveIndustry(industry.id)}
               className={`
-                industry-tab ${screenClass} 
-                ${
-                  activeIndustry === industry.id
-                    ? `active ${industry.bgGradient}`
-                    : "inactive"
+                ${styles.industryTab} ${styles[screenClass]} 
+                ${activeIndustry === industry.id 
+                  ? `${styles.active} ${styles[industry.bgGradient]}` 
+                  : styles.inactive
                 }
               `}
             >
@@ -201,24 +208,20 @@ export default function IndustriesSection() {
           ))}
         </div>
 
-        <div
-          className={`industry-content ${screenClass} ${activeIndustryData.bgGradient}`}
-        >
-          <div className={`industry-grid ${screenClass}`}>
-            <div className={`industry-text-section ${screenClass}`}>
-              <h3
-                className={`industry-content-title ${screenClass} ${activeIndustryData.color}`}
-              >
+        <div className={`${styles.industryContent} ${styles[screenClass]} ${styles[activeIndustryData.bgGradient]}`}>
+          <div className={`${styles.industryGrid} ${styles[screenClass]}`}>
+            <div className={`${styles.industryTextSection} ${styles[screenClass]}`}>
+              <h3 className={`${styles.industryContentTitle} ${styles[screenClass]} ${styles[activeIndustryData.color]}`}>
                 {activeIndustryData.title}
               </h3>
-              <p className={`industry-description ${screenClass}`}>
+              <p className={`${styles.industryDescription} ${styles[screenClass]}`}>
                 {activeIndustryData.description}
               </p>
 
-              <div className={`features-list ${screenClass}`}>
+              <div className={`${styles.featuresList} ${styles[screenClass]}`}>
                 {activeIndustryData.features.map((feature, index) => (
-                  <div key={index} className={`feature-item ${screenClass}`}>
-                    <span className={`feature-text ${screenClass}`}>
+                  <div key={index} className={`${styles.featureItem} ${styles[screenClass]}`}>
+                    <span className={`${styles.featureText} ${styles[screenClass]}`}>
                       {feature}
                     </span>
                   </div>
@@ -226,9 +229,7 @@ export default function IndustriesSection() {
               </div>
             </div>
 
-            <div
-              className={`industry-image-section ${screenClass} ${activeIndustryData.bgGradient}`}
-            >
+            <div className={`${styles.industryImageSection} ${styles[screenClass]} ${styles[activeIndustryData.bgGradient]}`}>
               {activeIndustryData.image}
             </div>
           </div>

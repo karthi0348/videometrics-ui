@@ -1,4 +1,3 @@
-
 import React from "react";
 import "../styles/StepsSection.css";
 
@@ -28,7 +27,6 @@ const defaultSteps: Step[] = [
     icon: (
       <div className="step-icon-container">
         <svg viewBox="0 0 100 80" className="step-icon-svg">
-
           <ellipse cx="70" cy="25" rx="20" ry="12" fill="#e0f2fe" stroke="#0891b2" strokeWidth="2"/>
           <ellipse cx="30" cy="35" rx="25" ry="15" fill="#e0f2fe" stroke="#0891b2" strokeWidth="2"/>
           
@@ -87,7 +85,6 @@ const defaultSteps: Step[] = [
             strokeWidth="2"
             strokeDasharray="2,2"
           />
-          {/* Data points */}
           <circle cx="25" cy="15" r="2" fill="#f97316"/>
           <circle cx="35" cy="18" r="2" fill="#f97316"/>
           <circle cx="45" cy="12" r="2" fill="#f97316"/>
@@ -132,11 +129,12 @@ const StepsSection: React.FC<StepsSectionProps> = ({
               )}
               
               <h3 className="step-title">{step.title}</h3>
-              <p className="step-description">{step.description}</p>
               
               <div className="step-icon">
                 {step.icon}
               </div>
+
+              <p className="step-description">{step.description}</p>
             </div>
           ))}
         </div>

@@ -1,0 +1,566 @@
+.stepsSection {
+  position: relative;
+  isolation: isolate;
+  padding: 2.5rem 0;
+  background-color: #ffffff;
+  border-radius: 40px;
+  margin-bottom: 40px;
+}
+
+.stepsContainer {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.stepsHeader {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.stepsMainTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  line-height: 1.25;
+  margin: 0;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.titleBreak {
+  display: none;
+}
+
+.titleSpan {
+  display: inline;
+}
+
+.stepsDescriptionContainer {
+  padding-top: 0.5rem;
+}
+
+.stepsDescription {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.75;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.stepsContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.stepItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  animation: slideInLeft 0.6s ease-out both;
+  will-change: transform;
+}
+
+.stepItem:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stepItem:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stepItem:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stepIconWrapper {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stepIconContainer {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #ecfeff 0%, #f0fdfa 100%);
+  border: 2px solid #a5f3fc;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.stepItem:hover .stepIconContainer {
+  background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+  border-color: #0891b2;
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.25);
+  transform: scale(1.1);
+}
+
+.stepIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #06b6d4;
+  transition: all 0.3s ease;
+}
+
+.stepItem:hover .stepIcon {
+  color: white;
+  transform: scale(1.1);
+}
+
+.connectingLine {
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(to bottom, #e5e7eb, #f3f4f6);
+  margin: 0.75rem auto 0;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.stepItem:hover .connectingLine {
+  background: linear-gradient(to bottom, #06b6d4, #14b8a6);
+  transform: scaleY(1.1);
+}
+
+.stepContent {
+  flex: 1;
+  padding-top: 0.125rem;
+}
+
+.stepTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0891b2;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.25;
+  transition: color 0.3s ease;
+}
+
+.stepTitleText {
+  color: #14b8a6;
+}
+
+.stepItem:hover .stepTitle {
+  color: #0e7490;
+}
+
+.stepDescription {
+  font-size: 0.875rem;
+  color: #4b5563;
+  line-height: 1.75;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.stepItem:hover .stepDescription {
+  color: #374151;
+}
+
+.stepsImageContainer {
+  padding-left: 1rem;
+  order: -1;
+  animation: slideInRight 0.8s ease-out 0.4s both;
+}
+
+.stepsImageWrapper {
+  position: relative;
+}
+
+.stepsImageFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.5s ease;
+}
+
+.stepsImageWrapper:hover .stepsImageFrame {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.stepsImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 40px;
+}
+
+.stepsImageWrapper:hover .stepsImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.05),
+    transparent,
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 40px;
+}
+
+.stepsImageWrapper:hover .imageOverlay {
+  opacity: 1;
+}
+
+.decorativeElement1 {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, #a5f3fc, #67e8f9);
+  border-radius: 40px;
+  opacity: 0.6;
+  animation: pulse 2s infinite;
+}
+
+.decorativeElement2 {
+  position: absolute;
+  bottom: -1rem;
+  left: -1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, #67e8f9, #6ee7b7);
+  border-radius: 40px;
+  opacity: 0.4;
+  animation: pulse 2s infinite;
+  animation-delay: 1s;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.stepItem:focus-within .stepIconContainer {
+  outline: 2px solid #06b6d4;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .stepsSection {
+    padding: 4rem 0;
+  }
+
+  .stepsContainer {
+    padding: 0 1.5rem;
+  }
+
+  .stepsHeader {
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .stepsMainTitle {
+    font-size: 1.75rem;
+  }
+
+  .stepsDescription {
+    font-size: 1.125rem;
+  }
+
+  .stepsContent {
+    gap: 3rem;
+  }
+
+  .stepsList {
+    gap: 2rem;
+  }
+
+  .stepItem {
+    gap: 1.5rem;
+  }
+
+  .stepIconContainer {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .stepIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .connectingLine {
+    height: 4rem;
+    margin-top: 1rem;
+  }
+
+  .stepTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .stepDescription {
+    font-size: 1rem;
+  }
+
+  .titleBreak {
+    display: block;
+  }
+
+  .titleSpan {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stepsSection {
+    padding: 5rem 0;
+  }
+
+  .stepsContainer {
+    padding: 0 2rem;
+  }
+
+  .stepsHeader {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .stepsMainTitle {
+    font-size: 2rem;
+  }
+
+  .stepsDescription {
+    font-size: 1.25rem;
+  }
+
+  .stepsDescriptionContainer {
+    padding-top: 0.5rem;
+  }
+
+  .stepsContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .stepsList {
+    gap: 3rem;
+  }
+
+  .connectingLine {
+    height: 5rem;
+  }
+
+  .stepTitle {
+    font-size: 1.25rem;
+  }
+
+  .stepsImageContainer {
+    padding-left: 2rem;
+    order: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .stepsSection {
+    padding: 6rem 0;
+  }
+
+  .stepsHeader {
+    margin-bottom: 5rem;
+  }
+
+  .stepsMainTitle {
+    font-size: 2.25rem;
+  }
+
+  .stepsContent {
+    gap: 5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .stepsSection {
+    padding: 7rem 0;
+  }
+
+  .stepsMainTitle {
+    font-size: 2.5rem;
+  }
+
+  .stepsContent {
+    gap: 6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stepsHeader,
+  .stepsMainTitle,
+  .stepsDescription,
+  .stepsList,
+  .stepItem,
+  .stepsImageContainer {
+    animation: none;
+  }
+
+  .stepItem:hover .stepIconContainer,
+  .stepsImageWrapper:hover .stepsImageFrame,
+  .stepsImageWrapper:hover .stepsImage {
+    transform: none;
+  }
+
+  .decorativeElement1,
+  .decorativeElement2 {
+    animation: none;
+  }
+}
+
+/* High Contrast */
+@media (prefers-contrast: high) {
+  .stepItem {
+    border: 1px solid transparent;
+    border-radius: 40px;
+  }
+
+  .stepItem:focus-within {
+    border-color: #000;
+  }
+
+  .stepIconContainer {
+    border-width: 3px;
+  }
+
+  .connectingLine {
+    background: #000;
+    width: 3px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .stepItem:hover .stepIconContainer,
+  .stepItem:hover .connectingLine,
+  .stepsImageWrapper:hover .stepsImageFrame {
+    transform: none;
+    background: inherit;
+    border-color: inherit;
+    box-shadow: inherit;
+  }
+
+  .stepItem:active .stepIconContainer {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 480px) {
+  .stepsHeader {
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .titleBreak,
+  .titleSpan {
+    display: inline;
+  }
+
+  .stepsImageContainer {
+    order: -1;
+    margin-bottom: 2rem;
+    padding-left: 0;
+  }
+
+  .stepsImageFrame {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .stepsSection {
+    background: white !important;
+    color: black !important;
+  }
+
+  .stepItem {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .stepsImageWrapper,
+  .decorativeElement1,
+  .decorativeElement2,
+  .connectingLine {
+    display: none !important;
+  }
+
+  .stepIconContainer {
+    background: white !important;
+    border: 2px solid black !important;
+  }
+
+  .stepTitleText {
+    color: black !important;
+  }
+}

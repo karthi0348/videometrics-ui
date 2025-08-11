@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/FeaturesCTASection.css';
+import '../styles/FeaturesCTASection.css'
 
 export default function CTASection() {
   return (
@@ -21,10 +21,7 @@ export default function CTASection() {
           <button className="demo-button">
             Schedule Demo
           </button>
-         
         </div>
-        
-     
       </div>
     </section>
   );

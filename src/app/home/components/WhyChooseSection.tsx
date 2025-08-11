@@ -5,7 +5,7 @@ import "@/app/home/styles/whychoose.css";
 
 export default function WhyChooseSection() {
   return (
-    <section className="py-3 py-md-5 bg-light">
+    <section className="py-3 py-md-5 bg-light section-chamfered">
       <div className="container">
         <div className="row mb-3 mb-md-5">
           <div className="col-lg-6 text-center text-lg-start mb-3 mb-lg-0">

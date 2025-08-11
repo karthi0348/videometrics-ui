@@ -4,6 +4,8 @@
   background-image: 
     radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.08) 0%, transparent 50%);
+  border-radius: 40px;
+  margin-bottom: 40px;
 }
 
 .container {
@@ -17,11 +19,11 @@
 }
 
 .title {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  font-weight: 500;
   margin-bottom: 1.5rem;
   color: #1f2937;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .subtitle {
@@ -31,7 +33,7 @@
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
 }
 
 .steps-grid {
