@@ -57,10 +57,10 @@ export default function AdvancedCapabilitiesSection() {
   ];
 
   return (
-    <section className="advanced-capabilities-section">
+    <section className="section advanced-capabilities-section">
       <div className="container">
         <div className="header">
-          <h2 className="title">Advanced Capabilities</h2>
+          <h2 className="sectitle">Advanced Capabilities</h2>
           <p className="subtitle">
             Explore the powerful features that are sophisticated and apart from traditional video 
             analytics solutions.

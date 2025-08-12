@@ -41,7 +41,7 @@ const steps = [
 
 export default function Steps() {
   return (
-    <section className={styles.stepsSection}>
+    <section className={`section ${styles.stepsSection}`}>
       <div className={styles.stepsContainer}>
         <div className={styles.stepsHeader}>
           <div className={styles.stepsHeadingContainer}>

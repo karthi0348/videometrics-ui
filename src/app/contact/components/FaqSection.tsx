@@ -52,7 +52,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
   expandable = true,
 }) => {
   return (
-    <section className="faq-section">
+    <section className="section faq-section">
       <div className="faq-container">
         <div className="faq-header">
           <h2 className="faq-title">{title}</h2>

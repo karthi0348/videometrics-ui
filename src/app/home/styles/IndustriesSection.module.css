@@ -1,8 +1,7 @@
 .industriesSection {
-  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 50%, #ebf8ff 100%);
-  padding: 80px 24px;
-  border-radius: 40px;
-  margin: 20px 0;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+  margin: 4px;
+  margin-bottom: 60px;
 }
 
 .industriesContainer {
@@ -16,12 +15,11 @@
 }
 
 .industriesTitle {
-  font-size: 1.1rem;
-  font-weight: 500px;
+  font-size: clamp(28px, 5vw, 48px);
   font-weight: bold;
   margin-bottom: 24px;
   color: #111827;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .titleHighlight {
@@ -33,7 +31,7 @@
 }
 
 .industriesSubtitle {
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   color: #4b5563;
   max-width: 896px;
   margin: 0 auto;
@@ -61,6 +59,10 @@
   border: none;
   cursor: pointer;
   font-size: 16px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .industryTab.inactive {
@@ -118,7 +120,7 @@
 }
 
 .industryContentTitle {
-  font-size: 36px;
+  font-size: clamp(24px, 4vw, 36px);
   font-weight: bold;
   margin-bottom: 24px;
   line-height: 1.2;
@@ -129,7 +131,7 @@
 }
 
 .industryDescription {
-  font-size: 18px;
+  font-size: clamp(16px, 2.5vw, 18px);
   color: #4b5563;
   margin-bottom: 32px;
   line-height: 1.6;
@@ -175,7 +177,7 @@
   color: #374151;
   line-height: 1.6;
   transition: color 0.3s ease;
-  font-size: 16px;
+  font-size: clamp(15px, 2vw, 16px);
   font-weight: 500;
 }
 
@@ -191,6 +193,7 @@
   transition: all 0.5s ease;
 }
 
+/* Image section color variants */
 .industryImageSection.blueIndigo {
   background: linear-gradient(135deg, #ebf8ff, #e0e7ff);
 }
@@ -240,7 +243,7 @@
   gap: 8px;
   background: #ef4444;
   color: white;
-  padding: 4px 12px;
+  padding: 6px 12px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
@@ -255,347 +258,180 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
-    opacity: 1;
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ==============================================
+   MOBILE RESPONSIVE BREAKPOINTS
+   ============================================== */
+
+/* Mobile (320px - 575px) */
+@media (max-width: 575.98px) {
+  .industriesSection {
+    margin: 1px;
+    margin-bottom: 40px;
   }
-  50% {
-    opacity: 0.5;
+
+  .industriesHeader {
+    margin-bottom: 40px;
+  }
+
+  .industriesTitle {
+    margin-bottom: 16px;
+  }
+
+  .industryTabs {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding: 12px;
+  }
+
+  .industryTab {
+    padding: 16px 20px;
+    font-size: 16px; 
+    width: 100%;
+    text-align: center;
+    min-height: 48px; 
+  }
+
+  .industryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .industryTextSection {
+    padding: 32px 24px;
+    order: 2;
+  }
+
+  .industryDescription {
+    margin-bottom: 24px;
+  }
+
+  .featuresList {
+    gap: 12px;
+  }
+
+  .featureItem {
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .featureItem::before {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+  }
+
+  .industryImageSection {
+    padding: 24px;
+    order: 1;
+  }
+
+  .industryImageContainer {
+    height: 200px;
+    border-radius: 12px;
+  }
+
+  .liveIndicator {
+    top: 12px;
+    right: 12px;
+    padding: 6px 10px;
+    font-size: 11px;
   }
 }
 
-/* Responsive Screen Classes */
-
-/* Small screens */
-.industriesSection.small {
-  padding: 40px 16px;
-  border-radius: 20px;
-}
-
-.industriesHeader.small {
-  margin-bottom: 40px;
-}
-
-.industriesTitle.small {
-  font-size: 28px;
-  margin-bottom: 16px;
-}
-
-.industriesSubtitle.small {
-  font-size: 16px;
-}
-
-.industryTabs.small {
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 32px;
-}
-
-.industryTab.small {
-  padding: 12px 16px;
-  font-size: 14px;
-  width: 100%;
-}
-
-.industryGrid.small {
-  grid-template-columns: 1fr;
-}
-
-.industryTextSection.small {
-  padding: 32px 24px;
-  order: 2;
-}
-
-.industryContentTitle.small {
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-.industryDescription.small {
-  font-size: 14px;
-  margin-bottom: 24px;
-}
-
-.featuresList.small {
-  gap: 12px;
-}
-
-.featureItem.small {
-  gap: 8px;
-  padding: 8px 0;
-}
-
-.featureItem.small::before {
-  width: 16px;
-  height: 16px;
-  font-size: 10px;
-}
-
-.featureText.small {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.industryImageSection.small {
-  padding: 24px;
-  order: 1;
-}
-
-.industryImageContainer.small {
-  height: 200px;
-}
-
-.liveIndicator.small {
-  top: 12px;
-  right: 12px;
-  padding: 4px 8px;
-  font-size: 10px;
-}
-
-/* Medium screens */
-.industriesSection.medium {
-  padding: 60px 20px;
-  border-radius: 30px;
-}
-
-.industriesHeader.medium {
-  margin-bottom: 48px;
-}
-
-.industriesTitle.medium {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.industriesSubtitle.medium {
-  font-size: 18px;
-}
-
-.industryTabs.medium {
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 40px;
-}
-
-.industryTab.medium {
-  padding: 12px 20px;
-  font-size: 15px;
-}
-
-.industryGrid.medium {
-  grid-template-columns: 1fr;
-}
-
-.industryTextSection.medium {
-  padding: 40px 32px;
-  order: 2;
-}
-
-.industryContentTitle.medium {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.industryDescription.medium {
-  font-size: 16px;
-  margin-bottom: 28px;
-}
-
-.featuresList.medium {
-  gap: 14px;
-}
-
-.featureItem.medium {
-  gap: 10px;
-  padding: 10px 0;
-}
-
-.featureItem.medium::before {
-  width: 18px;
-  height: 18px;
-  font-size: 11px;
-}
-
-.featureText.medium {
-  font-size: 15px;
-  line-height: 1.55;
-}
-
-.industryImageSection.medium {
-  padding: 32px;
-  order: 1;
-}
-
-.industryImageContainer.medium {
-  height: 240px;
-}
-
-.liveIndicator.medium {
-  top: 14px;
-  right: 14px;
-  padding: 4px 10px;
-  font-size: 11px;
-}
-
-/* Large screens */
-.industriesSection.large {
-  padding: 70px 24px;
-  border-radius: 35px;
-}
-
-.industriesHeader.large {
-  margin-bottom: 56px;
-}
-
-.industriesTitle.large {
-  font-size: 42px;
-  margin-bottom: 22px;
-}
-
-.industriesSubtitle.large {
-  font-size: 19px;
-}
-
-.industryTabs.large {
-  margin-bottom: 44px;
-}
-
-.industryTab.large {
-  padding: 12px 22px;
-  font-size: 15px;
-}
-
-.industryGrid.large {
-  grid-template-columns: 1fr 1fr;
-}
-
-.industryTextSection.large {
-  padding: 44px 40px;
-}
-
-.industryContentTitle.large {
-  font-size: 32px;
-  margin-bottom: 22px;
-}
-
-.industryDescription.large {
-  font-size: 17px;
-  margin-bottom: 30px;
-}
-
-.featuresList.large {
-  gap: 15px;
-}
-
-.featureItem.large {
-  gap: 11px;
-  padding: 11px 0;
-}
-
-.featureItem.large::before {
-  width: 19px;
-  height: 19px;
-  font-size: 11px;
-}
-
-.featureText.large {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.industryImageSection.large {
-  padding: 44px 40px;
-}
-
-.industryImageContainer.large {
-  height: 280px;
-}
-
-.liveIndicator.large {
-  top: 15px;
-  right: 15px;
-  padding: 4px 11px;
-  font-size: 11px;
-}
-
-/* XLarge screens */
-.industriesSection.xlarge {
-  padding: 80px 24px;
-  border-radius: 40px;
-}
-
-.industriesHeader.xlarge {
-  margin-bottom: 64px;
-}
-
-.industriesTitle.xlarge {
-  font-size: 48px;
-  margin-bottom: 24px;
-}
-
-.industriesSubtitle.xlarge {
-  font-size: 20px;
-}
-
-.industryTabs.xlarge {
-  margin-bottom: 48px;
-}
-
-.industryTab.xlarge {
-  padding: 12px 24px;
-  font-size: 16px;
-}
-
-.industryGrid.xlarge {
-  grid-template-columns: 1fr 1fr;
-}
-
-.industryTextSection.xlarge {
-  padding: 48px;
-}
-
-.industryContentTitle.xlarge {
-  font-size: 36px;
-  margin-bottom: 24px;
-}
-
-.industryDescription.xlarge {
-  font-size: 18px;
-  margin-bottom: 32px;
-}
-
-.featuresList.xlarge {
-  gap: 16px;
-}
-
-.featureItem.xlarge {
-  gap: 12px;
-  padding: 12px 0;
-}
-
-.featureItem.xlarge::before {
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
-}
-
-.featureText.xlarge {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.industryImageSection.xlarge {
-  padding: 48px;
-}
-
-.industryImageContainer.xlarge {
-  height: 320px;
-}
-
-.liveIndicator.xlarge {
-  top: 16px;
-  right: 16px;
-  padding: 4px 12px;
-  font-size: 12px;
+/* Small Tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .industryTab {
+    padding: 14px 22px;
+    font-size: 15px;
+    min-height: 46px;
+  }
+
+  .industryImageContainer {
+    height: 240px;
+  }
+}
+
+/* Medium Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .industryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .industryTextSection {
+    order: 2;
+    padding: 40px;
+  }
+
+  .industryImageSection {
+    order: 1;
+    padding: 40px;
+  }
+
+  .industryImageContainer {
+    height: 280px;
+  }
+}
+
+/* Large Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .industryGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .industryTextSection {
+    order: 1;
+  }
+
+  .industryImageSection {
+    order: 2;
+  }
+}
+
+/* ==============================================
+   ACCESSIBILITY & PERFORMANCE
+   ============================================== */
+
+.industryTab:focus-visible {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}
+
+.industryTab:hover {
+  transform: translateY(-1px);
+}
+
+.industryTab.active:hover {
+  transform: scale(1.05) translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featureItem,
+  .industryTab,
+  .liveDot {
+    transition: none;
+    animation: none;
+  }
+
+  .industryTab:hover,
+  .industryTab.active:hover,
+  .featureItem:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .industryTab {
+    border: 2px solid currentColor;
+  }
+  
+  .industryContent {
+    border-width: 2px;
+  }
 }
 
 /* Dark theme support */
@@ -644,77 +480,11 @@
   }
 }
 
-/* Standard responsive breakpoints */
-@media (max-width: 639px) {
-  .industriesSection {
-    padding: 40px 16px;
-    border-radius: 20px;
-  }
-
-  .industryGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .industryTabs {
-    flex-direction: column;
-  }
-
-  .industryTab {
-    width: 100%;
-  }
-}
-
-@media (min-width: 640px) and (max-width: 767px) {
-  .industriesSection {
-    padding: 60px 20px;
-    border-radius: 30px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .industriesSection {
-    padding: 70px 24px;
-    border-radius: 35px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .industriesSection {
-    padding: 80px 24px;
-    border-radius: 40px;
-  }
-
-  .industryGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  .featureItem,
-  .industryTab,
-  .liveDot {
-    transition: none;
-    animation: none;
-  }
-}
-
-@media (prefers-contrast: high) {
-  .industryTab {
-    border: 2px solid currentColor;
-  }
-  
-  .industryContent {
-    border-width: 2px;
-  }
-}
-
 /* Print styles */
 @media print {
   .industriesSection {
     background: white !important;
     box-shadow: none !important;
-    border-radius: 0 !important;
   }
 
   .industryContent {
@@ -725,19 +495,4 @@
   .liveIndicator {
     display: none !important;
   }
-}
-
-/* Focus styles for accessibility */
-.industryTab:focus-visible {
-  outline: 2px solid #14b8a6;
-  outline-offset: 2px;
-}
-
-/* Hover effects */
-.industryTab:hover {
-  transform: translateY(-1px);
-}
-
-.industryTab.active:hover {
-  transform: scale(1.05) translateY(-1px);
 }

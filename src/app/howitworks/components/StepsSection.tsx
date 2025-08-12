@@ -27,18 +27,62 @@ const defaultSteps: Step[] = [
     icon: (
       <div className="step-icon-container">
         <svg viewBox="0 0 100 80" className="step-icon-svg">
-          <ellipse cx="70" cy="25" rx="20" ry="12" fill="#e0f2fe" stroke="#0891b2" strokeWidth="2"/>
-          <ellipse cx="30" cy="35" rx="25" ry="15" fill="#e0f2fe" stroke="#0891b2" strokeWidth="2"/>
-          
-          <rect x="20" y="50" width="25" height="15" rx="2" fill="#14b8a6" stroke="#0d9488" strokeWidth="1"/>
-          <circle cx="50" cy="58" r="8" fill="#14b8a6" stroke="#0d9488" strokeWidth="1"/>
-          <circle cx="50" cy="58" r="4" fill="white"/>
-          
-          <path d="M35 50 Q45 40 60 30" stroke="#14b8a6" strokeWidth="2" strokeDasharray="3,3" fill="none"/>
-          <path d="M58 58 Q65 45 70 35" stroke="#14b8a6" strokeWidth="2" strokeDasharray="3,3" fill="none"/>
+          <ellipse
+            cx="70"
+            cy="25"
+            rx="20"
+            ry="12"
+            fill="#e0f2fe"
+            stroke="#0891b2"
+            strokeWidth="2"
+          />
+          <ellipse
+            cx="30"
+            cy="35"
+            rx="25"
+            ry="15"
+            fill="#e0f2fe"
+            stroke="#0891b2"
+            strokeWidth="2"
+          />
+
+          <rect
+            x="20"
+            y="50"
+            width="25"
+            height="15"
+            rx="2"
+            fill="#14b8a6"
+            stroke="#0d9488"
+            strokeWidth="1"
+          />
+          <circle
+            cx="50"
+            cy="58"
+            r="8"
+            fill="#14b8a6"
+            stroke="#0d9488"
+            strokeWidth="1"
+          />
+          <circle cx="50" cy="58" r="4" fill="white" />
+
+          <path
+            d="M35 50 Q45 40 60 30"
+            stroke="#14b8a6"
+            strokeWidth="2"
+            strokeDasharray="3,3"
+            fill="none"
+          />
+          <path
+            d="M58 58 Q65 45 70 35"
+            stroke="#14b8a6"
+            strokeWidth="2"
+            strokeDasharray="3,3"
+            fill="none"
+          />
         </svg>
       </div>
-    )
+    ),
   },
   {
     number: 2,
@@ -46,7 +90,7 @@ const defaultSteps: Step[] = [
     description:
       "Choose a template or define custom metrics relevant to your goals. Set up zones, tracking parameters, and alerts.",
     icon: (
-      <div className="step-dashboard-container">
+      <div className="section step-dashboard-container">
         <div className="step-dashboard-screen">
           <div className="step-dashboard-content">
             <div className="dashboard-header"></div>
@@ -61,7 +105,7 @@ const defaultSteps: Step[] = [
           </div>
         </div>
       </div>
-    )
+    ),
   },
   {
     number: 3,
@@ -85,13 +129,13 @@ const defaultSteps: Step[] = [
             strokeWidth="2"
             strokeDasharray="2,2"
           />
-          <circle cx="25" cy="15" r="2" fill="#f97316"/>
-          <circle cx="35" cy="18" r="2" fill="#f97316"/>
-          <circle cx="45" cy="12" r="2" fill="#f97316"/>
+          <circle cx="25" cy="15" r="2" fill="#f97316" />
+          <circle cx="35" cy="18" r="2" fill="#f97316" />
+          <circle cx="45" cy="12" r="2" fill="#f97316" />
         </svg>
         <div className="chart-subtitle">vs. people flow</div>
       </div>
-    )
+    ),
   },
 ];
 
@@ -102,11 +146,13 @@ const StepsSection: React.FC<StepsSectionProps> = ({
   steps = defaultSteps,
   showNumbers = true,
   animationsEnabled = true,
-  testId = "steps-section"
+  testId = "steps-section",
 }) => {
   return (
-    <section 
-      className={`steps-section ${!animationsEnabled ? 'steps-section--no-animations' : ''} ${className}`}
+    <section
+      className={`section steps-section ${
+        !animationsEnabled ? "steps-section--no-animations" : ""
+      } ${className}`}
       data-testid={testId}
     >
       <div className="steps-container">
@@ -117,22 +163,16 @@ const StepsSection: React.FC<StepsSectionProps> = ({
 
         <div className="steps-grid">
           {steps.map((step, index) => (
-            <div 
-              key={step.number} 
+            <div
+              key={step.number}
               className="step-card"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {showNumbers && (
-                <div className="step-number">
-                  {step.number}
-                </div>
-              )}
-              
+              {showNumbers && <div className="step-number">{step.number}</div>}
+
               <h3 className="step-title">{step.title}</h3>
-              
-              <div className="step-icon">
-                {step.icon}
-              </div>
+
+              <div className="step-icon">{step.icon}</div>
 
               <p className="step-description">{step.description}</p>
             </div>

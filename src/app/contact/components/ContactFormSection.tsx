@@ -1,6 +1,8 @@
 import React from "react";
-import styles from '../styles/ContactFormSection.module.css';
 import '@/app/globals.css'
+import "../styles/ContactFormSection.css";
+
+
 
 interface ContactInfo {
   type: 'location' | 'email' | 'phone';
@@ -19,7 +21,6 @@ const defaultContactInfo: ContactInfo[] = [
     title: 'Office Location',
     details: ['5450 McGinnis Village Place,', 'Suite No. 111', 'Alpharetta, GA - 30005']
   },
-
 ];
 
 export default function ContactFormSection({ 
@@ -28,21 +29,21 @@ export default function ContactFormSection({
 }: ContactFormSectionProps) {
 
   return (
-    <section className={styles.contactFormSection}>
-      <div className={styles.contactContainer}>
-        <div className={styles.contactGrid}>
+    <section className="section contact-form-section">
+      <div className="contact-container">
+        <div className="contact-grid">
           {/* Contact Form */}
-          <div className={styles.formWrapper}>
-            <h2 className={styles.formTitle}>Send Us a Message</h2>
-            <p className={styles.formDescription}>
+          <div className="form-wrapper">
+            <h2 className="form-title">Send Us a Message</h2>
+            <p className="form-description">
               Fill out the form below and we will get back to you as soon as possible.
             </p>
 
-            <form action={apiEndpoint} method="POST" className={styles.contactForm}>
+            <form action={apiEndpoint} method="POST" className="contact-form">
               {/* First Name and Last Name */}
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="firstName" className={styles.formLabel}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="firstName" className="form-label">
                     First Name
                   </label>
                   <input
@@ -50,12 +51,12 @@ export default function ContactFormSection({
                     id="firstName"
                     name="firstName"
                     placeholder="John"
-                    className={styles.formInput}
+                    className="form-input"
                     required
                   />
                 </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="lastName" className={styles.formLabel}>
+                <div className="form-group">
+                  <label htmlFor="lastName" className="form-label">
                     Last Name
                   </label>
                   <input
@@ -63,15 +64,15 @@ export default function ContactFormSection({
                     id="lastName"
                     name="lastName"
                     placeholder="Doe"
-                    className={styles.formInput}
+                    className="form-input"
                     required
                   />
                 </div>
               </div>
 
               {/* Email */}
-              <div className={styles.formGroup}>
-                <label htmlFor="email" className={styles.formLabel}>
+              <div className="form-group">
+                <label htmlFor="email" className="form-label">
                   Email
                 </label>
                 <input
@@ -79,14 +80,14 @@ export default function ContactFormSection({
                   id="email"
                   name="email"
                   placeholder="john@example.com"
-                  className={styles.formInput}
+                  className="form-input"
                   required
                 />
               </div>
 
               {/* Company */}
-              <div className={styles.formGroup}>
-                <label htmlFor="company" className={styles.formLabel}>
+              <div className="form-group">
+                <label htmlFor="company" className="form-label">
                   Company
                 </label>
                 <input
@@ -94,13 +95,13 @@ export default function ContactFormSection({
                   id="company"
                   name="company"
                   placeholder="Acme Inc."
-                  className={styles.formInput}
+                  className="form-input"
                 />
               </div>
 
               {/* Subject */}
-              <div className={styles.formGroup}>
-                <label htmlFor="subject" className={styles.formLabel}>
+              <div className="form-group">
+                <label htmlFor="subject" className="form-label">
                   Subject
                 </label>
                 <input
@@ -108,14 +109,14 @@ export default function ContactFormSection({
                   id="subject"
                   name="subject"
                   placeholder="How can we help you?"
-                  className={styles.formInput}
+                  className="form-input"
                   required
                 />
               </div>
 
               {/* Message */}
-              <div className={styles.formGroup}>
-                <label htmlFor="message" className={styles.formLabel}>
+              <div className="form-group">
+                <label htmlFor="message" className="form-label">
                   Message
                 </label>
                 <textarea
@@ -123,7 +124,7 @@ export default function ContactFormSection({
                   name="message"
                   rows={6}
                   placeholder="Please provide details about your inquiry..."
-                  className={styles.formTextarea}
+                  className="form-textarea"
                   required
                 />
               </div>
@@ -131,7 +132,7 @@ export default function ContactFormSection({
               {/* Submit Button */}
               <button
                 type="submit"
-                className={styles.formSubmitBtn}
+                className="form-submit-btn"
               >
                 Send Message
               </button>
@@ -139,24 +140,24 @@ export default function ContactFormSection({
           </div>
 
           {/* Contact Information */}
-          <div className={styles.infoWrapper}>
-            <h2 className={styles.infoTitle}>Contact Information</h2>
-            <p className={styles.infoDescription}>
+          <div className="info-wrapper">
+            <h2 className="info-title">Contact Information</h2>
+            <p className="info-description">
               You can reach out to us at our office location.
             </p>
 
-            <div className={styles.infoCard}>
+            <div className="info-card">
               {contactInfo.filter(info => info.type === 'location').map((info, index) => (
-                <div key={index} className={styles.infoItem}>
-                  <div className={styles.infoIcon}>
-                    <svg className={styles.icon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div key={index} className="info-item">
+                  <div className="info-icon">
+                    <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <div className={styles.infoContent}>
-                    <h3 className={styles.infoItemTitle}>{info.title}</h3>
-                    <div className={styles.infoDetails}>
+                  <div className="info-content">
+                    <h3 className="info-item-title">{info.title}</h3>
+                    <div className="info-details">
                       {Array.isArray(info.details) ? (
                         info.details.map((line, i) => <p key={i}>{line}</p>)
                       ) : (

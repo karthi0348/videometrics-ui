@@ -80,7 +80,7 @@ const FeaturesJourneySection: React.FC<FeaturesJourneySectionProps> = ({
   features = defaultFeatures
 }) => {
   return (
-    <section className={`features-section ${className}`}>
+<section className={`section features-section ${className}`}>
       <div className="features-container">
         <div className="features-header">
           <h2 className="features-title">

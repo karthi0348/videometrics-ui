@@ -1,5 +1,5 @@
-import React from 'react';
-import { Eye, BarChart, Brain } from 'lucide-react';
+import React from "react";
+import { Eye, BarChart, Brain } from "lucide-react";
 import "../styles/CoreCapabilitiesSection.css";
 
 export default function CoreCapabilitiesSection() {
@@ -7,49 +7,52 @@ export default function CoreCapabilitiesSection() {
     {
       icon: <Eye className="capability-icon" />,
       title: "Advanced Object Detection",
-      description: "Accurately detect and track people, vehicles, and objects in your video footage with state-of-the-art computer vision algorithms.",
+      description:
+        "Accurately detect and track people, vehicles, and objects in your video footage with state-of-the-art computer vision algorithms.",
       features: [
         "97% detection accuracy",
         "Real-time tracking capabilities",
-        "Custom object recognition"
+        "Custom object recognition",
       ],
-      color: "teal"
+      color: "teal",
     },
     {
       icon: <BarChart className="capability-icon" />,
       title: "Data Visualizations",
-      description: "Transform complex video data into clear, actionable insights with comprehensive suite of visualization tools.",
+      description:
+        "Transform complex video data into clear, actionable insights with comprehensive suite of visualization tools.",
       features: [
         "Interactive reporting",
         "Real-time charts",
-        "Custom dashboards"
+        "Custom dashboards",
       ],
-      color: "teal"
+      color: "teal",
     },
     {
       icon: <Brain className="capability-icon" />,
       title: "AI-Powered Insights",
-      description: "Let our advanced AI analyze your video data for comprehensive insights and actionable recommendations.",
+      description:
+        "Let our advanced AI analyze your video data for comprehensive insights and actionable recommendations.",
       features: [
         "Anomaly detection",
         "Predictive analytics",
-        "Automated recommendations"
+        "Automated recommendations",
       ],
-      color: "teal"
-    }
+      color: "teal",
+    },
   ];
 
   return (
-    <section className="core-capabilities-section">
+<section className="section core-capabilities-section">
       <div className="core-capabilities-container">
         <div className="core-capabilities-header">
           <h2 className="core-capabilities-title">Core Capabilities</h2>
           <p className="core-capabilities-description">
-            Our platform offers a comprehensive set of tools to analyze, visualize, and extract 
-            insights from your video data.
+            Our platform offers a comprehensive set of tools to analyze,
+            visualize, and extract insights from your video data.
           </p>
         </div>
-        
+
         <div className="core-capabilities-grid">
           {coreCapabilities.map((capability, index) => (
             <div key={index} className="capability-card">

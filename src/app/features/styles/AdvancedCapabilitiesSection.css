@@ -1,8 +1,5 @@
 .advanced-capabilities-section {
-  padding: 5rem 1.5rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
-  border-radius: 40px;
-  margin-bottom: 40px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
 }
 
 .container {
@@ -15,21 +12,22 @@
   margin-bottom: 4rem;
 }
 
-.title {
-  font-size: 1.25rem;
+.sectitle {
+  font-size: 2.75rem !important;
+  font-weight: 700px;
+
   font-weight: bold;
-  font-weight: 500;
-  color: #111827;
-  margin-bottom: 1rem;
-  line-height: 1;
+  color: #1f2937;
+  margin: 1rem;
 }
 
 .subtitle {
   font-size: 1.25rem;
-  color: #6b7280;
-  max-width: 48rem;
+  line-height: 1.6 !important;
+  color: #4b5563;
+  max-width: 42rem;
   margin: 0 auto;
-  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .capabilities-grid {
@@ -100,12 +98,8 @@
 
 /* Large Desktop */
 @media (min-width: 1200px) {
-  .advanced-capabilities-section {
-    padding: 6rem 2rem;
-  }
-
-  .title {
-    font-size: 3rem;
+  .sectitle {
+    font-size: 2rem;
   }
 
   .subtitle {
@@ -126,11 +120,7 @@
 
 /* Tablet */
 @media (max-width: 768px) {
-  .advanced-capabilities-section {
-    padding: 3rem 1rem;
-  }
-
-  .title {
+  .sectitle {
     font-size: 2rem;
   }
 
@@ -154,12 +144,8 @@
 
 /* Mobile */
 @media (max-width: 480px) {
-  .advanced-capabilities-section {
-    padding: 2rem 0.75rem;
-  }
-
-  .title {
-    font-size: 1.75rem;
+  .sectitle {
+    font-size: 1.75rem !important;
     margin-bottom: 0.75rem;
   }
 
@@ -199,11 +185,7 @@
 
 /* Small Mobile */
 @media (max-width: 360px) {
-  .advanced-capabilities-section {
-    padding: 1.5rem 0.5rem;
-  }
-
-  .title {
+  .sectitle {
     font-size: 1.5rem;
   }
 
@@ -282,7 +264,7 @@
       0 10px 10px -5px rgba(0, 0, 0, 0.2);
   }
 
-  .title {
+  .sectitle {
     color: #f1f5f9;
   }
 
@@ -317,7 +299,6 @@
 @media print {
   .advanced-capabilities-section {
     background: white !important;
-    padding: 2rem 0;
   }
 
   .capability-card {

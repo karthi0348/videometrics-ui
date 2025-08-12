@@ -1,11 +1,13 @@
+
 .ctaSection {
   background: linear-gradient(135deg, #A7F3D0 0%, #0D9488 100%);
-  border-radius: 40px;
-  padding: 60px 80px;
-  margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1700px;
   position: relative;
   overflow: hidden;
+  border-radius: var(--section-border-radius-desktop, 24px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .ctaContainer {
@@ -14,6 +16,7 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  padding: var(--section-padding-desktop, 64px) var(--section-side-padding-desktop, 48px);
 }
 
 .ctaLeftSection {
@@ -22,7 +25,7 @@
 }
 
 .ctaHeading {
-  font-size: 48px;
+  font-size: clamp(28px, 5vw, 48px);
   font-weight: 500;
   color: #1F2937;
   line-height: 1.1;
@@ -32,7 +35,7 @@
 
 .ctaParagraph {
   color: #1F2937;
-  font-size: 16px;
+  font-size: clamp(16px, 2.5vw, 18px);
   line-height: 1.5;
   margin-bottom: 32px;
   font-weight: 400;
@@ -46,7 +49,7 @@
 .ctaButton {
   background-color: #1F2937;
   color: white;
-  padding: 12px 24px;
+  padding: 16px 32px;
   border-radius: 24px;
   font-size: 16px;
   font-weight: 500;
@@ -54,11 +57,17 @@
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 48px;
+  min-width: 140px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ctaButton:hover {
   background-color: #111827;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .ctaButton:focus-visible {
@@ -68,6 +77,12 @@
 
 .ctaButton:active {
   transform: translateY(0);
+}
+
+.ctaButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .ctaIconsSection {
@@ -92,34 +107,14 @@
   animation: barGrow 1.5s ease-out;
 }
 
-.bar1 {
-  height: 45px;
-  animation-delay: 0.1s;
-}
-
-.bar2 {
-  height: 70px;
-  animation-delay: 0.2s;
-}
-
-.bar3 {
-  height: 110px;
-  animation-delay: 0.3s;
-}
-
-.bar4 {
-  height: 85px;
-  animation-delay: 0.4s;
-}
+.bar1 { height: 45px; animation-delay: 0.1s; }
+.bar2 { height: 70px; animation-delay: 0.2s; }
+.bar3 { height: 110px; animation-delay: 0.3s; }
+.bar4 { height: 85px; animation-delay: 0.4s; }
 
 @keyframes barGrow {
-  from {
-    height: 0;
-    opacity: 0;
-  }
-  to {
-    opacity: 0.9;
-  }
+  from { height: 0; opacity: 0; }
+  to { opacity: 0.9; }
 }
 
 .pieChartIcon {
@@ -139,49 +134,51 @@
 }
 
 @keyframes drawCircle {
-  from {
-    stroke-dasharray: 0 283;
-  }
+  from { stroke-dasharray: 0 283; }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 0.9;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 0.9; transform: scale(1); }
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .ctaSection {
-    padding: 40px 60px;
-    border-radius: 32px;
-  }
-  
-  .ctaHeading {
-    font-size: 40px;
-  }
-  
-  .ctaIconsSection {
-    gap: 30px;
-    margin-left: 40px;
-  }
+@keyframes sectionFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
+.ctaSection {
+  animation: sectionFadeIn 0.6s ease-out;
+}
+
+/* Hover effects for visual elements */
+.barChartIcon:hover .bar {
+  transform: scaleY(1.1);
+  transition: transform 0.3s ease;
+}
+
+.pieChartIcon:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* ==============================================
+   MOBILE RESPONSIVE BREAKPOINTS
+   ============================================== */
+
+/* Mobile (320px - 575px) */
+@media (max-width: 575.98px) {
   .ctaSection {
-    padding: 40px 30px;
-    border-radius: 28px;
+    margin-top: 40px;
+    border-radius: var(--section-border-radius-mobile, 16px);
+    margin: 1px;
   }
   
   .ctaContainer {
     flex-direction: column;
     text-align: center;
-    gap: 40px;
+    gap: 32px;
+    padding: var(--section-padding-mobile, 32px) var(--section-side-padding-mobile, 20px);
   }
   
   .ctaLeftSection {
@@ -189,19 +186,68 @@
   }
   
   .ctaHeading {
-    font-size: 32px;
     margin-bottom: 16px;
   }
   
   .ctaParagraph {
-    font-size: 14px;
     max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .ctaButton {
+    padding: 16px 32px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 280px;
   }
   
   .ctaIconsSection {
     margin-left: 0;
     justify-content: center;
-    gap: 60px;
+    gap: 32px;
+  }
+  
+  .barChartIcon {
+    height: 80px;
+    gap: 8px;
+  }
+  
+  .bar {
+    width: 16px;
+  }
+  
+  .bar1 { height: 28px; }
+  .bar2 { height: 44px; }
+  .bar3 { height: 68px; }
+  .bar4 { height: 52px; }
+  
+  .pieChartIcon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Small Tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .ctaSection {
+    border-radius: var(--section-border-radius-tablet, 20px);
+  }
+  
+  .ctaContainer {
+    padding: var(--section-padding-tablet, 48px) var(--section-side-padding-tablet, 32px);
+    flex-direction: column;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .ctaButton {
+    padding: 14px 28px;
+    min-width: 180px;
+  }
+  
+  .ctaIconsSection {
+    margin-left: 0;
+    gap: 36px;
   }
   
   .barChartIcon {
@@ -212,21 +258,10 @@
     width: 18px;
   }
   
-  .bar1 { 
-    height: 34px; 
-  }
-  
-  .bar2 { 
-    height: 50px; 
-  }
-  
-  .bar3 { 
-    height: 82px; 
-  }
-  
-  .bar4 { 
-    height: 65px; 
-  }
+  .bar1 { height: 32px; }
+  .bar2 { height: 50px; }
+  .bar3 { height: 76px; }
+  .bar4 { height: 58px; }
   
   .pieChartIcon {
     width: 90px;
@@ -234,64 +269,74 @@
   }
 }
 
-@media (max-width: 640px) {
-  .ctaSection {
-    border-radius: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .ctaSection {
-    padding: 30px 20px;
-    border-radius: 20px;
-  }
-  
-  .ctaHeading {
-    font-size: 28px;
-  }
-  
-  .ctaParagraph {
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
-  
-  .ctaButton {
-    padding: 10px 20px;
-    font-size: 14px;
-    border-radius: 20px;
+/* Medium Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .ctaContainer {
+    padding: var(--section-padding-tablet, 48px) var(--section-side-padding-tablet, 32px);
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
   }
   
   .ctaIconsSection {
+    margin-left: 0;
     gap: 40px;
   }
+}
 
-  .barChartIcon {
-    height: 70px;
+/* Large Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .ctaContainer {
+    flex-direction: row;
+    text-align: left;
+    padding: var(--section-padding-desktop, 64px) var(--section-side-padding-desktop, 48px);
   }
   
-  .bar {
-    width: 16px;
+  .ctaIconsSection {
+    margin-left: 60px;
+  }
+
+  .ctaButton {
+    width: auto;
+  }
+}
+
+/* ==============================================
+   ACCESSIBILITY & PERFORMANCE
+   ============================================== */
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .bar,
+  .pieChartIcon,
+  .pieSvg circle,
+  .ctaButton,
+  .ctaSection {
+    animation: none;
+    transition: none;
   }
   
-  .bar1 { 
-    height: 26px; 
+  .ctaButton:hover,
+  .ctaButton:active,
+  .barChartIcon:hover .bar,
+  .pieChartIcon:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .ctaSection {
+    border: 2px solid #000;
   }
   
-  .bar2 { 
-    height: 40px; 
+  .ctaButton {
+    border: 2px solid #000;
   }
   
-  .bar3 { 
-    height: 62px; 
-  }
-  
-  .bar4 { 
-    height: 50px; 
-  }
-  
-  .pieChartIcon {
-    width: 70px;
-    height: 70px;
+  .ctaHeading,
+  .ctaParagraph {
+    color: #000;
   }
 }
 
@@ -323,46 +368,11 @@
   }
 }
 
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  .bar,
-  .pieChartIcon,
-  .pieSvg circle,
-  .ctaButton {
-    animation: none;
-    transition: none;
-  }
-  
-  .ctaButton:hover {
-    transform: none;
-  }
-  
-  .ctaButton:active {
-    transform: none;
-  }
-}
-
-@media (prefers-contrast: high) {
-  .ctaSection {
-    border: 2px solid #000;
-  }
-  
-  .ctaButton {
-    border: 2px solid #000;
-  }
-  
-  .ctaHeading,
-  .ctaParagraph {
-    color: #000;
-  }
-}
-
 /* Print styles */
 @media print {
   .ctaSection {
     background: white !important;
     border: 1px solid #000 !important;
-    border-radius: 0 !important;
     box-shadow: none !important;
   }
   
@@ -379,55 +389,5 @@
   
   .ctaIconsSection {
     display: none !important;
-  }
-}
-
-/* Focus and interaction states */
-.ctaButton:hover:not(:disabled) {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.ctaButton:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.ctaButton:disabled:hover {
-  background-color: #1F2937;
-  transform: none;
-  box-shadow: none;
-}
-
-/* Animation for section entrance */
-@keyframes sectionFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.ctaSection {
-  animation: sectionFadeIn 0.6s ease-out;
-}
-
-/* Hover effects for visual elements */
-.barChartIcon:hover .bar {
-  transform: scaleY(1.1);
-  transition: transform 0.3s ease;
-}
-
-.pieChartIcon:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 374px) {
-  .ctaSection {
-    border-radius: 16px;
   }
 }

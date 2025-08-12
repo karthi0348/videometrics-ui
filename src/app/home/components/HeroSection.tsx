@@ -4,7 +4,8 @@ import "../styles/hero.css";
 
 export default function HeroSection({ className = "" }: HeroSectionProps) {
   return (
-    <section className={`hero-section py-10 ${className}`}>
+        <section className={`section hero-section ${className}`}>
+
         <div className="hero-background">
           <div className="gradient-orb gradient-orb-1" />
           <div className="gradient-orb gradient-orb-2" />

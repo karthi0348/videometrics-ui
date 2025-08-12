@@ -77,7 +77,7 @@ const Features: React.FC<FeaturesSectionProps> = ({ className = '' }) => {
 
   return (
 
-    <section className={`${styles.featuresSection} ${className}`}>
+<section className={`section ${styles.featuresSection} ${className}`}>
       <div className={styles.featuresContainer}>
         <div className={styles.featuresMainGrid}>
           <div className={styles.featuresHeaderContent}>

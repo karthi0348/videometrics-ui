@@ -11,7 +11,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   onScheduleDemo 
 }) => {
   return (
-    <section className={`${styles.ctaSection} ${className}`}>
+    <section className={`section ${styles.ctaSection} ${className}`}>
       <div className={styles.ctaContainer}>
         {/* Left Section */}
         <div className={styles.ctaLeftSection}>

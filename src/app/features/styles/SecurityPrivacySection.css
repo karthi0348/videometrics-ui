@@ -1,8 +1,5 @@
 .security-privacy-section {
-  padding: 4rem 1.5rem;
-  background-color: #f9fafb;
-  border-radius: 40px;
-  margin-bottom: 40px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
 }
 
 .container {
@@ -16,7 +13,7 @@
 }
 
 .title {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -25,11 +22,12 @@
 }
 
 .subtitle {
-  color: #6b7280;
-  max-width: 48rem;
+  font-size: 1.25rem;
+  line-height: 1.6 !important;
+  color: #4b5563;
+  max-width: 42rem; 
   margin: 0 auto;
-  line-height: 1.6;
-  font-size: 1.1rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .security-features-grid {
@@ -100,9 +98,7 @@
 /* Small Mobile Screens */
 @media (max-width: 480px) {
   .security-privacy-section {
-    padding: 3rem 1rem;
-    border-radius: 20px;
-    margin-bottom: 20px;
+    
   }
   
   .security-feature-card {
@@ -110,7 +106,9 @@
   }
   
   .title {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
   }
   
   .subtitle {

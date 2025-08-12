@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import styles from '@/app/home/styles/IndustriesSection.module.css';
+import styles from "@/app/home/styles/IndustriesSection.module.css";
+
 
 interface Industry {
   id: string;
@@ -22,19 +23,28 @@ interface IndustriesSectionProps {
 
 export default function IndustriesSection({ className = '' }: IndustriesSectionProps) {
   const [activeIndustry, setActiveIndustry] = useState<string>("manufacturing");
+  const [hasMounted, setHasMounted] = useState<boolean>(false);
   const [screenSize, setScreenSize] = useState<{ width: number }>({
-    width: typeof window !== 'undefined' ? window.innerWidth : 1024
+    width: 1024 
   });
 
   useEffect(() => {
+    setHasMounted(true);
+
     const handleResize = (): void => {
       setScreenSize({ width: window.innerWidth });
     };
 
     if (typeof window !== 'undefined') {
+      setScreenSize({ width: window.innerWidth });
       window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
     }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
+    };
   }, []);
 
   const getScreenClass = (): ScreenSize => {
@@ -44,7 +54,7 @@ export default function IndustriesSection({ className = '' }: IndustriesSectionP
     return 'xlarge';
   };
 
-  const screenClass = getScreenClass();
+  const screenClass = hasMounted ? getScreenClass() : 'xlarge';
 
   const industries: Industry[] = [
     {
@@ -174,7 +184,7 @@ export default function IndustriesSection({ className = '' }: IndustriesSectionP
     industries[0];
 
   return (
-    <section className={`${styles.industriesSection} ${styles[screenClass]} ${className}`}>
+<section className={`section ${styles.industriesSection} ${styles[screenClass]} ${className}`}>
       <div className={`${styles.industriesContainer} ${styles[screenClass]}`}>
         <div className={`${styles.industriesHeader} ${styles[screenClass]}`}>
           <h2 className={`${styles.industriesTitle} ${styles[screenClass]}`}>
@@ -189,7 +199,6 @@ export default function IndustriesSection({ className = '' }: IndustriesSectionP
           </p>
         </div>
 
-        {/* Industry tabs */}
         <div className={`${styles.industryTabs} ${styles[screenClass]}`}>
           {industries.map((industry) => (
             <button

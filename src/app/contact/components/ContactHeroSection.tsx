@@ -1,5 +1,6 @@
 import React from "react";
-import styles from '../styles/ContactHero.module.css';
+import "@/app/globals.css";
+import "../styles/ContactHero.css"; 
 
 interface ContactHeroProps {
   title?: string;
@@ -7,26 +8,24 @@ interface ContactHeroProps {
   className?: string;
 }
 
-export default function ContactHero({ 
+export default function ContactHero({
   title = "Get in Touch",
   subtitle = "Have questions about VideoMetrics.ai? Our team is here to help you.",
-  className = ""
+  className = "",
 }: ContactHeroProps) {
   return (
-    <section className={`${styles.contactHeroSection} ${className}`}>
-      <div className={styles.container}>
-        <h1 className={styles.title}>
+    <section className={`section contact-hero-section ${className}`}>
+      <div className="container">
+        <h1 className="section title">
           {title.includes("Touch") ? (
             <>
-              Get in <span className={styles.highlight}>Touch</span>
+              Get in <span className="highlight">Touch</span>
             </>
           ) : (
             title
           )}
         </h1>
-        <p className={styles.subtitle}>
-          {subtitle}
-        </p>
+        <p className="subtitle">{subtitle}</p>
       </div>
     </section>
   );

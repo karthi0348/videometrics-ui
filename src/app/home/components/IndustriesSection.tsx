@@ -183,7 +183,7 @@ export default function IndustriesSection({ className = '' }: IndustriesSectionP
     industries[0];
 
   return (
-    <section className={`${styles.industriesSection} ${styles[screenClass]} ${className}`}>
+<section className={`section ${styles.industriesSection} ${styles[screenClass]} ${className}`}>
       <div className={`${styles.industriesContainer} ${styles[screenClass]}`}>
         <div className={`${styles.industriesHeader} ${styles[screenClass]}`}>
           <h2 className={`${styles.industriesTitle} ${styles[screenClass]}`}>

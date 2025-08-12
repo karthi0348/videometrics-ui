@@ -1,9 +1,7 @@
 .securitySection {
   position: relative;
   overflow: hidden;
-  padding: 3rem 1rem;
   background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
-  border-radius: 40px;
 }
 
 .securitySection[data-theme="dark"] {
@@ -20,14 +18,14 @@
 
 .securityHeader {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   animation: fadeInUp 0.8s ease-out;
 }
 
 .securityTitle {
-  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 6vw, 3rem);
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: #111827;
   line-height: 1.2;
   word-wrap: break-word;
@@ -39,7 +37,7 @@
 }
 
 .securityGradient {
-  background: teal 500px;
+  background: linear-gradient(135deg, #14b8a6 0%, #0891b2 50%, #0e7490 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -58,13 +56,14 @@
 }
 
 .securityDescription {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(0.9rem, 3.5vw, 1.25rem);
   color: #4b5563;
   max-width: 48rem;
   margin: 0 auto;
   line-height: 1.6;
-  padding: 0 1rem;
+  padding: 0;
   animation: fadeInUp 0.8s ease-out 0.2s both;
+  margin-bottom: 1.5rem;
 }
 
 .securitySection[data-theme="dark"] .securityDescription {
@@ -73,17 +72,17 @@
 
 .securityGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .securityCard {
   position: relative;
   background: white;
-  border-radius: 1.5rem;
-  padding: 2rem;
+  border-radius: var(--section-border-radius-mobile);
+  padding: 1.5rem;
   text-align: center;
   transition: all 0.5s ease;
   cursor: pointer;
@@ -92,6 +91,9 @@
   will-change: transform, box-shadow;
   overflow: hidden;
   animation: fadeInScale 0.6s ease-out both;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
 }
 
 .securitySection[data-theme="dark"] .securityCard {
@@ -112,8 +114,8 @@
 }
 
 .securityCard:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   border-color: #a7f3d0;
 }
 
@@ -129,7 +131,7 @@
 .securityCardBg {
   position: absolute;
   inset: 0;
-  border-radius: 1.5rem;
+  border-radius: var(--section-border-radius-mobile);
   overflow: hidden;
 }
 
@@ -179,23 +181,24 @@
 
 .securityIcon {
   position: relative;
-  width: 5rem;
-  height: 5rem;
-  margin: 0 auto 1.5rem;
-  border-radius: 1.25rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.5s ease;
+  flex-shrink: 0;
 }
 
 .securityCard:hover .securityIcon {
-  transform: scale(1.15) rotate(5deg);
+  transform: scale(1.1) rotate(3deg);
 }
 
 .iconWrapper {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .iconSvg {
@@ -250,20 +253,26 @@
 .securityContent {
   position: relative;
   z-index: 10;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .securityCardTitle {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 4vw, 1.25rem);
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: #111827;
   line-height: 1.3;
   transition: color 0.3s ease;
+  hyphens: auto;
+  word-break: break-word;
 }
 
 .securitySection[data-theme="dark"] .securityCardTitle {
   color: #f9fafb;
 }
+
 .teal600 {
   color: #0d9488;
 }
@@ -277,9 +286,11 @@
 }
 
 .securityCardDescription {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 3vw, 1rem);
   color: #4b5563;
-  line-height: 1.6;
+  line-height: 1.5;
+  flex-grow: 1;
+  hyphens: auto;
 }
 
 .securitySection[data-theme="dark"] .securityCardDescription {
@@ -387,43 +398,75 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 640px) {
+/* ===== RESPONSIVE BREAKPOINTS (MOBILE-FIRST) ===== */
+
+/* Extra small phones: 320-479px */
+@media (max-width: 575.98px) {
   .securitySection {
-    padding: 2rem 0.75rem;
-    border-radius: 20px;
+    margin: 1px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 479px) {
+  .securityHeader {
+    margin-bottom: 1.5rem;
   }
 
   .securityGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .securityCard {
-    padding: 1.5rem;
-    border-radius: 1.25rem;
+    padding: 1.25rem;
+    border-radius: var(--section-border-radius-mobile);
+    min-height: 220px;
   }
 
   .securityIcon {
-    width: 4rem;
-    height: 4rem;
-    margin-bottom: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .iconWrapper {
     width: 2rem;
     height: 2rem;
   }
+
+  .securityTitle {
+    margin-bottom: 0.75rem;
+  }
+
+  .securityDescription {
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+  }
 }
 
-@media (min-width: 641px) and (max-width: 768px) {
+/* Small phones: 480-639px */
+@media (min-width: 480px) {
+  .securityGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .securityCard {
+    min-height: 240px;
+  }
+}
+
+/* Medium phones: 640-767px */
+@media (min-width: 640px) {
   .securitySection {
-    padding: 3rem 1.5rem;
-    border-radius: 30px;
+    padding: var(--section-padding-tablet) var(--section-side-padding-tablet);
   }
 
   .securityGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .middleCard {
@@ -431,23 +474,113 @@
     max-width: 24rem;
     margin: 0 auto;
   }
+
+  .securityCard {
+    padding: 1.5rem;
+    border-radius: var(--section-border-radius-tablet);
+    min-height: 250px;
+  }
+
+  .securityIcon {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .iconWrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .securityHeader {
+    margin-bottom: 2.5rem;
+  }
+
+  .securityGrid {
+    margin-bottom: 2.5rem;
+  }
 }
 
-@media (min-width: 769px) {
+/* Tablets: 768-1023px */
+@media (min-width: 768px) {
+  .securitySection {
+    padding: var(--section-padding-tablet) var(--section-side-padding-tablet);
+  }
+
   .securityGrid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .middleCard {
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  .securityCard {
+    padding: 1.75rem;
+    border-radius: var(--section-border-radius-tablet);
+    min-height: 260px;
+  }
+
+  .securityIcon {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .iconWrapper {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .securityHeader {
+    margin-bottom: 3rem;
+  }
+
+  .securityGrid {
+    margin-bottom: 3rem;
   }
 }
 
+/* Desktop: 1024px+ */
 @media (min-width: 1024px) {
   .securitySection {
-    padding: 5rem 2rem;
+    padding: var(--section-padding-desktop) var(--section-side-padding-desktop);
+  }
+
+  .securityCard {
+    padding: 2rem;
+    border-radius: var(--section-border-radius-desktop);
+    min-height: 280px;
+  }
+
+  .securityCard:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .securityIcon {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .iconWrapper {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .securityCard:hover .securityIcon {
+    transform: scale(1.15) rotate(5deg);
   }
 }
 
+/* Large desktop: 1280px+ */
 @media (min-width: 1280px) {
   .securitySection {
-    padding: 6rem 2rem;
+    padding: var(--section-padding-desktop) var(--section-side-padding-desktop);
   }
 
   .securityHeader {
@@ -461,11 +594,13 @@
 
   .securityCard {
     padding: 2.5rem;
-    border-radius: 2rem;
+    border-radius: var(--section-border-radius-desktop);
+    min-height: 300px;
   }
 }
 
-/* Accessibility and Motion Preferences */
+/* ===== ACCESSIBILITY & PERFORMANCE FIXES ===== */
+
 @media (prefers-reduced-motion: reduce) {
   .securityCard,
   .securityHeader,
@@ -479,12 +614,17 @@
     transform: none;
   }
 
+  .securityCard:hover .securityIcon {
+    transform: none;
+  }
+
   .particle1,
   .particle2 {
     display: none;
   }
 }
 
+/* High contrast preferences */
 @media (prefers-contrast: high) {
   .securityCard {
     border-width: 2px;
@@ -502,7 +642,7 @@
   }
 }
 
-/* Touch devices */
+/* ===== TOUCH IMPROVEMENTS ===== */
 @media (hover: none) and (pointer: coarse) {
   .securityCard:hover {
     transform: none;
@@ -514,9 +654,18 @@
     transition: transform 0.1s ease;
   }
 
+  .securityCard:hover .securityIcon {
+    transform: none;
+  }
+
   .particle1,
   .particle2 {
     display: none;
+  }
+
+  .decorativeCircle1,
+  .decorativeCircle2 {
+    opacity: 0.1;
   }
 }
 
@@ -525,8 +674,8 @@
   .securitySection {
     background: white !important;
     color: black !important;
-    border-radius: 0;
     box-shadow: none;
+    padding: 2rem 1rem !important;
   }
 
   .securityCard {

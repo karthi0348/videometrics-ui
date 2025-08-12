@@ -1,31 +1,32 @@
-.contactFormSection {
+/* ContactFormSection.css */
+
+.contact-form-section {
   padding: 3rem 1rem;
-  background: linear-gradient(135deg, #eff1f2 0%, #e5edec 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
   line-height: 1.6;
   border-radius: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
-.contactContainer {
+.contact-container {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }
 
-.contactGrid {
+.contact-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   align-items: start;
 }
 
-.formWrapper {
+.form-wrapper {
   order: 2;
 }
 
-.formCard {
+.form-card {
   background: #2d3748;
   border-radius: 1rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
@@ -33,45 +34,49 @@
   transition: box-shadow 0.3s ease;
 }
 
-.formCard:hover {
+.form-card:hover {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-.formTitle {
+.form-title {
   font-size: 1.5rem;
   font-weight: 500;
+  font-weight: bold;
   color: #010610db;
   margin-bottom: 1rem;
   line-height: 1.2;
   font-family: inherit;
+  text-align: center
+  
 }
 
-.formDescription {
+.form-description {
   font-size: 1rem;
   color: #36383a;
   margin-bottom: 1.5rem;
   line-height: 1.6;
   font-family: inherit;
+  text-align: center;
 }
 
-.contactForm {
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.formRow {
+.form-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
 
-.formGroup {
+.form-group {
   display: flex;
   flex-direction: column;
 }
 
-.formLabel {
+.form-label {
   font-size: 0.875rem;
   font-weight: 600;
   color: #353638;
@@ -79,8 +84,8 @@
   font-family: inherit;
 }
 
-.formInput,
-.formTextarea {
+.form-input,
+.form-textarea {
   width: 100%;
   padding: 0.5rem 1rem;
   border: 2px solid #4b5563;
@@ -92,25 +97,25 @@
   color: #f9fafb;
 }
 
-.formInput:focus,
-.formTextarea:focus {
+.form-input:focus,
+.form-textarea:focus {
   outline: none;
   border-color: #14b8a6;
   box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
 }
 
-.formInput::placeholder,
-.formTextarea::placeholder {
+.form-input::placeholder,
+.form-textarea::placeholder {
   color: #9ca3af;
   font-family: inherit;
 }
 
-.formTextarea {
+.form-textarea {
   resize: vertical;
   min-height: 100px;
 }
 
-.formSubmitBtn {
+.form-submit-btn {
   width: 100%;
   background-color: #14b8a6;
   color: #ffffff;
@@ -126,23 +131,23 @@
   transform: translateY(0);
 }
 
-.formSubmitBtn:hover:not(:disabled) {
+.form-submit-btn:hover:not(:disabled) {
   background-color: #0f766e;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
-.formSubmitBtn:disabled {
+.form-submit-btn:disabled {
   background-color: #0f766e;
   cursor: not-allowed;
   transform: translateY(0);
 }
 
-.formSubmitBtn.loading {
+.form-submit-btn.loading {
   background-color: #0f766e;
 }
 
-.loadingContent {
+.loading-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,45 +168,48 @@
   100% { transform: rotate(360deg); }
 }
 
-.infoWrapper {
+.info-wrapper {
   order: 1;
 }
 
-.infoStickyContainer {
+.info-sticky-container {
   position: relative;
 }
 
-.infoTitle {
+.info-title {
   font-size: 1.5rem;
   font-weight: 500;
+  font-weight: bold;
   color: #010610db;
   margin-bottom: 1rem;
   line-height: 1.2;
   font-family: inherit;
+  text-align: center;
 }
 
-.infoDescription {
+.info-description {
   font-size: 1rem;
   color: #3a3c3e;
   margin-bottom: 2rem;
   line-height: 1.6;
   font-family: inherit;
+  text-align: center;
 }
 
-.infoCard {
+.info-card {
   background: #2d3748;
   border-radius: 1rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
 }
 
-.infoItem {
+.info-item {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
 }
 
-.infoIcon {
+.info-icon {
   flex-shrink: 0;
   width: 3rem;
   height: 3rem;
@@ -218,11 +226,11 @@
   height: 1.5rem;
 }
 
-.infoContent {
+.info-content {
   flex: 1;
 }
 
-.infoItemTitle {
+.info-item-title {
   font-size: 1.125rem;
   font-weight: 700;
   color: #f3f4f6;
@@ -230,37 +238,37 @@
   font-family: inherit;
 }
 
-.infoDetails {
+.info-details {
   font-size: 0.875rem;
   color: #9ca3af;
   line-height: 1.5;
   font-family: inherit;
 }
 
-.detailLineSpacing {
+.detail-line-spacing {
   margin-top: 0.25rem;
 }
 
-.additionalInfo {
+.additional-info {
   margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid #4b5563;
 }
 
-.additionalInfoGrid {
+.additional-info-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
-.infoBadge {
+.info-badge {
   text-align: center;
   padding: 1rem;
   background-color: #2d3748;
   border-radius: 0.5rem;
 }
 
-.badgeIcon {
+.badge-icon {
   width: 2rem;
   height: 2rem;
   background-color: #14b8a6;
@@ -272,12 +280,12 @@
   margin: 0 auto 0.75rem;
 }
 
-.iconSm {
+.icon-sm {
   width: 1rem;
   height: 1rem;
 }
 
-.badgeTitle {
+.badge-title {
   font-size: 0.875rem;
   font-weight: 600;
   color: #d1d5db;
@@ -285,286 +293,285 @@
   font-family: inherit;
 }
 
-.badgeSubtitle {
+.badge-subtitle {
   font-size: 0.75rem;
   color: #9ca3af;
   font-family: inherit;
 }
 
-
 @media (min-width: 576px) {
-  .contactFormSection {
+  .contact-form-section {
     padding: 4rem 1.5rem;
   }
   
-  .formCard,
-  .infoCard {
+  .form-card,
+  .info-card {
     padding: 1.5rem;
   }
   
-  .formRow {
+  .form-row {
     grid-template-columns: 1fr 1fr;
   }
   
-  .additionalInfoGrid {
+  .additional-info-grid {
     grid-template-columns: 1fr 1fr;
   }
   
-  .formTitle,
-  .infoTitle {
+  .form-title,
+  .info-title {
     font-size: 1.875rem;
   }
   
-  .formDescription,
-  .infoDescription {
+  .form-description,
+  .info-description {
     font-size: 1.125rem;
   }
   
-  .formSubmitBtn {
+  .form-submit-btn {
     padding: 0.75rem 1.5rem;
     font-size: 1.125rem;
   }
 }
 
 @media (min-width: 768px) {
-  .contactFormSection {
+  .contact-form-section {
     padding: 5rem 2rem;
   }
   
-  .formTitle,
-  .infoTitle {
+  .form-title,
+  .info-title {
     font-size: 2.25rem;
   }
   
-  .formCard,
-  .infoCard {
+  .form-card,
+  .info-card {
     padding: 2rem;
   }
   
-  .contactGrid {
+  .contact-grid {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
   }
   
-  .formWrapper {
+  .form-wrapper {
     order: 1;
   }
   
-  .infoWrapper {
+  .info-wrapper {
     order: 2;
   }
 
-  .infoStickyContainer {
+  .info-sticky-container {
     position: sticky;
     top: 2rem;
   }
 }
 
 @media (min-width: 992px) {
-  .contactFormSection {
+  .contact-form-section {
     gap: 4rem;
   }
   
-  .formTitle,
-  .infoTitle {
+  .form-title,
+  .info-title {
     font-size: 2.5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .contactFormSection {
+  .contact-form-section {
     padding: 8rem 2rem;
   }
   
-  .formCard,
-  .infoCard {
+  .form-card,
+  .info-card {
     padding: 2.5rem;
   }
   
-  .formTitle,
-  .infoTitle {
+  .form-title,
+  .info-title {
     font-size: 3rem;
   }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .formInput,
-  .formTextarea,
-  .formSubmitBtn {
+  .form-input,
+  .form-textarea,
+  .form-submit-btn {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .contactFormSection {
+  .contact-form-section {
     background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
   }
   
-  .formCard {
+  .form-card {
     background: #2d3748;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   }
 
-  .formCard:hover {
+  .form-card:hover {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
   
-  .formTitle {
+  .form-title {
     color: #f3f4f6;
   }
   
-  .formDescription {
+  .form-description {
     color: #d1d5db;
   }
 
-  .formLabel {
+  .form-label {
     color: #d1d5db;
   }
   
-  .formInput,
-  .formTextarea {
+  .form-input,
+  .form-textarea {
     background-color: #4b5563;
     border-color: #4b5563;
     color: #f9fafb;
   }
   
-  .formInput:focus,
-  .formTextarea:focus {
+  .form-input:focus,
+  .form-textarea:focus {
     border-color: #14b8a6;
     box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
   }
 
-  .formInput::placeholder,
-  .formTextarea::placeholder {
+  .form-input::placeholder,
+  .form-textarea::placeholder {
     color: #9ca3af;
   }
 
-  .formSubmitBtn:disabled {
+  .form-submit-btn:disabled {
     background-color: #0f766e;
   }
 
-  .formSubmitBtn.loading {
+  .form-submit-btn.loading {
     background-color: #0f766e;
   }
   
-  .infoTitle {
+  .info-title {
     color: #f3f4f6;
   }
   
-  .infoDescription {
+  .info-description {
     color: #d1d5db;
   }
 
-  .infoCard {
+  .info-card {
     background: #2d3748;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   }
   
-  .infoIcon {
+  .info-icon {
     background-color: #14b8a6;
     color: #ffffff;
   }
   
-  .infoItemTitle {
+  .info-item-title {
     color: #f3f4f6;
   }
   
-  .infoDetails {
+  .info-details {
     color: #9ca3af;
   }
 
-  .additionalInfo {
+  .additional-info {
     border-top: 1px solid #4b5563;
   }
 
-  .infoBadge {
+  .info-badge {
     background-color: #2d3748;
   }
 
-  .badgeIcon {
+  .badge-icon {
     background-color: #14b8a6;
     color: #ffffff;
   }
 
-  .badgeTitle {
+  .badge-title {
     color: #d1d5db;
   }
 
-  .badgeSubtitle {
+  .badge-subtitle {
     color: #9ca3af;
   }
 }
 
 /* Add high contrast and reduced motion support for dark mode */
 @media (prefers-color-scheme: dark) and (prefers-contrast: high) {
-  .contactFormSection {
+  .contact-form-section {
     background: #d7d4d4;
   }
 
-  .formCard,
-  .infoCard,
-  .infoBadge {
+  .form-card,
+  .info-card,
+  .info-badge {
     background: #000000;
     border: 2px solid #ffffff;
     box-shadow: none;
   }
 
-  .formCard:hover {
+  .form-card:hover {
     box-shadow: none;
     border-color: #14b8a6;
   }
 
-  .formTitle,
-  .formDescription,
-  .formLabel,
-  .infoTitle,
-  .infoDescription,
-  .infoItemTitle,
-  .infoDetails,
-  .badgeTitle,
-  .badgeSubtitle,
-  .formInput,
-  .formTextarea {
+  .form-title,
+  .form-description,
+  .form-label,
+  .info-title,
+  .info-description,
+  .info-item-title,
+  .info-details,
+  .badge-title,
+  .badge-subtitle,
+  .form-input,
+  .form-textarea {
     color: #ffffff;
   }
 
-  .formInput,
-  .formTextarea {
+  .form-input,
+  .form-textarea {
     border-color: #ffffff;
     background: #000000;
   }
 
-  .formInput:focus,
-  .formTextarea:focus {
+  .form-input:focus,
+  .form-textarea:focus {
     border-color: #14b8a6;
     box-shadow: none;
   }
 
-  .formInput::placeholder,
-  .formTextarea::placeholder {
+  .form-input::placeholder,
+  .form-textarea::placeholder {
     color: #aaaaaa;
   }
   
-  .formSubmitBtn {
+  .form-submit-btn {
     background-color: #14b8a6;
     color: #000000;
     border: 2px solid #14b8a6;
   }
 
-  .formSubmitBtn:hover:not(:disabled) {
+  .form-submit-btn:hover:not(:disabled) {
     background-color: #1f2937;
     color: #14b8a6;
   }
   
-  .formSubmitBtn:disabled {
+  .form-submit-btn:disabled {
     background-color: #1f2937;
     color: #9ca3af;
     border-color: #9ca3af;
   }
 
-  .infoIcon,
-  .badgeIcon {
+  .info-icon,
+  .badge-icon {
     background: #14b8a6;
     color: #000000;
   }

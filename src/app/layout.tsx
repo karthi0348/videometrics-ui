@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-white text-gray-900">
         <Header />
-        <main className="px-6">{children}</main>
+        <main className="px-1">{children}</main>
         <Footer />
       </body>
     </html>

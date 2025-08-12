@@ -26,7 +26,7 @@ const steps = [
 
 export default function QuickStartSection() {
   return (
-    <section className="quick-start-section">
+    <section className="section quick-start-section">
       <div className="container">
         <div className="header">
           <h2 className="title">

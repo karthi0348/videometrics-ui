@@ -1,8 +1,6 @@
 .features-section {
-  padding: 5rem 1.5rem;
-  background-color: #ffffff;
-  border-radius: 40px;
-  margin-bottom: 40px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+
 }
 
 .features-container {
@@ -17,19 +15,24 @@
 }
 
 .features-title {
-  font-size: clamp(2.5rem, 6vw, 3rem);
+  font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 500;
-  margin-bottom: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem;
   color: #111827;
   line-height: 1.1;
+  max-width: 800px;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
 .features-description {
   color: #4b5563;
+  max-width: 32rem;
+  margin: 0 auto 2rem;
   font-size: clamp(1rem, 2.5vw, 1.125rem);
   line-height: 1.75;
-  max-width: 48rem;
-  margin: 0 auto;
+  padding: 0 1rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .features-grid {
@@ -182,9 +185,7 @@
 
 /* Tablet */
 @media (max-width: 768px) {
-  .features-section {
-    padding: 4rem 1rem;
-  }
+  
 
   .features-header {
     margin-bottom: 2.5rem;
@@ -201,9 +202,7 @@
 
 /* Mobile */
 @media (max-width: 480px) {
-  .features-section {
-    padding: 3rem 0.75rem;
-  }
+  
 
   .features-header {
     margin-bottom: 2rem;
@@ -225,7 +224,11 @@
   }
 
   .feature-title {
-    margin-bottom: 0.75rem;
+    font-size: clamp(1.125rem, 4vw, 1.25rem);
+    margin-bottom: 1.5rem;
+    padding: 0;
+    order: 2;
+    width: 100%;
   }
 }
 
@@ -331,7 +334,6 @@
 @media print {
   .features-section {
     background: white !important;
-    padding: 2rem 0;
   }
 
   .feature-card {

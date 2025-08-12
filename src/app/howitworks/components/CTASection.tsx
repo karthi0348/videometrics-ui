@@ -5,7 +5,7 @@ export default function CTASection() {
   return (
     <section 
       suppressHydrationWarning={true}
-      className="cta-section"
+      className="section cta-section"
     >
       <div className="container">
         <h2 className="title">

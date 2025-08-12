@@ -5,7 +5,7 @@ import "@/app/home/styles/whychoose.css";
 
 export default function WhyChooseSection() {
   return (
-    <section className="py-3 py-md-5 bg-light section-chamfered">
+    <section className="section py-3 py-md-5 bg-light section-chamfered">
       <div className="container">
         <div className="row mb-3 mb-md-5">
           <div className="col-lg-6 text-center text-lg-start mb-3 mb-lg-0">
@@ -53,7 +53,6 @@ export default function WhyChooseSection() {
 
           <div className="col-lg-6 order-2 order-lg-2">
             <div className="ps-lg-4">
-              {/* Stat 1 */}
               <div className="mb-3 mb-md-4 text-center text-lg-start">
                 <h3 className="statNumber fw-bold mb-1" style={{ color: "#14b8a6",fontSize: "2rem" }}>
                   99.8%
@@ -115,7 +114,7 @@ export default function WhyChooseSection() {
             <div className="col-sm-6 col-lg-4" key={feature.id}>
               <div className="card h-100 border-0 shadow-sm bg-white position-relative custom-card">
                 <div className="card-body p-3 p-md-4">
-                  <div className="d-flex align-items-start align-items-md-center mb-3 flex-column flex-md-row text-center text-md-start">
+                  <div className="d-flex align-items-center align-items-md-center mb-3 flex-column flex-md-row text-center text-md-start">
                     <div
                       className="rounded d-flex align-items-center justify-content-center mb-2 mb-md-0 me-md-3 flex-shrink-0 mx-auto mx-md-0"
                       style={{
@@ -141,7 +140,7 @@ export default function WhyChooseSection() {
                         />
                       </svg>
                     </div>
-                    <h5 className="card-title mb-0 fw-semibold text-dark fs-6 fs-md-5">
+                    <h5 className="card-title mb-0 fw-semibold text-dark fs-6 fs-md-5 text-center">
                       {feature.title}
                     </h5>
                   </div>

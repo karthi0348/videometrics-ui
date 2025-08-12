@@ -1,7 +1,7 @@
 .card {
-  border-radius: 40px !important;
   transition: all 0.3s ease;
   overflow: hidden;
+
 }
 
 .card:hover {
@@ -45,11 +45,13 @@
   .py-3 {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
+    margin-bottom: 40px !important;
+
+
   }
 
   .card {
     border-radius: 12px !important;
-    margin-bottom: 1rem;
   }
 
   .custom-card {
@@ -61,17 +63,20 @@
   }
 
   .statNumber {
-    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 00 !important;
   }
 
   .titleText {
     font-size: clamp(1.25rem, 6vw, 1.8rem);
+    justify-content: center;
   }
 
   .responsive-image {
-    min-height: 200px !important;
-    max-height: 300px !important;
-    border-radius: 8px;
+    min-height: 220px !important;
+    max-height: 280px !important;
+    border-radius: 10px !important;
   }
 
   .custom-card .rounded {
@@ -86,6 +91,9 @@
 
   .card-title {
     font-size: 0.9rem !important;
+        display: flex;
+
+    text-align: center;
   }
 
   .card-text {
@@ -95,6 +103,111 @@
   .rounded-circle {
     width: 5px !important;
     height: 5px !important;
+  }
+
+  /* Enhanced mobile stats section */
+  .col-lg-6.order-2 .ps-lg-4 {
+    padding: 0 !important;
+    margin-top: 1.5rem;
+  }
+
+  /* Individual stat containers */
+  .col-lg-6.order-2 .mb-3.mb-md-4 {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    margin-bottom: 1rem !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(20, 184, 166, 0.1);
+  }
+
+  /* Last stat card */
+  .col-lg-6.order-2 .mb-0 {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    margin-bottom: 0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(20, 184, 166, 0.1);
+  }
+
+  /* Stat titles */
+  .col-lg-6.order-2 h6 {
+    font-size: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+  }
+
+  /* Stat descriptions */
+  .col-lg-6.order-2 p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
+    color: #6b7280 !important;
+  }
+
+  /* Better spacing between sections */
+  .row.align-items-center.mb-4.mb-md-5 {
+    margin-bottom: 2rem !important;
+  }
+
+  /* Image section adjustments */
+  .col-lg-6.mb-3.mb-lg-0.order-1 {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Small mobile devices (320px - 375px) */
+@media (max-width: 375px) {
+  .col-lg-6.order-2 .mb-3.mb-md-4,
+  .col-lg-6.order-2 .mb-0 {
+    padding: 1rem 0.875rem;
+    margin-bottom: 60px !important;
+  }
+
+  .statNumber {
+    font-size: 2.25rem !important;
+  }
+
+  .col-lg-6.order-2 h6 {
+    font-size: 0.95rem !important;
+  }
+
+  .col-lg-6.order-2 p {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Medium mobile devices (376px - 414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+  .col-lg-6.order-2 .mb-3.mb-md-4,
+  .col-lg-6.order-2 .mb-0 {
+    padding: 1.125rem 1rem;
+  }
+
+  .statNumber {
+    font-size: 2.75rem !important;
+  }
+}
+
+/* Large mobile devices (415px - 575px) */
+@media (min-width: 415px) and (max-width: 575.98px) {
+  .col-lg-6.order-2 .mb-3.mb-md-4,
+  .col-lg-6.order-2 .mb-0 {
+    padding: 1.375rem 1.125rem;
+  }
+
+  .statNumber {
+    font-size: 3rem !important;
+  }
+
+  .col-lg-6.order-2 h6 {
+    font-size: 1.05rem !important;
+  }
+
+  .col-lg-6.order-2 p {
+    font-size: 0.95rem !important;
   }
 }
 
@@ -269,6 +382,11 @@
   .responsive-image:hover {
     transform: none;
   }
+
+  .col-lg-6.order-2 .mb-3.mb-md-4,
+  .col-lg-6.order-2 .mb-0 {
+    transition: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -287,6 +405,23 @@
 
   .text-muted {
     color: #adb5bd !important;
+  }
+
+  /* Dark mode adjustments for mobile stats */
+  @media (max-width: 575.98px) {
+    .col-lg-6.order-2 .mb-3.mb-md-4,
+    .col-lg-6.order-2 .mb-0 {
+      background: rgba(42, 42, 42, 0.9) !important;
+      border: 1px solid rgba(20, 184, 166, 0.2);
+    }
+
+    .col-lg-6.order-2 h6 {
+      color: #f8f9fa !important;
+    }
+
+    .col-lg-6.order-2 p {
+      color: #adb5bd !important;
+    }
   }
 }
 
@@ -309,9 +444,10 @@
 
 .section-chamfered {
   position: relative;
-  border-radius: 30px;
   margin: 40px 0;
   overflow: hidden;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+ ;
 }
 
 .section-chamfered::before {
@@ -449,5 +585,23 @@
 @media (prefers-reduced-motion: reduce) {
   .section-chamfered::before {
     background: rgba(20, 184, 166, 0.03);
+  }
+}
+
+/* Hover effects for mobile stat cards */
+@media (max-width: 575.98px) and (hover: hover) {
+  .col-lg-6.order-2 .mb-3.mb-md-4:hover,
+  .col-lg-6.order-2 .mb-0:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+}
+
+/* Remove hover effects for touch devices */
+@media (max-width: 575.98px) and (hover: none) {
+  .col-lg-6.order-2 .mb-3.mb-md-4,
+  .col-lg-6.order-2 .mb-0 {
+    transition: none;
   }
 }

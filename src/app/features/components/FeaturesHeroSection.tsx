@@ -1,20 +1,18 @@
 import React from "react";
-import styles from "../styles/FeaturesHero.module.css";
+import "../styles/FeaturesHero.css";
 
 export default function FeaturesHeroSection() {
   return (
-    <section className={styles.featuresHeroSection}>
-      <div className={styles.featuresHeroContainer}>
-        <div className={styles.featuresHeroContent}>
-          <h1 className={styles.featuresHeroTitle}>
-            <span className={styles.titleMain}>Powerful Features for</span>{" "}
-            <br className={styles.titleBreak} />
-            <span className={styles.titleHighlight}>
-              Video Analytics
-            </span>
+    <section className="featuresHeroSection">
+      <div className="featuresHeroContainer">
+        <div className="featuresHeroContent">
+          <h1 className="featuresHeroTitle">
+            <span className="titleMain">Powerful Features for</span>
+            <br className="titleBreak" />
+            <span className="titleHighlight">Video Analytics</span>
           </h1>
-          
-          <p className={styles.featuresHeroDescription}>
+
+          <p className="featuresHeroDescription">
             Discover how VideoMetrics.ai transforms your video data into
             actionable business intelligence with our comprehensive suite of
             features.

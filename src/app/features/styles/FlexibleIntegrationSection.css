@@ -1,9 +1,6 @@
 .flexible-integration-section {
-  padding: 4rem 1.5rem;
-  background: #f9fafb;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
   position: relative;
-  border-radius: 40px;
-  margin-bottom: 40px;
 }
 
 .flexible-integration-container {
@@ -18,7 +15,7 @@
 }
 
 .flexible-integration-title {
-  font-size: 1.1rem !important;
+  font-size: 1.5rem !important;
   font-weight: 500px !important; 
   font-weight: bold !important;
   margin-bottom: 1rem !important;
@@ -27,9 +24,9 @@
 }
 
 .flexible-integration-description {
-  font-size: 0.875rem !important; 
+  font-size: 1.25rem;
   line-height: 1.6 !important;
-  color: #6b7280;
+  color: #4b5563;
   max-width: 42rem; 
   margin: 0 auto;
   animation: fadeInUp 0.8s ease-out 0.2s both;
@@ -200,9 +197,7 @@
 /* ========== RESPONSIVE BREAKPOINTS ========== */
 
 @media (min-width: 640px) {
-  .flexible-integration-section {
-    padding: 5rem 1.5rem;
-  }
+  
 
   .flexible-integration-title {
     font-size: 1.875rem !important; 
@@ -222,9 +217,7 @@
 }
 
 @media (min-width: 768px) {
-  .flexible-integration-section {
-    padding: 6rem 1.5rem;
-  }
+  
 
   .flexible-integration-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -249,9 +242,7 @@
 }
 
 @media (min-width: 1024px) {
-  .flexible-integration-section {
-    padding: 8rem 1.5rem;
-  }
+  
 
   .flexible-integration-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -259,7 +250,6 @@
   }
 
   .flexible-integration-title {
-    font-size: 2.25rem !important; 
   }
 
   .flexible-integration-description {
@@ -267,7 +257,6 @@
   }
 
   .integration-title {
-    font-size: 1.375rem !important; 
   }
 
   .integration-description {
@@ -276,16 +265,13 @@
 }
 
 @media (min-width: 1280px) {
-  .flexible-integration-section {
-    padding: 10rem 1.5rem;
-  }
+  
 
   .flexible-integration-grid {
     gap: 2.5rem;
   }
 
   .flexible-integration-title {
-    font-size: 2.5rem !important; 
   }
 
   .flexible-integration-description {
@@ -302,9 +288,7 @@
 }
 
 @media (min-width: 1536px) {
-  .flexible-integration-section {
-    padding: 12rem 1.5rem;
-  }
+ 
 
   .flexible-integration-grid {
     gap: 3rem;
@@ -330,16 +314,15 @@
 /* ========== MOBILE SPECIFIC ADJUSTMENTS ========== */
 
 @media (max-width: 480px) {
-  .flexible-integration-section {
-    padding: 3rem 1rem;
-  }
+  
 
   .flexible-integration-header {
     margin-bottom: 3rem;
   }
 
   .flexible-integration-title {
-    font-size: 1.375rem !important; 
+    font-size: 1.75rem !important;
+    margin-bottom: 0.75rem; 
   }
 
   .flexible-integration-description {
@@ -365,9 +348,7 @@
 }
 
 @media (max-height: 500px) and (orientation: landscape) and (max-width: 1023px) {
-  .flexible-integration-section {
-    padding: 2rem 1rem;
-  }
+
   
   .flexible-integration-header {
     margin-bottom: 2rem;
@@ -404,9 +385,7 @@
 }
 
 @media (max-height: 400px) {
-  .flexible-integration-section {
-    padding: 1.5rem 1rem;
-  }
+  
   
   .flexible-integration-header {
     margin-bottom: 1.5rem;
@@ -497,7 +476,6 @@
 @media print {
   .flexible-integration-section {
     background: white !important;
-    padding: 2rem 1rem !important;
   }
   
   .integration-card {

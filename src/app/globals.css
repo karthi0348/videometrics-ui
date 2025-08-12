@@ -23,13 +23,14 @@ a {
 
 .hero-cta-button:hover {
   background-color: #0f766e !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
 }
-
 
 .cta-demo-button:hover {
   background-color: #0f766e !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
   transform: translateY(-1px);
 }
 
@@ -39,4 +40,112 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* globals.css */
+
+/* Global spacing variables */
+:root {
+  --section-padding-desktop: 80px;
+  --section-padding-tablet: 60px;
+  --section-padding-mobile: 40px;
+
+  --section-side-padding-desktop: 80px;
+  --section-side-padding-tablet: 40px;
+  --section-side-padding-mobile: 20px;
+
+  --section-border-radius-desktop: 40px;
+  --section-border-radius-tablet: 30px;
+  --section-border-radius-mobile: 20px;
+}
+
+/* Reusable section class */
+section {
+  padding: var(--section-padding-desktop) var(--section-side-padding-desktop);
+  border-radius: var(--section-border-radius-desktop);
+  padding-left: var(--section-side-padding-desktop);
+  padding-right: var(--section-side-padding-desktop);
+  margin-bottom: 60px !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  section {
+    padding-left: var(--section-side-padding-tablet);
+    padding-right: var(--section-side-padding-tablet);
+    border-radius: var(--section-border-radius-tablet);
+    margin-bottom: 40px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-left: var(--section-side-padding-mobile);
+    padding-right: var(--section-side-padding-mobile);
+    border-radius: var(--section-border-radius-mobile);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .heading-line {
+    margin-bottom: 0px !important;
+  }
+  .section {
+    margin-bottom: 40px !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    margin-bottom: 40px !important;
+  }
+
+}
+
+/* Primary Button - Teal Green */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #14b8a6;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px; /* pill shape */
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(20, 184, 166, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #0d9488; /* darker teal on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(20, 184, 166, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(20, 184, 166, 0.4);
+}
+
+/* Secondary Button - White with Teal Border */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #14b8a6;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid #14b8a6;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(20, 184, 166, 0.05); /* subtle teal tint */
+}
+
+.btn-secondary:active {
+  background-color: rgba(20, 184, 166, 0.1);
 }
