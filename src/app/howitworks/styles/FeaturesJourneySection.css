@@ -290,11 +290,11 @@
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   .features-section {
-    background-color: #1f2937;
+    background: #030f22;
   }
 
   .features-title {
-    color: #f9fafb;
+    color: #f9fafb !important;
   }
 
   .features-description {

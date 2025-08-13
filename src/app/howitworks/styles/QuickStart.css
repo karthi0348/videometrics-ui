@@ -245,7 +245,6 @@
   font-weight: 600px;
   font-weight: bold;
   margin: 0 auto 1.5rem;
-  color: #111827;
   line-height: 1.1;
   max-width: 800px;
   animation: fadeInUp 0.8s ease-out 0.1s both;
@@ -290,18 +289,17 @@
 
 @media (prefers-color-scheme: dark) {
   .quick-start-section {
-    background-color: #1f2937;
-    background-image: 
-      radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.12) 0%, transparent 50%);
+      background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+
+
   }
   
   .title {
-    color: #f9fafb;
+    color: #f9fbfc !important;
   }
   
   .subtitle {
-    color: #d1d5db;
+    color: #d1d5db !important;
   }
   
   .step-card {

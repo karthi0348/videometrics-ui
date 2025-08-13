@@ -84,8 +84,8 @@
 }
 
 .integration-icon-container.teal {
-  background: linear-gradient(135deg, #14b8a6, #06b6d4);
-}
+  display: flex;
+  background: linear-gradient(135deg, #14b8a6, #06b6d4);}
 
 .integration-icon-container::before {
   content: '';

@@ -310,7 +310,8 @@
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   .security-privacy-section {
-    background-color: #1e293b;
+      background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+
   }
   
   .security-feature-card {
@@ -323,11 +324,11 @@
   }
   
   .title {
-    color: #f1f5f9;
+    color: #f1f5f9 !important;
   }
   
   .subtitle {
-    color: #94a3b8;
+    color: #94a3b8 !important;
   }
   
   .feature-title {

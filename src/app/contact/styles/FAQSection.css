@@ -362,7 +362,7 @@
 /* Dark Mode Support (already integrated, but explicitly defined for clarity) */
 @media (prefers-color-scheme: dark) {
   .faq-section {
-    background-color: #1f2937;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
   }
   
   .faq-title {

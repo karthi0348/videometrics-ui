@@ -23,7 +23,7 @@
 
 .subtitle {
   font-size: 1.25rem;
-  line-height: 1.6 !important;
+  line-height: 1.6;
   color: #4b5563;
   max-width: 42rem;
   margin: 0 auto;
@@ -57,13 +57,11 @@
 .icon-container {
   width: 4rem;
   height: 4rem;
-  background-color: #14b8a6;
-  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #14b8a6, #06b6d4) !important;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .capability-card:hover .icon-container {
@@ -241,17 +239,19 @@
   }
 
   .icon-container {
-    background-color: #0d9488;
-    border: 2px solid #065f46;
+      display: flex;
+  background: linear-gradient(135deg, #14b8a6, #06b6d4);
   }
 }
 
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   .advanced-capabilities-section {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+
   }
 
+  
   .capability-card {
     background: #1e293b;
     border-color: #334155;
@@ -265,11 +265,11 @@
   }
 
   .sectitle {
-    color: #f1f5f9;
+    color: #0d0e0e;
   }
 
   .subtitle {
-    color: #94a3b8;
+    color: #f0f0f1 !important;
   }
 
   .capability-title {
@@ -281,7 +281,7 @@
   }
 
   .capability-description {
-    color: #94a3b8;
+    color: #f1f3f5;
   }
 
   .icon-container {
@@ -315,3 +315,4 @@
     background-color: #666 !important;
   }
 }
+

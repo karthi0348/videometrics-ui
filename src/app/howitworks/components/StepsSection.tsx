@@ -84,29 +84,93 @@ const defaultSteps: Step[] = [
       </div>
     ),
   },
-  {
-    number: 2,
-    title: "Configure Analysis",
-    description:
-      "Choose a template or define custom metrics relevant to your goals. Set up zones, tracking parameters, and alerts.",
-    icon: (
-      <div className="section step-dashboard-container">
-        <div className="step-dashboard-screen">
-          <div className="step-dashboard-content">
-            <div className="dashboard-header"></div>
-            <div className="dashboard-line-1"></div>
-            <div className="dashboard-line-2"></div>
-            <div className="dashboard-grid">
-              <div className="dashboard-block-1"></div>
-              <div className="dashboard-block-2"></div>
-            </div>
-            <div className="dashboard-footer-1"></div>
-            <div className="dashboard-footer-2"></div>
-          </div>
-        </div>
-      </div>
-    ),
-  },
+  // Replace the Configure Analysis step icon with this white SVG icon:
+
+{
+  number: 2,
+  title: "Configure Analysis",
+  description:
+    "Choose a template or define custom metrics relevant to your goals. Set up zones, tracking parameters, and alerts.",
+  icon: (
+    <div className="step-icon-container">
+      <svg viewBox="0 0 100 80" className="step-icon-svg">
+        {/* Dashboard/Monitor Screen */}
+        <rect
+          x="15"
+          y="20"
+          width="70"
+          height="45"
+          rx="4"
+          fill="none"
+          stroke="white"
+          strokeWidth="2"
+        />
+        
+        {/* Screen content */}
+        <rect
+          x="20"
+          y="25"
+          width="60"
+          height="35"
+          rx="2"
+          fill="rgba(255,255,255,0.1)"
+          stroke="white"
+          strokeWidth="1"
+        />
+        
+        {/* Dashboard elements */}
+        <rect x="25" y="30" width="15" height="6" rx="1" fill="white" />
+        <rect x="25" y="38" width="25" height="4" rx="1" fill="white" opacity="0.7" />
+        <rect x="25" y="44" width="20" height="4" rx="1" fill="white" opacity="0.7" />
+        
+        {/* Chart/graph representation */}
+        <rect x="55" y="30" width="20" height="25" rx="2" fill="none" stroke="white" strokeWidth="1" />
+        <rect x="58" y="45" width="3" height="8" fill="white" />
+        <rect x="63" y="40" width="3" height="13" fill="white" />
+        <rect x="68" y="35" width="3" height="18" fill="white" />
+        
+        {/* Settings/gear icon */}
+        <circle cx="75" cy="15" r="8" fill="none" stroke="white" strokeWidth="2" />
+        <circle cx="75" cy="15" r="4" fill="none" stroke="white" strokeWidth="1" />
+        <path
+          d="M75 7 L75 5 M83 15 L85 15 M75 23 L75 25 M67 15 L65 15 M80.5 9.5 L82 8 M80.5 20.5 L82 22 M69.5 20.5 L68 22 M69.5 9.5 L68 8"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        
+        {/* Monitor base */}
+        <rect
+          x="45"
+          y="65"
+          width="10"
+          height="8"
+          rx="2"
+          fill="white"
+          opacity="0.8"
+        />
+        <rect
+          x="40"
+          y="73"
+          width="20"
+          height="3"
+          rx="1.5"
+          fill="white"
+          opacity="0.6"
+        />
+        
+        <path
+          d="M70 20 Q65 22 60 25"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeDasharray="2,2"
+          fill="none"
+          opacity="0.7"
+        />
+      </svg>
+    </div>
+  ),
+},
   {
     number: 3,
     title: "Visualize & Act",
