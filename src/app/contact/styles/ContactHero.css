@@ -43,6 +43,7 @@
   visibility: visible;
   transform: translateY(0);
   will-change: auto;
+  padding-top: 40px;
 }
 
 .highlight {

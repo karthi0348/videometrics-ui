@@ -16,7 +16,6 @@
   align-items: center;
   position: relative;
   z-index: 2;
-  padding: var(--section-padding-desktop, 64px) var(--section-side-padding-desktop, 48px);
 }
 
 .ctaLeftSection {
@@ -173,12 +172,13 @@
     border-radius: var(--section-border-radius-mobile, 16px);
     margin: 1px;
   }
-  
+  .CallToAction{
+  padding: 0px !important;
+}
   .ctaContainer {
     flex-direction: column;
     text-align: center;
     gap: 32px;
-    padding: var(--section-padding-mobile, 32px) var(--section-side-padding-mobile, 20px);
   }
   
   .ctaLeftSection {
