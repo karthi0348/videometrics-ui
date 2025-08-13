@@ -295,35 +295,6 @@
   flex-shrink: 0;
 }
 
-/* Configuration Icon Container */
-.step-config-container {
-  width: 6rem;
-  height: 6rem;
-  margin: 0 auto;
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
-  border-radius: 0.5rem;
-  padding: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
-  box-sizing: border-box;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.step-card:hover .step-config-container {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
-}
-
-.config-icon {
-  width: 3rem;
-  height: 3rem;
-  fill: #ffffff;
-}
-
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -365,15 +336,6 @@
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-@keyframes rotate-gear {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
@@ -432,15 +394,9 @@
 
   .step-icon-container,
   .step-dashboard-container,
-  .step-chart-container,
-  .step-config-container {
+  .step-chart-container {
     width: 7rem;
     height: 7rem;
-  }
-
-  .config-icon {
-    width: 3.5rem;
-    height: 3.5rem;
   }
 }
 
@@ -485,15 +441,9 @@
 
   .step-icon-container,
   .step-dashboard-container,
-  .step-chart-container,
-  .step-config-container {
+  .step-chart-container {
     width: 5.5rem;
     height: 5.5rem;
-  }
-
-  .config-icon {
-    width: 2.75rem;
-    height: 2.75rem;
   }
 }
 
@@ -564,15 +514,9 @@
 
   .step-icon-container,
   .step-dashboard-container,
-  .step-chart-container,
-  .step-config-container {
+  .step-chart-container {
     width: 5rem;
     height: 5rem;
-  }
-
-  .config-icon {
-    width: 2.5rem;
-    height: 2.5rem;
   }
 }
 
@@ -626,15 +570,9 @@
 
   .step-icon-container,
   .step-dashboard-container,
-  .step-chart-container,
-  .step-config-container {
+  .step-chart-container {
     width: 4.5rem;
     height: 4.5rem;
-  }
-
-  .config-icon {
-    width: 2.25rem;
-    height: 2.25rem;
   }
 }
 
@@ -663,15 +601,9 @@
 
   .step-icon-container,
   .step-dashboard-container,
-  .step-chart-container,
-  .step-config-container {
+  .step-chart-container {
     width: 4rem;
     height: 4rem;
-  }
-
-  .config-icon {
-    width: 2rem;
-    height: 2rem;
   }
 }
 
@@ -728,15 +660,9 @@
 
   .step-icon-container,
   .step-dashboard-container,
-  .step-chart-container,
-  .step-config-container {
+  .step-chart-container {
     width: 4rem;
     height: 4rem;
-  }
-
-  .config-icon {
-    width: 2rem;
-    height: 2rem;
   }
 }
 
@@ -754,10 +680,6 @@
 .steps-section--no-animations .step-card:hover {
   transform: none;
   box-shadow: none;
-}
-
-.steps-section--no-animations .config-icon {
-  animation: none;
 }
 
 /* Accessibility */
@@ -789,13 +711,6 @@
     border-color: #14b8a6;
     background: rgba(255, 255, 255, 0.9);
   }
-
-  .config-icon,
-  .config-gear::before,
-  .config-tooth {
-    border-color: #000000;
-    fill: #000000;
-  }
 }
 
 /* Reduced Motion */
@@ -817,7 +732,6 @@
   .step-icon-svg,
   .step-dashboard-container,
   .step-chart-container,
-  .step-config-container,
   .step-number {
     transition: none;
   }
@@ -825,16 +739,11 @@
   .step-card:hover .step-icon-svg,
   .step-card:hover .step-dashboard-container,
   .step-card:hover .step-chart-container,
-  .step-card:hover .step-config-container,
   .step-card:hover .step-number {
     transform: none;
   }
 
   .dashboard-header {
-    animation: none;
-  }
-
-  .config-icon {
     animation: none;
   }
 }
@@ -873,14 +782,6 @@
     background: rgba(31, 41, 55, 0.8);
     border-color: rgba(20, 184, 166, 0.3);
   }
-
-  .step-config-container {
-    background: linear-gradient(135deg, #451a03, #78350f);
-  }
-
-  .config-icon {
-    fill: #f59e0b;
-  }
 }
 
 /* Print Styles */
@@ -908,9 +809,5 @@
 
   .step-description {
     color: #333333 !important;
-  }
-
-  .config-icon {
-    animation: none;
   }
 }

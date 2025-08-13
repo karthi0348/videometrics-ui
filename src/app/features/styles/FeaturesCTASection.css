@@ -26,7 +26,7 @@
   z-index: 1;
 }
 
-.title{
+.ctatitle{
   font-size: clamp(28px, 5vw, 48px);
     font-weight: 500;
     color: #1F2937;
@@ -35,7 +35,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.subtitle {
+.subctatitle {
   font-size: 1.25rem;
   line-height: 1.6 !important;
   color: #4b5563;
@@ -184,11 +184,11 @@
 }
 
 /* Apply fade-in animation */
-.title {
+.ctatitle {
   animation: fadeInUp 0.6s ease-out;
 }
 
-.subtitle {
+.subctatitle {
   animation: fadeInUp 0.6s ease-out 0.1s both;
 }
 
@@ -208,12 +208,12 @@
     padding: 3.5rem 1rem;
   }
   
-  .title {
+  .ctatitle {
     font-size: 1.75rem;
     margin-bottom: 1rem;
   }
   
-  .subtitle {
+  .subctatitle {
     font-size: 0.9375rem;
     margin-bottom: 2rem;
     padding: 0 0.5rem;
@@ -268,11 +268,11 @@
 
 /* Tablet */
 @media (min-width: 768px) {
-  .title {
+  .ctatitle {
     font-size: 2.25rem;
   }
   
-  .subtitle {
+  .subctatitle {
     font-size: 1.125rem;
     padding: 0;
   }
@@ -298,12 +298,12 @@
     padding: 1rem 1.5rem;
   }
   
-  .title {
+  .ctatitle {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
   
-  .subtitle {
+  .subctatitle {
     font-size: 1rem;
     margin-bottom: 1.5rem;
   }
@@ -324,12 +324,12 @@
     padding: 1rem 2rem;
   }
   
-  .title {
+  .ctatitle {
     font-size: 2.75rem;
     margin-bottom: 2rem;
   }
   
-  .subtitle {
+  .subctatitle {
     font-size: 1.25rem;
     margin-bottom: 3.5rem;
   }
@@ -345,12 +345,12 @@
     padding: 1rem 2rem;
   }
   
-  .title {
+  .ctatitle {
     font-size: 3rem;
     margin-bottom: 2.5rem;
   }
   
-  .subtitle {
+  .subctatitle {
     font-size: 1.375rem;
     margin-bottom: 4rem;
   }
@@ -370,12 +370,12 @@
     max-width: 64rem;
   }
   
-  .title {
+  .ctatitle {
     font-size: 3.5rem;
     margin-bottom: 3rem;
   }
   
-  .subtitle {
+  .subctatitle {
     font-size: 1.5rem;
     margin-bottom: 4.5rem;
   }
@@ -403,11 +403,11 @@
     color: #0d9488;
   }
   
-  .title {
+  .ctatitle {
     color: #000000;
   }
   
-  .subtitle {
+  .subctatitle {
     color: #333333;
   }
 }
@@ -425,8 +425,8 @@
     animation: none;
   }
   
-  .title,
-  .subtitle,
+  .ctatitle,
+  .subctatitle,
   .cta-buttons,
   .trust-indicators {
     animation: none;
@@ -445,17 +445,15 @@
     background: linear-gradient(135deg, transparent 0%, rgba(20, 184, 166, 0.05) 50%, transparent 100%);
   }
   
-  .title {
+  .ctatitle {
     color: #131313 !important;
   }
   
-  .subtitle {
+  .subctatitle {
     color: #1d1d1d !important;
   }
   
-  .trust-text {
-    color: #d1d5db;
-  }
+
   
   .trial-button {
     color: #14b8a6;
@@ -492,8 +490,8 @@
     display: none;
   }
   
-  .title,
-  .subtitle {
+  .ctatitle,
+  .subctatitle {
     color: #000000;
   }
 }

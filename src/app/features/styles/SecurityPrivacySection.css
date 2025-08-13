@@ -14,7 +14,7 @@
 
 
 
-.subtitle {
+.subprivacytitle {
   font-size: 1.25rem;
   line-height: 1.6 !important;
   color: #4b5563;
@@ -71,11 +71,11 @@
   height: 3rem;
 }
 
-.feature-title {
+.feature-privacytitle {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #1f2937;
+  color: #edf0f5;
   line-height: 1.4;
 }
 
@@ -98,13 +98,13 @@
     padding: 2rem 1.5rem;
   }
   
-  .title {
+  .privacytitle {
     font-size: 1.75rem;
     margin-bottom: 1rem;
     font-weight: bold;
   }
   
-  .subtitle {
+  .subprivacytitle {
     font-size: 1rem;
   }
   
@@ -119,7 +119,7 @@
     height: 2.25rem;
   }
   
-  .feature-title {
+  .feature-privacytitle {
     font-size: 1.125rem;
     margin-bottom: 0.75rem;
   }
@@ -157,15 +157,15 @@
     gap: 2.5rem;
   }
   
-  .title {
+  .privacytitle {
     font-size: 2.75rem;
   }
   
-  .subtitle {
+  .subprivacytitle {
     font-size: 1.125rem;
   }
   
-  .feature-title {
+  .feature-privacytitle {
     font-size: 1.375rem;
   }
   
@@ -232,11 +232,11 @@
     margin-bottom: 5rem;
   }
   
-  .title {
+  .privacytitle {
     font-size: 3rem;
   }
   
-  .subtitle {
+  .subprivacytitle {
     font-size: 1.25rem;
   }
 }
@@ -259,7 +259,7 @@
     padding: 3rem 2.5rem;
   }
   
-  .title {
+  .privacytitle {
     font-size: 3.5rem;
   }
 }
@@ -279,7 +279,7 @@
     background: linear-gradient(135deg, #0d9488, #065f46);
   }
   
-  .feature-title {
+  .feature-privacytitle {
     color: #111827;
   }
   
@@ -310,7 +310,7 @@
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   .security-privacy-section {
-      background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+      background: #0f172a
 
   }
   
@@ -323,20 +323,20 @@
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   }
   
-  .title {
+  .privacytitle {
     color: #f1f5f9 !important;
   }
   
-  .subtitle {
+  .subprivacytitle {
     color: #94a3b8 !important;
   }
   
-  .feature-title {
-    color: #e2e8f0;
+  .feature-privacytitle {
+    color: #06b6d4;
   }
   
   .feature-description {
-    color: #94a3b8;
+    color: #f0f1f4;
   }
   
   .icon-container {
@@ -354,7 +354,7 @@
   cursor: default;
 }
 
-.security-feature-card:hover .feature-title {
+.security-feature-card:hover .feature-privacytitle {
   color: #0d9488;
   transition: color 0.3s ease;
 }

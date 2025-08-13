@@ -28,8 +28,8 @@ export default function SecurityPrivacySection() {
     <section className={`section security-privacy-section`}>
       <div className="container">
         <div className="header">
-          <h2 className="title">Enterprise-Grade Security & Privacy</h2>
-          <p className="subtitle">
+          <h2 className="privacytitle">Enterprise-Grade Security & Privacy</h2>
+          <p className="subprivacytitle">
             We take security and privacy seriously. VideoMetrics.ai is built
             with enterprise-grade security features and privacy controls to
             protect your data.
@@ -40,7 +40,7 @@ export default function SecurityPrivacySection() {
           {securityFeatures.map((feature, index) => (
             <div key={index} className="security-feature-card">
               <div className="icon-container">{feature.icon}</div>
-              <h3 className="feature-title">{feature.title}</h3>
+              <h3 className="feature-privacytitle">{feature.title}</h3>
               <p className="feature-description">{feature.description}</p>
             </div>
           ))}

@@ -343,20 +343,21 @@
 /* Dark theme support */
 @media (prefers-color-scheme: dark) {
   .ctaSection {
-    background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+      background-color: teal;
+    padding-top: 60px;
   }
   
   .ctaHeading {
-    color: #f9fafb;
+    color: #111111;
   }
   
   .ctaParagraph {
-    color: #f3f4f6;
+    color: #0e0e0e;
   }
   
   .ctaButton {
-    background-color: #f9fafb;
-    color: #1f2937;
+    background-color: #0f0f0f;
+    color: hsl(0, 33%, 98%);
   }
   
   .ctaButton:hover {

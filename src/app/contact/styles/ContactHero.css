@@ -26,7 +26,7 @@
   z-index: 1;
 }
 
-.title {
+.contacttitle {
   font-size: 2.25rem;
   font-weight: 700;
   font-weight: bold;
@@ -66,7 +66,7 @@
   animation: underline-expand 0.8s ease-out 0.5s forwards;
 }
 
-.subtitle {
+.subcontacttitle {
   color: #6b7280;
   max-width: 32rem;
   margin: 0 auto;
@@ -104,11 +104,11 @@
   }
 }
 
-.title {
+.contacttitle {
   animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
-.subtitle {
+.subcontacttitle {
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
@@ -122,7 +122,7 @@
 
   padding-top: 80px !important;
 }
-  .title {
+  .contacttitle {
   font-size: clamp(2rem, 6vw, 3rem);
 
   margin: 0 auto 1.5rem;
@@ -132,7 +132,7 @@
   animation: fadeInUp 0.8s ease-out 0.1s both;;
   }
 
-  .subtitle {
+  .subcontacttitle {
     font-size: 0.875rem;
     max-width: 100%;
   }
@@ -143,7 +143,7 @@
   
   }
 
-  .title {
+  .contacttitle {
         font-size: clamp(2rem, 6vw, 3rem);
 
   margin: 0 auto 1.5rem;
@@ -153,7 +153,7 @@
   animation: fadeInUp 0.8s ease-out 0.1s both;
   }
 
-  .subtitle {
+  .subcontacttitle {
     font-size: 0.9375rem;
   }
 }
@@ -163,7 +163,7 @@
    
   }
 
-  .title {
+  .contacttitle {
      font-size: clamp(2rem, 6vw, 3rem);
 
   margin: 0 auto 1.5rem;
@@ -173,7 +173,7 @@
   animation: fadeInUp 0.8s ease-out 0.1s both;;
   }
 
-  .subtitle {
+  .subcontacttitle {
     font-size: 1rem;
   }
 }
@@ -183,7 +183,7 @@
    
   }
 
-  .title {
+  .contacttitle {
      font-size: clamp(2rem, 6vw, 3rem);
 
   margin: 0 auto 1.5rem;
@@ -193,7 +193,7 @@
   animation: fadeInUp 0.8s ease-out 0.1s both;;
   }
 
-  .subtitle {
+  .subcontacttitle {
     font-size: 1.125rem;
     max-width: 36rem;
   }
@@ -204,7 +204,7 @@
     
   }
 
-  .title {
+  .contacttitle {
      font-size: clamp(2rem, 6vw, 3rem);
 
   margin: 0 auto 1.5rem;
@@ -214,7 +214,7 @@
   animation: fadeInUp 0.8s ease-out 0.1s both;;
   }
 
-  .subtitle {
+  .subcontacttitle {
     font-size: 1.25rem;
     max-width: 40rem;
   }
@@ -225,12 +225,12 @@
     
   }
 
-  .title {
+  .contacttitle {
     font-size: 3.75rem;
     margin-bottom: 2rem;
   }
 
-  .subtitle {
+  .subcontacttitle {
     font-size: 1.375rem;
     max-width: 44rem;
   }
@@ -242,12 +242,12 @@
     margin-top: 6rem;
   }
 
-  .title {
+  .contacttitle {
     font-size: 4rem;
     margin-bottom: 2.5rem;
   }
 
-  .subtitle {
+  .subcontacttitle {
     font-size: 1.5rem;
     max-width: 48rem;
   }
@@ -258,12 +258,12 @@
   
   }
 
-  .title {
+  .contacttitle {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
 
-  .subtitle {
+  .subcontacttitle {
     font-size: 0.9375rem;
   }
 }
@@ -273,7 +273,7 @@
   }
 
 
-  .subtitle {
+  .subcontacttitle {
     font-size: 1.125rem;
   }
 }
@@ -289,8 +289,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .title,
-  .subtitle {
+  .contacttitle,
+  .subcontacttitle {
     animation: none;
   }
 
@@ -312,11 +312,11 @@
     background: linear-gradient(45deg, transparent 0%, rgba(20, 184, 166, 0.05) 50%, transparent 100%);
   }
 
-  .title {
+  .contacttitle {
     color: #111827;
   }
 
-  .subtitle {
+  .subcontacttitle {
     color: #4b5563;
   }
 }
@@ -340,8 +340,8 @@
     display: none;
   }
 
-  .title,
-  .subtitle {
+  .contacttitle,
+  .subcontacttitle {
     animation: none;
   }
 }

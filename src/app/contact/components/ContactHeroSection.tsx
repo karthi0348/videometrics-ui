@@ -16,7 +16,7 @@ export default function ContactHero({
   return (
     <section className={`section contact-hero-section ${className}`}>
       <div className="container">
-        <h1 className="section title">
+        <h1 className="section contacttitle">
           {title.includes("Touch") ? (
             <>
               Get in <span className="highlight">Touch</span>
@@ -25,7 +25,7 @@ export default function ContactHero({
             title
           )}
         </h1>
-        <p className="subtitle">{subtitle}</p>
+        <p className="subcontacttitle">{subtitle}</p>
       </div>
     </section>
   );

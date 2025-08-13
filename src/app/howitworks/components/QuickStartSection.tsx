@@ -29,10 +29,10 @@ export default function QuickStartSection() {
     <section className="section quick-start-section">
       <div className="container">
         <div className="header">
-          <h2 className="title">
+          <h2 className="quicktitle">
             Get Started in Minutes
           </h2>
-          <p className="subtitle">
+          <p className="subquicktitle">
             Setting up your first video analysis is simple. Our guided onboarding process takes you through these steps:
           </p>
         </div>
