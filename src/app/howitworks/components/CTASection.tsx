@@ -8,11 +8,11 @@ export default function CTASection() {
       className="section cta-section"
     >
       <div className="container">
-        <h2 className="title">
+        <h2 className="ctatitle">
           Ready to Transform Your Video Data?
         </h2>
         
-        <p className="subtitle">
+        <p className="subctatitle">
           Join thousands of businesses already using VideoMetrics.ai to gain
           actionable insights and drive better decisions.
         </p>
@@ -21,10 +21,7 @@ export default function CTASection() {
           <button className="demo-button">
             Schedule Demo
           </button>
-         
         </div>
-        
-     
       </div>
     </section>
   );
