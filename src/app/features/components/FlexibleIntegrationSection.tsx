@@ -32,7 +32,7 @@ export default function FlexibleIntegrationSection() {
       <div className="flexible-integration-container">
         <div className="flexible-integration-header">
           <h2 className="flexible-integration-title">Flexible Integration</h2>
-          <p className="flexible-integration-description">
+          <p className="flexible-integration-description text-center">
             Connect to your existing video sources and integrate with your
             business systems.
           </p>
@@ -41,11 +41,14 @@ export default function FlexibleIntegrationSection() {
         <div className="flexible-integration-grid">
           {integrationFeatures.map((feature, index) => (
             <div key={index} className="integration-card">
-              <div className={`integration-icon-container ${feature.color}`}>
-                {feature.icon}
+              <div className="outericon">
+                {" "}
+                <div className={`integration-icon-container ${feature.color}`}>
+                  {feature.icon}
+                </div>
               </div>
-              <h3 className="integration-title">{feature.title}</h3>
-              <p className="integration-description">{feature.description}</p>
+              <h3 className="integration-title text-center">{feature.title}</h3>
+              <p className="integration-description text-center">{feature.description}</p>
             </div>
           ))}
         </div>

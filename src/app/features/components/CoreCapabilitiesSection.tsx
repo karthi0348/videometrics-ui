@@ -56,14 +56,14 @@ export default function CoreCapabilitiesSection() {
         <div className="core-capabilities-grid">
           {coreCapabilities.map((capability, index) => (
             <div key={index} className="capability-card">
-              <div className={`capability-icon-container ${capability.color}`}>
+             <div className="outericon"> <div className={`capability-icon-container ${capability.color}`}>
                 {capability.icon}
-              </div>
-              <h3 className="capability-title">{capability.title}</h3>
+              </div></div>
+              <h3 className="capability-title text-center">{capability.title}</h3>
               <p className="capability-description">{capability.description}</p>
               <ul className="capability-features">
                 {capability.features.map((feature, idx) => (
-                  <li key={idx} className="capability-feature">
+                  <li key={idx} className="capability-feature ">
                     <div className="feature-bullet"></div>
                     <span className="feature-text">{feature}</span>
                   </li>

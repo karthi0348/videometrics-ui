@@ -25,16 +25,6 @@
   z-index: 1;
 }
 
-.title {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  color: #111827;
-  line-height: 1.2;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .subtitle {
   font-size: 1.25rem;

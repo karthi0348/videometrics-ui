@@ -30,7 +30,12 @@
   margin: 0 auto;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
-
+.outericon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 .core-capabilities-grid {
   display: grid;
   grid-template-columns: 1fr;
