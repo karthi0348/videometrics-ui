@@ -7,9 +7,9 @@
 
 .footer {
   width: 100%;
-  background-color: #f9fafb;
-  color: #4b5563;
-  border-top: 1px solid #f3f4f6;
+  background-color: #f8fafc;
+  color: #475569;
+  border-top: 1px solid #e2e8f0;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   contain: layout style;
@@ -50,7 +50,7 @@
 }
 
 .companyDescription {
-  color: #4b5563;
+  color: #475569;
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
@@ -69,7 +69,7 @@
 .sectionTitle {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #111827;
+  color: #1e293b;
   margin: 0 0 1rem 0;
   line-height: 1.2;
   font-synthesis: none;
@@ -88,7 +88,7 @@
 }
 
 .footerLink {
-  color: #4b5563;
+  color: #475569;
   font-size: 1rem;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
@@ -96,6 +96,7 @@
   position: relative;
   font-synthesis: none;
   font-display: swap;
+  cursor: pointer;
 }
 
 .footerLink:hover {
@@ -110,14 +111,14 @@
 
 .copyrightBar {
   width: 100%;
-  border-top: 1px solid #e5e7eb;
-  background-color: #f9fafb;
+  border-top: 1px solid #cbd5e1;
+  background-color: #f8fafc;
   padding: 1rem;
 }
 
 .copyrightText {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #64748b;
   margin: 0;
   text-align: center;
   font-synthesis: none;
@@ -391,11 +392,12 @@
   }
 }
 
+/* Dark mode keeps same colors as light mode for consistency */
 @media (prefers-color-scheme: dark) {
   .footer {
-    background-color: #1f2937;
-    color: #d1d5db;
-    border-top-color: #374151;
+    background-color: #f8fafc;
+    color: #475569;
+    border-top-color: #e2e8f0;
   }
 
   .companyName {
@@ -403,15 +405,15 @@
   }
 
   .companyDescription {
-    color: #d1d5db;
+    color: #475569;
   }
 
   .sectionTitle {
-    color: #f9fafb;
+    color: #1e293b;
   }
 
   .footerLink {
-    color: #d1d5db;
+    color: #475569;
   }
 
   .footerLink:hover {
@@ -419,12 +421,12 @@
   }
 
   .copyrightBar {
-    background-color: #1f2937;
-    border-top-color: #374151;
+    background-color: #f8fafc;
+    border-top-color: #cbd5e1;
   }
 
   .copyrightText {
-    color: #9ca3af;
+    color: #64748b;
   }
 }
 

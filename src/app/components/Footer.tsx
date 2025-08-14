@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import styles from './styles/Footer.module.css';
+import './styles/Footer.css';
 
 interface FooterLink {
   label: string;
@@ -19,42 +18,41 @@ const Footer: React.FC<FooterProps> = ({
   companyName = "videometrics.ai",
   companyDescription = "Advanced video analytics platform for business intelligence and operational insights.",
   links = [
-    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" }
   ],
   copyrightYear = 2024,
   className = ""
 }) => {
   return (
-    <div className={styles.footerWrapper} suppressHydrationWarning={true}>
-      <footer className={`${styles.footer} ${className}`}>
-        <div className={styles.footerContent}>
-          <div className={styles.container}>
-            <div className={styles.footerGrid}>
+    <div className="footerWrapper">
+      <footer className={`footer ${className}`}>
+        <div className="footerContent">
+          <div className="container">
+            <div className="footerGrid">
               
-              <div className={styles.companySection}>
-                <h2 className={styles.companyName}>
+              <div className="companySection">
+                <h2 className="companyName">
                   {companyName}
                 </h2>
-                <p className={styles.companyDescription}>
+                <p className="companyDescription">
                   {companyDescription}
                 </p>
               </div>
 
-              <div className={styles.linksSection}>
-                <h3 className={styles.sectionTitle}>
+              <div className="linksSection">
+                <h3 className="sectionTitle">
                   Company
                 </h3>
-                <nav className={styles.navigation} role="navigation" aria-label="Footer navigation">
-                  <ul className={styles.linksList}>
+                <nav className="navigation" role="navigation" aria-label="Footer navigation">
+                  <ul className="linksList">
                     {links.map((link, index) => (
-                      <li key={`${link.label}-${index}`} className={styles.linkItem}>
-                        <Link 
+                      <li key={`${link.label}-${index}`} className="linkItem">
+                        <a 
                           href={link.href}
-                          className={styles.footerLink}
+                          className="footerLink"
                         >
                           {link.label}
-                        </Link>
+                        </a>
                       </li>
                     ))}
                   </ul>
@@ -64,9 +62,9 @@ const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
 
-        <div className={styles.copyrightBar}>
-          <div className={styles.container}>
-            <p className={styles.copyrightText}>
+        <div className="copyrightBar">
+          <div className="container">
+            <p className="copyrightText">
               © {copyrightYear} {companyName}. All rights reserved.
             </p>
           </div>
