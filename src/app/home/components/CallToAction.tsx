@@ -11,15 +11,15 @@ const CallToAction: React.FC<CallToActionProps> = ({
   onScheduleDemo 
 }) => {
   return (
-    <section className={`section ${styles.ctaSection} ${className}`}>
-      <div className={styles.ctaContainer}>
+    <section className={`section ${styles.hctaSection} ${className}`}>
+      <div className={styles.hctaContainer}>
         {/* Left Section */}
-        <div className={styles.ctaLeftSection}>
-          <h2 className={styles.ctaHeading}>
+        <div className={styles.hctaLeftSection}>
+          <h2 className={styles.hctaHeading}>
             Ready to<br />
             Transform Your Video Data?
           </h2>
-          <p className={styles.ctaParagraph}>
+          <p className={styles.hctaParagraph}>
             Make smarter, faster decisions with AI-powered video analytics. Whether 
             you are in retail, manufacturing, agriculture, or events—<strong>VideoMetrics.ai</strong> helps 
             you unlock hidden insights, cut costs, and scale confidently.
@@ -27,14 +27,14 @@ const CallToAction: React.FC<CallToActionProps> = ({
 
           <button
             type="button"
-            className={styles.ctaButton}
+            className={styles.hctaButton}
             aria-label="Schedule a demo with VideoMetrics.ai"
           >
             Schedule Demo
           </button>
         </div>
 
-        <div className={styles.ctaIconsSection}>
+        <div className={styles.hctaIconsSection}>
           {/* Bar Chart Icon */}
           <div className={styles.barChartIcon} role="img" aria-label="Bar chart visualization">
             <div className={`${styles.bar} ${styles.bar1}`}></div>

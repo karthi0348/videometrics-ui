@@ -1,16 +1,16 @@
 
-.ctaSection {
+.hctaSection {
   background: linear-gradient(135deg, #A7F3D0 0%, #0D9488 100%);
   max-width: 1700px;
   position: relative;
   overflow: hidden;
   border-radius: var(--section-border-radius-desktop, 24px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  margin-top: 60px;
-  margin-bottom: 60px;
+      padding-top: 60px !important;
+
 }
 
-.ctaContainer {
+.hctaContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,21 +18,20 @@
   z-index: 2;
 }
 
-.ctaLeftSection {
+.hctaLeftSection {
   flex: 1;
   max-width: 500px;
 }
 
-.ctaHeading {
+.hctaHeading {
   font-size: clamp(28px, 5vw, 48px);
   font-weight: 500;
   color: #1F2937;
   line-height: 1.1;
-  margin-bottom: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.ctaParagraph {
+.hctaParagraph {
   color: #1F2937;
   font-size: clamp(16px, 2.5vw, 18px);
   line-height: 1.5;
@@ -41,11 +40,11 @@
   max-width: 450px;
 }
 
-.ctaParagraph strong {
+.hctaParagraph strong {
   font-weight: 600;
 }
 
-.ctaButton {
+.hctaButton {
   background-color: #1F2937;
   color: white;
   padding: 16px 32px;
@@ -63,28 +62,28 @@
   justify-content: center;
 }
 
-.ctaButton:hover {
+.hctaButton:hover {
   background-color: #111827;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.ctaButton:focus-visible {
+.hctaButton:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
-.ctaButton:active {
+.hctaButton:active {
   transform: translateY(0);
 }
 
-.ctaButton:disabled {
+.hctaButton:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
 }
 
-.ctaIconsSection {
+.hctaIconsSection {
   display: flex;
   align-items: center;
   gap: 40px;
@@ -146,7 +145,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-.ctaSection {
+.hctaSection {
   animation: sectionFadeIn 0.6s ease-out;
 }
 
@@ -167,7 +166,7 @@
 
 /* Mobile (320px - 575px) */
 @media (max-width: 575.98px) {
-  .ctaSection {
+  .hctaSection {
     margin-top: 40px;
     border-radius: var(--section-border-radius-mobile, 16px);
     margin: 1px;
@@ -175,33 +174,33 @@
   .CallToAction{
   padding: 0px !important;
 }
-  .ctaContainer {
+  .hctaContainer {
     flex-direction: column;
     text-align: center;
     gap: 32px;
   }
   
-  .ctaLeftSection {
+  .hctaLeftSection {
     max-width: 100%;
   }
   
-  .ctaHeading {
+  .hctaHeading {
     margin-bottom: 16px;
   }
   
-  .ctaParagraph {
+  .hctaParagraph {
     max-width: 100%;
     margin-bottom: 24px;
   }
 
-  .ctaButton {
+  .hctaButton {
     padding: 16px 32px;
     font-size: 16px;
     width: 100%;
     max-width: 280px;
   }
   
-  .ctaIconsSection {
+  .hctaIconsSection {
     margin-left: 0;
     justify-content: center;
     gap: 32px;
@@ -229,23 +228,23 @@
 
 /* Small Tablets (576px - 767px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .ctaSection {
+  .hctaSection {
     border-radius: var(--section-border-radius-tablet, 20px);
   }
   
-  .ctaContainer {
+  .hctaContainer {
     padding: var(--section-padding-tablet, 48px) var(--section-side-padding-tablet, 32px);
     flex-direction: column;
     gap: 36px;
     text-align: center;
   }
 
-  .ctaButton {
+  .hctaButton {
     padding: 14px 28px;
     min-width: 180px;
   }
   
-  .ctaIconsSection {
+  .hctaIconsSection {
     margin-left: 0;
     gap: 36px;
   }
@@ -271,14 +270,14 @@
 
 /* Medium Tablets (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .ctaContainer {
+  .hctaContainer {
     padding: var(--section-padding-tablet, 48px) var(--section-side-padding-tablet, 32px);
     flex-direction: column;
     gap: 40px;
     text-align: center;
   }
   
-  .ctaIconsSection {
+  .hctaIconsSection {
     margin-left: 0;
     gap: 40px;
   }
@@ -286,17 +285,17 @@
 
 /* Large Desktop (1024px+) */
 @media (min-width: 1024px) {
-  .ctaContainer {
+  .hctaContainer {
     flex-direction: row;
     text-align: left;
     padding: var(--section-padding-desktop, 64px) var(--section-side-padding-desktop, 48px);
   }
   
-  .ctaIconsSection {
+  .hctaIconsSection {
     margin-left: 60px;
   }
 
-  .ctaButton {
+  .hctaButton {
     width: auto;
   }
 }
@@ -310,14 +309,14 @@
   .bar,
   .pieChartIcon,
   .pieSvg circle,
-  .ctaButton,
-  .ctaSection {
+  .hctaButton,
+  .hctaSection {
     animation: none;
     transition: none;
   }
   
-  .ctaButton:hover,
-  .ctaButton:active,
+  .hctaButton:hover,
+  .hctaButton:active,
   .barChartIcon:hover .bar,
   .pieChartIcon:hover {
     transform: none;
@@ -326,69 +325,69 @@
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  .ctaSection {
+  .hctaSection {
     border: 2px solid #000;
   }
   
-  .ctaButton {
+  .hctaButton {
     border: 2px solid #000;
   }
   
-  .ctaHeading,
-  .ctaParagraph {
+  .hctaHeading,
+  .hctaParagraph {
     color: #000;
   }
 }
 
 /* Dark theme support */
 @media (prefers-color-scheme: dark) {
-  .ctaSection {
+  .hctaSection {
       background-color: teal;
     padding-top: 60px;
   }
   
-  .ctaHeading {
+  .hctaHeading {
     color: #111111;
   }
   
-  .ctaParagraph {
+  .hctaParagraph {
     color: #0e0e0e;
   }
   
-  .ctaButton {
+  .hctaButton {
     background-color: #0f0f0f;
     color: hsl(0, 33%, 98%);
   }
   
-  .ctaButton:hover {
+  .hctaButton:hover {
     background-color: #e5e7eb;
   }
   
-  .ctaButton:focus-visible {
+  .hctaButton:focus-visible {
     outline-color: #1f2937;
   }
 }
 
 /* Print styles */
 @media print {
-  .ctaSection {
+  .hctaSection {
     background: white !important;
     border: 1px solid #000 !important;
     box-shadow: none !important;
   }
   
-  .ctaHeading,
-  .ctaParagraph {
+  .hctaHeading,
+  .hctaParagraph {
     color: #000 !important;
   }
   
-  .ctaButton {
+  .hctaButton {
     background: white !important;
     color: #000 !important;
     border: 1px solid #000 !important;
   }
   
-  .ctaIconsSection {
+  .hctaIconsSection {
     display: none !important;
   }
 }
