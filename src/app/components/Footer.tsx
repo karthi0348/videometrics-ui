@@ -1,5 +1,6 @@
 import React from 'react';
-import './styles/Footer.css';
+import Link from 'next/link';
+import styles from './styles/Footer.module.css';
 
 interface FooterLink {
   label: string;
@@ -24,35 +25,35 @@ const Footer: React.FC<FooterProps> = ({
   className = ""
 }) => {
   return (
-    <div className="footerWrapper">
-      <footer className={`footer ${className}`}>
-        <div className="footerContent">
-          <div className="container">
-            <div className="footerGrid">
+    <div className={styles.footerWrapper} suppressHydrationWarning={true}>
+      <footer className={`${styles.footer} ${className}`}>
+        <div className={styles.footerContent}>
+          <div className={styles.container}>
+            <div className={styles.footerGrid}>
               
-              <div className="companySection">
-                <h2 className="companyName">
+              <div className={styles.companySection}>
+                <h2 className={styles.companyName}>
                   {companyName}
                 </h2>
-                <p className="companyDescription">
+                <p className={styles.companyDescription}>
                   {companyDescription}
                 </p>
               </div>
 
-              <div className="linksSection">
-                <h3 className="sectionTitle">
+              <div className={styles.linksSection}>
+                <h3 className={styles.sectionTitle}>
                   Company
                 </h3>
-                <nav className="navigation" role="navigation" aria-label="Footer navigation">
-                  <ul className="linksList">
+                <nav className={styles.navigation} role="navigation" aria-label="Footer navigation">
+                  <ul className={styles.linksList}>
                     {links.map((link, index) => (
-                      <li key={`${link.label}-${index}`} className="linkItem">
-                        <a 
+                      <li key={`${link.label}-${index}`} className={styles.linkItem}>
+                        <Link 
                           href={link.href}
-                          className="footerLink"
+                          className={styles.footerLink}
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -62,9 +63,9 @@ const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
 
-        <div className="copyrightBar">
-          <div className="container">
-            <p className="copyrightText">
+        <div className={styles.copyrightBar}>
+          <div className={styles.container}>
+            <p className={styles.copyrightText}>
               © {copyrightYear} {companyName}. All rights reserved.
             </p>
           </div>
