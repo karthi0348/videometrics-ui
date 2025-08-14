@@ -6,7 +6,7 @@
   overflow: hidden;
   border-radius: var(--section-border-radius-desktop, 24px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding-top: 60px !important;
+      padding-top: 40px !important;
 
 }
 
@@ -343,11 +343,13 @@
 @media (prefers-color-scheme: dark) {
   .hctaSection {
       background-color: teal;
-    padding-top: 60px;
+          padding-top: 40px;
+
   }
   
   .hctaHeading {
     color: #111111;
+
   }
   
   .hctaParagraph {

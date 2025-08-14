@@ -140,7 +140,7 @@ export default function WhyChooseSection() {
                         />
                       </svg>
                     </div>
-                    <h5 className="card-title mb-0 fw-semibold text-dark fs-6 fs-md-5 text-center">
+                    <h5 className="card-title mb-0 fw-semibold  fs-6 fs-md-5 text-center">
                       {feature.title}
                     </h5>
                   </div>
