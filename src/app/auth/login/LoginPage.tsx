@@ -278,7 +278,7 @@ export default function LoginPage(): JSX.Element {
           </form>
 
           <p className="auth-footer">
-            Don't have an account? <Link href="/auth/register" className="auth-link">Sign up</Link>
+            Dont have an account? <Link href="/auth/register" className="auth-link">Sign up</Link>
           </p>
         </div>
       </div>

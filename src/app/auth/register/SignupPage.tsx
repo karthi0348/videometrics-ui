@@ -104,7 +104,7 @@ export default function SignupPage(): JSX.Element {
       } else {
         const errorData: ApiError = await response.json();
         const errorMessage = errorData.detail
-          ? errorData.detail.map((err: { msg: any; }) => err.msg).join(", ")
+          ? errorData.detail.map((err: { msg:string; }) => err.msg).join(", ")
           : "An unexpected error occurred.";
         setMessage({ text: `Registration failed: ${errorMessage}`, type: 'error' });
       }

@@ -66,7 +66,7 @@ export default function ForgotPasswordPage(): JSX.Element {
         <div className="auth-form-container">
           <h2 className="auth-title">Forgot Password?</h2>
           <p className="auth-subtitle">
-            Enter your email and we'll send you a password reset link.
+            Enter your email and we will send you a password reset link.
           </p>
           
           {/* Display messages based on state */}
