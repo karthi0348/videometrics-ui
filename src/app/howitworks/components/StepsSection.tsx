@@ -32,8 +32,8 @@ const defaultSteps: Step[] = [
             cy="25"
             rx="20"
             ry="12"
-            fill="#e0f2fe"
-            stroke="#0891b2"
+            fill="var(--purple-light-20)"
+            stroke="var(--purple-primary)"
             strokeWidth="2"
           />
           <ellipse
@@ -41,8 +41,8 @@ const defaultSteps: Step[] = [
             cy="35"
             rx="25"
             ry="15"
-            fill="#e0f2fe"
-            stroke="#0891b2"
+            fill="var(--purple-light-20)"
+            stroke="var(--purple-primary)"
             strokeWidth="2"
           />
 
@@ -52,30 +52,30 @@ const defaultSteps: Step[] = [
             width="25"
             height="15"
             rx="2"
-            fill="#14b8a6"
-            stroke="#0d9488"
+            fill="var(--purple-accent)"
+            stroke="var(--purple-secondary)"
             strokeWidth="1"
           />
           <circle
             cx="50"
             cy="58"
             r="8"
-            fill="#14b8a6"
-            stroke="#0d9488"
+            fill="var(--purple-accent)"
+            stroke="var(--purple-secondary)"
             strokeWidth="1"
           />
           <circle cx="50" cy="58" r="4" fill="white" />
 
           <path
             d="M35 50 Q45 40 60 30"
-            stroke="#14b8a6"
+            stroke="var(--purple-accent)"
             strokeWidth="2"
             strokeDasharray="3,3"
             fill="none"
           />
           <path
             d="M58 58 Q65 45 70 35"
-            stroke="#14b8a6"
+            stroke="var(--purple-accent)"
             strokeWidth="2"
             strokeDasharray="3,3"
             fill="none"
@@ -84,93 +84,91 @@ const defaultSteps: Step[] = [
       </div>
     ),
   },
-  // Replace the Configure Analysis step icon with this white SVG icon:
-
-{
-  number: 2,
-  title: "Configure Analysis",
-  description:
-    "Choose a template or define custom metrics relevant to your goals. Set up zones, tracking parameters, and alerts.",
-  icon: (
-    <div className="step-icon-container">
-      <svg viewBox="0 0 100 80" className="step-icon-svg">
-        {/* Dashboard/Monitor Screen */}
-        <rect
-          x="15"
-          y="20"
-          width="70"
-          height="45"
-          rx="4"
-          fill="none"
-          stroke="white"
-          strokeWidth="2"
-        />
-        
-        {/* Screen content */}
-        <rect
-          x="20"
-          y="25"
-          width="60"
-          height="35"
-          rx="2"
-          fill="rgba(255,255,255,0.1)"
-          stroke="white"
-          strokeWidth="1"
-        />
-        
-        {/* Dashboard elements */}
-        <rect x="25" y="30" width="15" height="6" rx="1" fill="white" />
-        <rect x="25" y="38" width="25" height="4" rx="1" fill="white" opacity="0.7" />
-        <rect x="25" y="44" width="20" height="4" rx="1" fill="white" opacity="0.7" />
-        
-        {/* Chart/graph representation */}
-        <rect x="55" y="30" width="20" height="25" rx="2" fill="none" stroke="white" strokeWidth="1" />
-        <rect x="58" y="45" width="3" height="8" fill="white" />
-        <rect x="63" y="40" width="3" height="13" fill="white" />
-        <rect x="68" y="35" width="3" height="18" fill="white" />
-        
-        {/* Settings/gear icon */}
-        <circle cx="75" cy="15" r="8" fill="none" stroke="white" strokeWidth="2" />
-        <circle cx="75" cy="15" r="4" fill="none" stroke="white" strokeWidth="1" />
-        <path
-          d="M75 7 L75 5 M83 15 L85 15 M75 23 L75 25 M67 15 L65 15 M80.5 9.5 L82 8 M80.5 20.5 L82 22 M69.5 20.5 L68 22 M69.5 9.5 L68 8"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        
-        {/* Monitor base */}
-        <rect
-          x="45"
-          y="65"
-          width="10"
-          height="8"
-          rx="2"
-          fill="white"
-          opacity="0.8"
-        />
-        <rect
-          x="40"
-          y="73"
-          width="20"
-          height="3"
-          rx="1.5"
-          fill="white"
-          opacity="0.6"
-        />
-        
-        <path
-          d="M70 20 Q65 22 60 25"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeDasharray="2,2"
-          fill="none"
-          opacity="0.7"
-        />
-      </svg>
-    </div>
-  ),
-},
+  {
+    number: 2,
+    title: "Configure Analysis",
+    description:
+      "Choose a template or define custom metrics relevant to your goals. Set up zones, tracking parameters, and alerts.",
+    icon: (
+      <div className="step-icon-container">
+        <svg viewBox="0 0 100 80" className="step-icon-svg">
+          {/* Dashboard/Monitor Screen */}
+          <rect
+            x="15"
+            y="20"
+            width="70"
+            height="45"
+            rx="4"
+            fill="none"
+            stroke="var(--purple-primary)"
+            strokeWidth="2"
+          />
+          
+          {/* Screen content */}
+          <rect
+            x="20"
+            y="25"
+            width="60"
+            height="35"
+            rx="2"
+            fill="var(--purple-light-10)"
+            stroke="var(--purple-primary)"
+            strokeWidth="1"
+          />
+          
+          {/* Dashboard elements */}
+          <rect x="25" y="30" width="15" height="6" rx="1" fill="var(--purple-accent)" />
+          <rect x="25" y="38" width="25" height="4" rx="1" fill="var(--purple-secondary)" opacity="0.7" />
+          <rect x="25" y="44" width="20" height="4" rx="1" fill="var(--purple-secondary)" opacity="0.7" />
+          
+          {/* Chart/graph representation */}
+          <rect x="55" y="30" width="20" height="25" rx="2" fill="none" stroke="var(--purple-primary)" strokeWidth="1" />
+          <rect x="58" y="45" width="3" height="8" fill="var(--purple-accent)" />
+          <rect x="63" y="40" width="3" height="13" fill="var(--purple-accent)" />
+          <rect x="68" y="35" width="3" height="18" fill="var(--purple-accent)" />
+          
+          {/* Settings/gear icon */}
+          <circle cx="75" cy="15" r="8" fill="none" stroke="var(--purple-primary)" strokeWidth="2" />
+          <circle cx="75" cy="15" r="4" fill="none" stroke="var(--purple-primary)" strokeWidth="1" />
+          <path
+            d="M75 7 L75 5 M83 15 L85 15 M75 23 L75 25 M67 15 L65 15 M80.5 9.5 L82 8 M80.5 20.5 L82 22 M69.5 20.5 L68 22 M69.5 9.5 L68 8"
+            stroke="var(--purple-primary)"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+          
+          {/* Monitor base */}
+          <rect
+            x="45"
+            y="65"
+            width="10"
+            height="8"
+            rx="2"
+            fill="var(--purple-accent)"
+            opacity="0.8"
+          />
+          <rect
+            x="40"
+            y="73"
+            width="20"
+            height="3"
+            rx="1.5"
+            fill="var(--purple-secondary)"
+            opacity="0.6"
+          />
+          
+          <path
+            d="M70 20 Q65 22 60 25"
+            stroke="var(--purple-primary)"
+            strokeWidth="1.5"
+            strokeDasharray="2,2"
+            fill="none"
+            opacity="0.7"
+          />
+        </svg>
+      </div>
+    ),
+  },
   {
     number: 3,
     title: "Visualize & Act",
@@ -183,19 +181,19 @@ const defaultSteps: Step[] = [
           <polyline
             points="5,25 15,20 25,15 35,18 45,12 55,8"
             fill="none"
-            stroke="#f97316"
+            stroke="var(--purple-accent)"
             strokeWidth="2"
           />
           <polyline
             points="5,28 15,22 25,20 35,25 45,18 55,15"
             fill="none"
-            stroke="#3b82f6"
+            stroke="var(--purple-primary)"
             strokeWidth="2"
             strokeDasharray="2,2"
           />
-          <circle cx="25" cy="15" r="2" fill="#f97316" />
-          <circle cx="35" cy="18" r="2" fill="#f97316" />
-          <circle cx="45" cy="12" r="2" fill="#f97316" />
+          <circle cx="25" cy="15" r="2" fill="var(--purple-accent)" />
+          <circle cx="35" cy="18" r="2" fill="var(--purple-accent)" />
+          <circle cx="45" cy="12" r="2" fill="var(--purple-accent)" />
         </svg>
         <div className="chart-subtitle">vs. people flow</div>
       </div>

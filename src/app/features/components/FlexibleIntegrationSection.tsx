@@ -1,3 +1,4 @@
+// FlexibleIntegrationSection.tsx
 import React from "react";
 import { Camera, Cloud, Code } from "lucide-react";
 import "../styles/FlexibleIntegrationSection.css";
@@ -9,26 +10,26 @@ export default function FlexibleIntegrationSection() {
       title: "Camera Compatibility",
       description:
         "Connect to virtually any IP camera or CCTV system. Compatible with RTSP, RTMP, ONVIF protocols.",
-      color: "teal",
+      color: "purple",
     },
     {
       icon: <Cloud className="integration-icon" />,
       title: "Cloud Storage",
       description:
         "Seamlessly connect to AWS S3, Google Cloud Storage, or use your existing surveillance cloud.",
-      color: "teal",
+      color: "purple",
     },
     {
       icon: <Code className="integration-icon" />,
       title: "API Access",
       description:
         "Integrate video analytics into your applications with our comprehensive REST API and webhooks.",
-      color: "teal",
+      color: "purple",
     },
   ];
 
   return (
-    <section className={`section flexible-integration-section`}>
+    <section className="section flexible-integration-section">
       <div className="flexible-integration-container">
         <div className="flexible-integration-header">
           <h2 className="flexible-integration-title">Flexible Integration</h2>
@@ -42,7 +43,6 @@ export default function FlexibleIntegrationSection() {
           {integrationFeatures.map((feature, index) => (
             <div key={index} className="integration-card">
               <div className="outericon">
-                {" "}
                 <div className={`integration-icon-container ${feature.color}`}>
                   {feature.icon}
                 </div>

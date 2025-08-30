@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { NavItem } from "@/app/components/types/header";
@@ -15,13 +17,21 @@ export default function Header() {
     { href: "/features", label: "Features" },
     { href: "/howitworks", label: "How it Works" },
     { href: "/contact", label: "Contact" },
+
+
   ];
 
   return (
     <div className="header-container">
       <header className="header-card">
         <Link href="/" className="logo-brand">
-          videometrics.ai
+         <Image 
+        src="/images/Videometrics.png"   // place your logo in /public/logo.png
+        alt="Videometrics Logo"
+        width={200}     // adjust size
+        height={60}
+        priority
+      />
         </Link>
 
         <nav className="desktop-nav">
@@ -39,10 +49,10 @@ export default function Header() {
         </nav>
 
         <div className="action-buttons">
-          <Link href="/login" className="btn-login">
+          <Link href="/auth/login" className="btn-login">
             Login
           </Link>
-          <Link href="/signup" className="btn-signup">
+          <Link href="/auth/register" className="btn-signup">
             Sign up
           </Link>
         </div>
@@ -75,10 +85,10 @@ export default function Header() {
             </nav>
 
             <div className="mobile-action-buttons">
-              <Link href="/login" className="btn-login" onClick={() => setIsOpen(false)}>
+              <Link href="/auth/login" className="btn-login" onClick={() => setIsOpen(false)}>
                 Login
               </Link>
-              <Link href="/signup" className="btn-signup" onClick={() => setIsOpen(false)}>
+              <Link href="/auth/register" className="btn-signup" onClick={() => setIsOpen(false)}>
                 Sign up
               </Link>
             </div>

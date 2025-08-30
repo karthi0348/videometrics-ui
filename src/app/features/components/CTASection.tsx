@@ -1,27 +1,32 @@
 import React from "react";
-import '../styles/FeaturesCTASection.css'
+import "../styles/FeaturesCTASection.css";
 
 export default function CTASection() {
   return (
     <section 
       suppressHydrationWarning={true}
-      className="section cta-section"
+      className="cta-section"
     >
-      <div className="container">
-        <h2 className="ctatitle">
+      {/* Overlay gradient */}
+      <div className="cta-container">
+        <h2 className="cta-title animate-fade-in-up">
           Ready to Transform Your Video Data?
         </h2>
         
-        <p className="subctatitle">
-          Join thousands of businesses already using VideoMetrics.ai to gain
-          actionable insights and drive better decisions.
+        <p className="cta-subtitle animate-fade-in-up-delay">
+          Start turning your video footage into actionable insights today with <strong>Videometrics.ai</strong>.
         </p>
         
-        <div className="cta-buttons">
-          <button className="demo-button">
+        <div className="cta-buttons animate-fade-in-up-delay-2">
+          <button className="cta-button-primary">
+            Free Trial
+          </button>
+          
+          <button className="cta-button-tertiary">
             Schedule Demo
           </button>
         </div>
+
       </div>
     </section>
   );

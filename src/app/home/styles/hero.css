@@ -1,10 +1,12 @@
+/* Hero Section using Global CSS Variables */
+
 .hero-section {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(180deg, #d1f6ef 0%, #00bfa6 100%);
+  background: var(--gradient-purple-hero);
 }
 
 .hero-background {
@@ -17,7 +19,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(60px);
-  opacity: 0.3;
+  opacity: 0.4;
   animation: pulse 4s ease-in-out infinite;
 }
 
@@ -26,7 +28,7 @@
   left: 20%;
   width: min(300px, 25vw);
   height: min(300px, 25vw);
-  background: linear-gradient(45deg, #3b82f6, #22d3ee);
+  background: linear-gradient(45deg, var(--purple-primary), var(--purple-light));
   animation-delay: 0s;
 }
 
@@ -35,7 +37,7 @@
   right: 30%;
   width: min(250px, 20vw);
   height: min(250px, 20vw);
-  background: linear-gradient(45deg, #10b981, #06b6d4);
+  background: linear-gradient(45deg, var(--purple-secondary), var(--purple-tertiary));
   animation-delay: 2s;
 }
 
@@ -44,19 +46,19 @@
   left: 60%;
   width: min(200px, 18vw);
   height: min(200px, 18vw);
-  background: linear-gradient(45deg, #22d3ee, #10b981);
+  background: linear-gradient(45deg, var(--purple-light), var(--purple-accent));
   animation-delay: 1s;
 }
 
 .grid-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.1;
+  opacity: 0.08;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
+      rgba(255, 255, 255, 0.15) 1px,
       transparent 1px
     ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
   background-size: min(50px, 8vw) min(50px, 8vw);
 }
 
@@ -64,7 +66,7 @@
   position: absolute;
   width: clamp(6px, 1vw, 8px);
   height: clamp(6px, 1vw, 8px);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   animation: float 3s ease-in-out infinite;
 }
@@ -119,15 +121,14 @@
 .badge-text {
   display: inline-block;
   padding: clamp(0.375rem, 1.5vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
-  background: rgb(250, 250, 250);
-  color: #00bfa6 !important;
-  border: 1px solid rgba(12, 199, 186, 0.2);
+  background: rgb(250, 248, 255);
+  color: var(--purple-tertiary) !important;
+  border: 1px solid var(--purple-accent-30);
   border-radius: 9999px;
   font-size: clamp(0.75rem, 2vw, 0.875rem);
   font-weight: 500;
   white-space: nowrap;
   margin-top: 20px;
-  
 }
 
 .hero-heading {
@@ -137,9 +138,9 @@
 
 .heading-text {
   font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.1;
-  color: #1f2937;
+  color: var(--text-primary);
   margin: 0;
   hyphens: auto;
   word-wrap: break-word;
@@ -148,8 +149,8 @@
 .heading-line {
   display: block;
   margin-bottom: 0.5rem;
-  color: black;
-  font-weight: 400;
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 .hero-description {
@@ -160,9 +161,10 @@
 .description-text {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   line-height: 1.6;
-  color: #4b5563;
+  color: var(--text-secondary);
   margin: 0;
   text-align: center;
+  opacity: 0.9;
 }
 
 .hero-cta {
@@ -177,7 +179,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
-  background: #1f2937;
+  background: var(--purple-dark);
   color: white;
   border: none;
   border-radius: 9999px;
@@ -193,7 +195,8 @@
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px var(--purple-primary-30);
+  background: var(--purple-tertiary);
 }
 
 .cta-text {
@@ -204,7 +207,7 @@
 .cta-background {
   position: absolute;
   inset: 0;
-  background: #111827;
+  background: var(--purple-secondary);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
@@ -220,7 +223,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.3),
     transparent
   );
   transform: translateX(-100%);
@@ -247,11 +250,11 @@
 
 .dashboard-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-radius: clamp(0.75rem, 2vw, 1rem);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--purple-light-20);
+  box-shadow: 0 25px 50px var(--purple-dark-20);
   overflow: hidden;
   flex: 1 1 300px;
   max-width: min(350px, 90vw);
@@ -268,7 +271,7 @@
 .card-glow {
   position: absolute;
   inset: -2px;
-  background: linear-gradient(45deg, #3b82f6, #22d3ee, #10b981);
+  background: var(--gradient-purple-card);
   border-radius: inherit;
   opacity: 0;
   filter: blur(20px);
@@ -277,7 +280,7 @@
 }
 
 .dashboard-card:hover .card-glow {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .main-card {
@@ -313,12 +316,12 @@
   flex: 1;
   max-width: clamp(16px, 3vw, 20px);
   min-width: clamp(12px, 2vw, 16px);
-  background: linear-gradient(135deg, #3b82f6 0%, #22d3ee 50%, #10b981 100%);
+  background: var(--gradient-purple-card);
   border-radius: 4px 4px 2px 2px;
   min-height: 25px;
   animation: chartGrow 1.5s ease-out;
   animation-fill-mode: both;
-  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 8px var(--purple-primary-40);
 }
 
 .secondary-card {
@@ -347,7 +350,7 @@
 
 .chart-value {
   font-size: clamp(0.6rem, 1.5vw, 0.7rem);
-  color: #6b7280;
+  color: var(--purple-tertiary);
   font-weight: 600;
   line-height: 1;
 }
@@ -374,12 +377,12 @@
   flex: 1;
   max-width: clamp(18px, 3vw, 22px);
   min-width: clamp(14px, 2.5vw, 18px);
-  background: linear-gradient(135deg, #059669 0%, #22d3ee 50%, #10b981 100%);
+  background: var(--gradient-purple-secondary);
   border-radius: 4px 4px 2px 2px;
   min-height: 20px;
   animation: chartGrow 1.5s ease-out;
   animation-fill-mode: both;
-  box-shadow: 0 4px 8px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 4px 8px var(--purple-secondary-40);
 }
 
 .chart-labels {
@@ -391,7 +394,7 @@
 
 .chart-label {
   font-size: clamp(0.6rem, 1.5vw, 0.7rem);
-  color: #6b7280;
+  color: var(--purple-tertiary);
   font-weight: 600;
   text-align: center;
   flex: 1;
@@ -401,7 +404,7 @@
 .floating-element {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   animation: floatSlow 4s ease-in-out infinite;
   z-index: 1;
@@ -435,11 +438,11 @@
 @keyframes pulse {
   0%,
   100% {
-    opacity: 0.3;
+    opacity: 0.4;
     transform: scale(1);
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.6;
     transform: scale(1.05);
   }
 }
@@ -480,7 +483,6 @@
 @media (max-width: 1024px) {
   .hero-visual {
     max-width: 100%;
-
     gap: 1.5rem;
   }
 
@@ -514,7 +516,6 @@
     padding: 2rem 1rem;
     min-height: calc(100vh - 60px);
     justify-content: center;
-
     gap: 2rem;
   }
 
@@ -555,7 +556,7 @@
 
   .gradient-orb {
     filter: blur(30px);
-    opacity: 0.2;
+    opacity: 0.3;
   }
 }
 

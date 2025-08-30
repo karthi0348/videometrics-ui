@@ -1,5 +1,7 @@
+/* SecurityPrivacySection.css - Purple Theme */
+
 .security-privacy-section {
-  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+  background: linear-gradient(135deg, rgba(196, 127, 254, 0.1) 0%, rgba(135, 40, 212, 0.1) 50%, rgba(81, 77, 223, 0.1) 100%);
 }
 
 .container {
@@ -12,12 +14,17 @@
   margin-bottom: 4rem;
 }
 
-
+.privacytitle {
+  font-size: 2.75rem;
+  font-weight: 700 !important;
+  color: var(--purple-dark);
+  margin-bottom: 1rem;
+}
 
 .subprivacytitle {
   font-size: 1.25rem;
   line-height: 1.6 !important;
-  color: #4b5563;
+  color: var(--purple-tertiary);
   max-width: 42rem; 
   margin: 0 auto;
   animation: fadeInUp 0.8s ease-out 0.2s both;
@@ -33,18 +40,18 @@
   background: #ffffff;
   border-radius: 1rem;
   padding: 2.5rem 2rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px var(--purple-primary-10), 0 4px 6px -2px var(--purple-primary-10);
   transition: all 0.3s ease;
   text-align: center;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid transparent;
+  border: 1px solid var(--purple-primary-10);
 }
 
 .security-feature-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px var(--purple-primary-20), 0 10px 10px -5px var(--purple-primary-10);
   transform: translateY(-4px);
 }
 
@@ -53,12 +60,12 @@
   height: 5rem;
   margin: 0 auto 1.5rem;
   border-radius: 1rem;
-  background: linear-gradient(135deg, #14b8a6, #0d9488);
+  background: var(--gradient-purple-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+  box-shadow: 0 4px 12px var(--purple-primary-30);
   transition: transform 0.3s ease;
 }
 
@@ -75,25 +82,54 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #edf0f5;
+  color: var(--purple-dark);
   line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.security-feature-card:hover .feature-privacytitle {
+  color: var(--purple-accent);
 }
 
 .feature-description {
-  color: #6b7280;
+  color: var(--purple-tertiary);
   line-height: 1.6;
   font-size: 1rem;
   flex-grow: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.security-feature-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.security-feature-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.security-feature-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.security-feature-card:nth-child(3) {
+  animation-delay: 0.3s;
 }
 
 /* Responsive Design */
 
 /* Small Mobile Screens */
 @media (max-width: 480px) {
-  .security-privacy-section {
-    
-  }
-  
   .security-feature-card {
     padding: 2rem 1.5rem;
   }
@@ -101,7 +137,6 @@
   .privacytitle {
     font-size: 1.75rem;
     margin-bottom: 1rem;
-    font-weight: bold;
   }
   
   .subprivacytitle {
@@ -271,12 +306,12 @@
   }
   
   .security-feature-card:hover {
-    border-color: #14b8a6;
+    border-color: var(--purple-primary);
   }
   
   .icon-container {
     border: 2px solid #ffffff;
-    background: linear-gradient(135deg, #0d9488, #065f46);
+    background: #000 !important;
   }
   
   .feature-privacytitle {
@@ -292,6 +327,7 @@
 @media (prefers-reduced-motion: reduce) {
   .security-feature-card {
     transition: none;
+    animation: none;
   }
   
   .security-feature-card:hover {
@@ -305,58 +341,20 @@
   .security-feature-card:hover .icon-container {
     transform: none;
   }
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .security-privacy-section {
-      background: #0f172a
-
-  }
-  
-  .security-feature-card {
-    background: #334155;
-    border-color: #475569;
-  }
-  
-  .security-feature-card:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .privacytitle {
-    color: #f1f5f9 !important;
-  }
   
   .subprivacytitle {
-    color: #94a3b8 !important;
-  }
-  
-  .feature-privacytitle {
-    color: #06b6d4;
-  }
-  
-  .feature-description {
-    color: #f0f1f4;
-  }
-  
-  .icon-container {
-    background: linear-gradient(135deg, #0891b2, #0e7490);
-    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+    animation: none;
   }
 }
 
+/* Focus Styles for Accessibility */
 .security-feature-card:focus-within {
-  outline: 2px solid #14b8a6;
+  outline: 2px solid var(--purple-primary);
   outline-offset: 2px;
 }
 
 .security-feature-card {
   cursor: default;
-}
-
-.security-feature-card:hover .feature-privacytitle {
-  color: #0d9488;
-  transition: color 0.3s ease;
 }
 
 /* Print Styles */
@@ -376,46 +374,12 @@
   }
   
   .icon-container {
-    background: #14b8a6 !important;
+    background: var(--purple-primary) !important;
     box-shadow: none;
   }
   
   .security-features-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-}
-
-/* Loading Animation (Optional Enhancement) */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.security-feature-card {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.security-feature-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.security-feature-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.security-feature-card:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .security-feature-card {
-    animation: none;
   }
 }

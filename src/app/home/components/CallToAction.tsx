@@ -20,9 +20,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
             Transform Your Video Data?
           </h2>
           <p className={styles.hctaParagraph}>
-            Make smarter, faster decisions with AI-powered video analytics. Whether 
-            you are in retail, manufacturing, agriculture, or events—<strong>VideoMetrics.ai</strong> helps 
-            you unlock hidden insights, cut costs, and scale confidently.
+          Join your business using <strong>VideoMetrics.ai</strong> to gain actionable insights and drive better decisions.
           </p>
 
           <button

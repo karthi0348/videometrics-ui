@@ -1,5 +1,7 @@
+/* AdvancedCapabilitiesSection.css - Purple Theme */
+
 .advanced-capabilities-section {
-  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+  background: linear-gradient(135deg, rgba(196, 127, 254, 0.1) 0%, rgba(135, 40, 212, 0.1) 50%, rgba(81, 77, 223, 0.1) 100%);
 }
 
 .container {
@@ -14,17 +16,15 @@
 
 .sectitle {
   font-size: 2.75rem !important;
-  font-weight: 700px;
-
-  font-weight: bold;
-  color: #1f2937;
+  font-weight: 700 !important;
+  color: var(--purple-dark);
   margin: 1rem;
 }
 
 .subsectitle {
   font-size: 1.25rem;
   line-height: 1.6;
-  color: #4b5563;
+  color: var(--purple-tertiary);
   max-width: 42rem;
   margin: 0 auto;
   animation: fadeInUp 0.8s ease-out 0.2s both;
@@ -40,28 +40,30 @@
   background: #ffffff;
   border-radius: 0.75rem;
   padding: 2rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 15px -3px var(--purple-primary-10),
+    0 4px 6px -2px var(--purple-primary-10);
+  border: 1px solid var(--purple-primary-10);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
 .capability-card:hover {
-  box-shadow: 0 25px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 25px 25px -5px var(--purple-primary-20),
+    0 10px 10px -5px var(--purple-primary-10);
   transform: translateY(-8px);
 }
 
 .icon-container {
   width: 4rem;
   height: 4rem;
-  background: linear-gradient(135deg, #14b8a6, #06b6d4) !important;
+  background: var(--gradient-purple-primary) !important;
+  border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
 .capability-card:hover .icon-container {
@@ -77,19 +79,31 @@
 .capability-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #0d9488;
+  color: var(--purple-accent);
   margin-bottom: 1rem;
   transition: color 0.3s ease;
 }
 
 .capability-card:hover .capability-title {
-  color: #0f766e;
+  color: var(--purple-secondary);
 }
 
 .capability-description {
-  color: #6b7280;
+  color: var(--purple-tertiary);
   line-height: 1.75;
   font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
@@ -218,6 +232,10 @@
   .capability-title {
     transition: none;
   }
+
+  .subsectitle {
+    animation: none;
+  }
 }
 
 /* High Contrast */
@@ -227,7 +245,7 @@
   }
 
   .capability-card:hover {
-    border-color: #14b8a6;
+    border-color: var(--purple-primary);
   }
 
   .capability-title {
@@ -239,59 +257,13 @@
   }
 
   .icon-container {
-      display: flex;
-  background: linear-gradient(135deg, #14b8a6, #06b6d4);
-  }
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .advanced-capabilities-section {
-      background: #030f22
-
-  }
-
-  
-  .capability-card {
-    background: #1e293b;
-    border-color: #334155;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
-      0 4px 6px -2px rgba(0, 0, 0, 0.15);
-  }
-
-  .capability-card:hover {
-    box-shadow: 0 25px 25px -5px rgba(0, 0, 0, 0.4),
-      0 10px 10px -5px rgba(0, 0, 0, 0.2);
-  }
-
-  .sectitle {
-    color: #e4e9e9;
-  }
-
-  .subsectitle {
-    color: #ebebfa !important;
-  }
-
-  .capability-title {
-    color: #06b6d4;
-  }
-
-  .capability-card:hover .capability-title {
-    color: #0891b2;
-  }
-
-  .capability-description {
-    color: #f1f3f5;
-  }
-
-  .icon-container {
-    background-color: #0891b2;
+    background: #000 !important;
   }
 }
 
 /* Focus Styles for Accessibility */
 .capability-card:focus-within {
-  outline: 2px solid #14b8a6;
+  outline: 2px solid var(--purple-primary);
   outline-offset: 2px;
 }
 
@@ -315,4 +287,3 @@
     background-color: #666 !important;
   }
 }
-

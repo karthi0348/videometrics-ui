@@ -1,3 +1,19 @@
+/* Purple theme color variables matching globals.css */
+:root {
+  --purple-primary: rgb(81, 77, 223);
+  --purple-secondary: rgb(120, 37, 195);
+  --purple-tertiary: rgb(100, 33, 172);
+  --purple-light: rgb(196, 127, 254);
+  --purple-accent: rgb(135, 40, 212);
+  --purple-dark: rgb(61, 24, 129);
+  
+  --purple-primary-10: rgba(81, 77, 223, 0.1);
+  --purple-primary-20: rgba(81, 77, 223, 0.2);
+  --purple-primary-30: rgba(81, 77, 223, 0.3);
+  --purple-accent-10: rgba(135, 40, 212, 0.1);
+  --purple-accent-20: rgba(135, 40, 212, 0.2);
+}
+
 .card {
   transition: all 0.3s ease;
   overflow: hidden;
@@ -5,7 +21,7 @@
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 12px 40px var(--purple-primary-20) !important;
 }
 
 .custom-card {
@@ -25,7 +41,7 @@
   font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 700;
   line-height: 1.2;
-  color: #14b8a6;
+  color: var(--purple-primary);
 }
 
 .titleText {
@@ -101,30 +117,30 @@
     height: 5px !important;
   }
 
-  /* Enhanced mobile stats section */
+  /* Enhanced mobile stats section with purple theme */
   .col-lg-6.order-2 .ps-lg-4 {
     padding: 0 !important;
     margin-top: 1.5rem;
   }
 
-  /* Individual stat containers */
+  /* Individual stat containers with purple accents */
   .col-lg-6.order-2 .mb-3.mb-md-4 {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     padding: 1.25rem 1rem;
     margin-bottom: 1rem !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(20, 184, 166, 0.1);
+    box-shadow: 0 2px 8px var(--purple-primary-10);
+    border: 1px solid var(--purple-primary-10);
   }
 
   /* Last stat card */
   .col-lg-6.order-2 .mb-0 {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     padding: 1.25rem 1rem;
     margin-bottom: 0 !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(20, 184, 166, 0.1);
+    box-shadow: 0 2px 8px var(--purple-primary-10);
+    border: 1px solid var(--purple-primary-10);
   }
 
   /* Stat titles */
@@ -132,7 +148,7 @@
     font-size: 1rem !important;
     margin-bottom: 0.75rem !important;
     font-weight: 600 !important;
-    color: #1f2937 !important;
+    color: var(--purple-dark) !important;
   }
 
   /* Stat descriptions */
@@ -140,7 +156,7 @@
     font-size: 0.9rem !important;
     line-height: 1.5 !important;
     margin-bottom: 0 !important;
-    color: #6b7280 !important;
+    color: var(--purple-tertiary) !important;
   }
 
   /* Better spacing between sections */
@@ -357,11 +373,11 @@
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .card {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 8px 25px var(--purple-primary-10) !important;
   }
 
   .card:hover {
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18) !important;
+    box-shadow: 0 15px 45px var(--purple-primary-20) !important;
   }
 }
 
@@ -385,9 +401,6 @@
   }
 }
 
-/* REMOVED ALL DARK MODE STYLES - SAME UI FOR BOTH MODES */
-/* All @media (prefers-color-scheme: dark) rules have been removed */
-
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
@@ -409,7 +422,7 @@
   position: relative;
   margin: 40px 0;
   overflow: hidden;
-  background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 50%, #ecfeff 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, rgba(196, 127, 254, 0.05) 50%, rgba(81, 77, 223, 0.05) 100%);
 }
 
 .section-chamfered::before {
@@ -421,11 +434,11 @@
   bottom: -2px;
   background: linear-gradient(
     45deg,
-    rgba(20, 184, 166, 0.05) 0%,
-    rgba(6, 182, 212, 0.05) 25%,
+    var(--purple-primary-10) 0%,
+    var(--purple-accent-10) 25%,
     transparent 50%,
-    rgba(20, 184, 166, 0.05) 75%,
-    rgba(6, 182, 212, 0.05) 100%
+    var(--purple-primary-10) 75%,
+    var(--purple-accent-10) 100%
   );
   border-radius: 32px;
   z-index: -1;
@@ -518,8 +531,6 @@
   }
 }
 
-/* REMOVED DARK MODE ADJUSTMENTS FOR SECTION-CHAMFERED */
-
 @media print {
   .section-chamfered {
     border-radius: 10px;
@@ -534,17 +545,18 @@
 
 @media (prefers-reduced-motion: reduce) {
   .section-chamfered::before {
-    background: rgba(20, 184, 166, 0.03);
+    background: var(--purple-primary-10);
   }
 }
 
-/* Hover effects for mobile stat cards */
+/* Hover effects for mobile stat cards with purple theme */
 @media (max-width: 575.98px) and (hover: hover) {
   .col-lg-6.order-2 .mb-3.mb-md-4:hover,
   .col-lg-6.order-2 .mb-0:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--purple-primary-20);
     transition: all 0.2s ease;
+    border-color: var(--purple-primary-20);
   }
 }
 

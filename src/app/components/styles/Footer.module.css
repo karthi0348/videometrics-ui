@@ -7,11 +7,10 @@
 
 .footer {
   width: 100%;
-  background-color: #f9fafb;
-  color: #4b5563;
-  border-top: 1px solid #f3f4f6;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background-color: #f8f5ff;
+  color: var(--purple-tertiary);
+  border-top: 1px solid var(--purple-primary-20);
+  font-family: var(--font-primary);
   contain: layout style;
   font-display: swap;
 }
@@ -40,7 +39,7 @@
 .companyName {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #14b8a6;
+  color: var(--purple-primary);
   margin: 0 0 1rem 0;
   line-height: 1.2;
   font-synthesis: none;
@@ -50,7 +49,7 @@
 }
 
 .companyDescription {
-  color: #4b5563;
+  color: var(--purple-tertiary);
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
@@ -69,7 +68,7 @@
 .sectionTitle {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--purple-dark);
   margin: 0 0 1rem 0;
   line-height: 1.2;
   font-synthesis: none;
@@ -88,7 +87,7 @@
 }
 
 .footerLink {
-  color: #4b5563;
+  color: var(--purple-tertiary);
   font-size: 1rem;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
@@ -99,25 +98,25 @@
 }
 
 .footerLink:hover {
-  color: #14b8a6;
+  color: var(--purple-accent);
 }
 
 .footerLink:focus-visible {
-  outline: 2px solid #14b8a6;
+  outline: 2px solid var(--purple-primary);
   outline-offset: 2px;
   border-radius: 0.25rem;
 }
 
 .copyrightBar {
   width: 100%;
-  border-top: 1px solid #e5e7eb;
-  background-color: #f9fafb;
+  border-top: 1px solid var(--purple-primary-30);
+  background-color: #f8f5ff;
   padding: 1rem;
 }
 
 .copyrightText {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--purple-secondary);
   margin: 0;
   text-align: center;
   font-synthesis: none;
@@ -352,30 +351,30 @@
 
 @media (prefers-contrast: high) {
   .footer {
-    border-top: 2px solid #374151;
+    border-top: 2px solid var(--purple-dark);
     background-color: #ffffff;
   }
 
   .copyrightBar {
-    border-top: 2px solid #374151;
+    border-top: 2px solid var(--purple-dark);
     background-color: #ffffff;
   }
 
   .companyName {
-    color: #0d9488;
+    color: var(--purple-primary);
   }
 
   .footerLink {
-    color: #374151;
+    color: var(--purple-dark);
   }
 
   .footerLink:hover {
-    color: #0d9488;
+    color: var(--purple-primary);
     text-decoration: underline;
   }
 
   .footerLink:focus-visible {
-    outline: 3px solid #0d9488;
+    outline: 3px solid var(--purple-primary);
   }
 }
 
@@ -391,40 +390,41 @@
   }
 }
 
+/* Dark theme - using same colors */
 @media (prefers-color-scheme: dark) {
   .footer {
-    background-color: #1f2937;
-    color: #d1d5db;
-    border-top-color: #374151;
+    background-color: #f8f5ff;
+    color: var(--purple-tertiary);
+    border-top-color: var(--purple-primary-20);
   }
 
   .companyName {
-    color: #14b8a6;
+    color: var(--purple-primary);
   }
 
   .companyDescription {
-    color: #d1d5db;
+    color: var(--purple-tertiary);
   }
 
   .sectionTitle {
-    color: #f9fafb;
+    color: var(--purple-dark);
   }
 
   .footerLink {
-    color: #d1d5db;
+    color: var(--purple-tertiary);
   }
 
   .footerLink:hover {
-    color: #14b8a6;
+    color: var(--purple-accent);
   }
 
   .copyrightBar {
-    background-color: #1f2937;
-    border-top-color: #374151;
+    background-color: #f8f5ff;
+    border-top-color: var(--purple-primary-30);
   }
 
   .copyrightText {
-    color: #9ca3af;
+    color: var(--purple-secondary);
   }
 }
 

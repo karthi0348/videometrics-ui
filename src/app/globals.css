@@ -3,18 +3,59 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Purple Color Palette */
+  --purple-primary: rgb(81, 77, 223);    /* #514ddf */
+  --purple-secondary: rgb(120, 37, 195); /* #7825c3 */
+  --purple-tertiary: rgb(100, 33, 172);  /* #6421ac */
+  --purple-light: rgb(196, 127, 254);    /* #c47ffe */
+  --purple-accent: rgb(135, 40, 212);    /* #8728d4 */
+  --purple-dark: rgb(61, 24, 129);       /* #3d1881 */
+  
+  /* Purple variants with opacity */
+  --purple-primary-10: rgba(81, 77, 223, 0.1);
+  --purple-primary-20: rgba(81, 77, 223, 0.2);
+  --purple-primary-30: rgba(81, 77, 223, 0.3);
+  --purple-primary-40: rgba(81, 77, 223, 0.4);
+  --purple-primary-50: rgba(81, 77, 223, 0.5);
+  
+  --purple-secondary-10: rgba(120, 37, 195, 0.1);
+  --purple-secondary-20: rgba(120, 37, 195, 0.2);
+  --purple-secondary-30: rgba(120, 37, 195, 0.3);
+  
+  --purple-accent-10: rgba(135, 40, 212, 0.1);
+  --purple-accent-20: rgba(135, 40, 212, 0.2);
+  --purple-accent-30: rgba(135, 40, 212, 0.3);
+  
+  --purple-light-10: rgba(196, 127, 254, 0.1);
+  --purple-light-20: rgba(196, 127, 254, 0.2);
+  --purple-light-30: rgba(196, 127, 254, 0.3);
+  
+  /* Purple gradients */
+  --gradient-purple-primary: linear-gradient(135deg, var(--purple-primary), var(--purple-light));
+  --gradient-purple-secondary: linear-gradient(135deg, var(--purple-secondary), var(--purple-accent));
+  --gradient-purple-hero: linear-gradient(180deg, #e8d5ff 0%, var(--purple-accent) 100%);
+  --gradient-purple-card: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-light) 50%, var(--purple-accent) 100%);
+  
+  /* Text colors using purple palette */
+  --text-primary: var(--purple-dark);
+  --text-secondary: var(--purple-tertiary);
+  --text-muted: var(--purple-secondary-30);
+  
+  /* Gotham Font */
+  --font-primary: 'Gotham', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
   margin: 0;
   padding: 0;
 }
 
 .footer-link:hover {
-  color: #0d9488 !important;
+  color: var(--purple-accent) !important;
 }
 
 a {
@@ -22,15 +63,15 @@ a {
 }
 
 .hero-cta-button:hover {
-  background-color: #0f766e !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  background-color: var(--purple-secondary) !important;
+  box-shadow: 0 20px 25px -5px var(--purple-primary-20),
+    0 10px 10px -5px var(--purple-primary-10) !important;
 }
 
 .cta-demo-button:hover {
-  background-color: #0f766e !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  background-color: var(--purple-secondary) !important;
+  box-shadow: 0 20px 25px -5px var(--purple-primary-20),
+    0 10px 10px -5px var(--purple-primary-10) !important;
   transform: translateY(-1px);
 }
 
@@ -40,9 +81,8 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: var(--font-primary);
 }
-
-/* globals.css */
 
 /* Global spacing variables */
 :root {
@@ -85,6 +125,7 @@ section {
     border-radius: var(--section-border-radius-mobile);
   }
 }
+
 @media only screen and (max-width: 576px) {
   .heading-line {
     margin-bottom: 0px !important;
@@ -95,57 +136,164 @@ section {
     padding-bottom: 2rem !important;
     margin-bottom: 40px !important;
   }
-
 }
 
-/* Primary Button - Teal Green */
+/* Primary Button - Purple Theme */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #14b8a6;
+  background: var(--gradient-purple-primary);
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
-  border-radius: 9999px; /* pill shape */
+  border-radius: 9999px;
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 10px rgba(20, 184, 166, 0.3);
+  box-shadow: 0 4px 10px var(--purple-primary-30);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-purple-secondary);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
 }
 
 .btn-primary:hover {
-  background-color: #0d9488; /* darker teal on hover */
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(20, 184, 166, 0.4);
+  box-shadow: 0 6px 14px var(--purple-primary-40);
 }
 
 .btn-primary:active {
   transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(20, 184, 166, 0.4);
+  box-shadow: 0 3px 6px var(--purple-primary-40);
 }
 
-/* Secondary Button - White with Teal Border */
+.btn-primary * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Secondary Button - White with Purple Border */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  color: #14b8a6;
+  color: var(--purple-primary);
   font-weight: 600;
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #14b8a6;
+  border: 2px solid var(--purple-primary);
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(20, 184, 166, 0.05); /* subtle teal tint */
+  background-color: var(--purple-primary-10);
+  color: var(--purple-dark);
+  border-color: var(--purple-accent);
 }
 
 .btn-secondary:active {
-  background-color: rgba(20, 184, 166, 0.1);
+  background-color: var(--purple-primary-20);
+}
+
+/* Tertiary Button - Outline Purple */
+.btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--purple-accent);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid var(--purple-accent);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-tertiary:hover {
+  background: var(--gradient-purple-primary);
+  color: white;
+  border-color: transparent;
+}
+
+/* Utility classes for purple theme */
+.text-purple-primary { color: var(--purple-primary); }
+.text-purple-secondary { color: var(--purple-secondary); }
+.text-purple-tertiary { color: var(--purple-tertiary); }
+.text-purple-light { color: var(--purple-light); }
+.text-purple-accent { color: var(--purple-accent); }
+.text-purple-dark { color: var(--purple-dark); }
+
+.bg-purple-primary { background-color: var(--purple-primary); }
+.bg-purple-secondary { background-color: var(--purple-secondary); }
+.bg-purple-tertiary { background-color: var(--purple-tertiary); }
+.bg-purple-light { background-color: var(--purple-light); }
+.bg-purple-accent { background-color: var(--purple-accent); }
+.bg-purple-dark { background-color: var(--purple-dark); }
+
+.bg-gradient-purple { background: var(--gradient-purple-primary); }
+.bg-gradient-purple-secondary { background: var(--gradient-purple-secondary); }
+.bg-gradient-purple-hero { background: var(--gradient-purple-hero); }
+.bg-gradient-purple-card { background: var(--gradient-purple-card); }
+
+.border-purple-primary { border-color: var(--purple-primary); }
+.border-purple-secondary { border-color: var(--purple-secondary); }
+.border-purple-accent { border-color: var(--purple-accent); }
+.border-purple-light { border-color: var(--purple-light); }
+
+/* Shadow utilities with purple theme */
+.shadow-purple-sm { box-shadow: 0 1px 2px var(--purple-primary-20); }
+.shadow-purple { box-shadow: 0 4px 10px var(--purple-primary-30); }
+.shadow-purple-lg { box-shadow: 0 10px 25px var(--purple-primary-30); }
+.shadow-purple-xl { box-shadow: 0 20px 40px var(--purple-primary-30); }
+
+/* Hover effects for purple theme */
+.hover-purple:hover { background-color: var(--purple-primary-10); }
+.hover-purple-accent:hover { background-color: var(--purple-accent-10); }
+
+/* Focus states */
+.focus-purple:focus {
+  outline: 2px solid var(--purple-primary);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar with purple theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--purple-primary-10);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-purple-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-purple-secondary);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--purple-light-30);
+  color: var(--purple-dark);
 }

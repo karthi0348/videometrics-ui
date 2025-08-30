@@ -1,31 +1,31 @@
 .header-container {
-  min-height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  width: 100%;
-  position: fixed;
+  padding: 0;
+  width: 100vw;
+  position: static;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.05);
+  transform: none; /* Prevent any transforms */
 }
 
 .header-card {
-  background: linear-gradient(135deg, #2C2C2C 0%, #1F1F1F 100%);
-  border-radius: 50px;
+  background: white;
+  border-radius: 10px;
   padding: 16px 32px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 900px;
+  margin: 0;
   position: relative;
   overflow: visible; 
-  z-index: 1; 
+  z-index: 1;
+  transform: none; /* Prevent any transforms */
 }
 
 .header-card::before {
@@ -35,16 +35,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
   border-radius: 50px;
   pointer-events: none;
 }
 
 .logo-brand {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-primary);
   font-size: 1.5rem;
   font-weight: 700;
-  color: #4ECDC4;
+  color: #2d1b69;
   text-decoration: none;
   letter-spacing: -0.02em;
   z-index: 2;
@@ -53,7 +52,7 @@
 }
 
 .logo-brand:hover {
-  color: #5FDDD4;
+  color: #1e0f4b;
   transform: scale(1.05);
   text-decoration: none;
 }
@@ -67,9 +66,9 @@
 }
 
 .nav-link-item {
-  color: #FFFFFF;
+  color: white;
   text-decoration: none;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-primary);
   font-size: 0.95rem;
   font-weight: 500;
   padding: 12px 20px;
@@ -80,15 +79,16 @@
 }
 
 .nav-link-item:hover {
-  color: #FFFFFF;
+  color: white;
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-1px);
   text-decoration: none;
 }
 
 .nav-link-item.active {
-  color: #4ECDC4;
-  background: rgba(78, 205, 196, 0.15);
+    color: var(--purple-dark);
+
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .action-buttons {
@@ -102,10 +102,10 @@
 .btn-login {
   background: transparent;
   border: 1.5px solid rgba(255, 255, 255, 0.3);
-  color: #FFFFFF;
+  color: white;
   padding: 10px 24px;
   border-radius: 25px;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-primary);
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -120,24 +120,24 @@
 .btn-login:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5);
-  color: #FFFFFF;
+  color: white;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   text-decoration: none;
 }
 
 .btn-login:focus {
-  outline: 2px solid #4ECDC4;
+  outline: 2px solid white;
   outline-offset: 2px;
 }
 
 .btn-signup {
-  background: #FFFFFF;
-  border: 1.5px solid #FFFFFF;
-  color: #2C2C2C;
+  background: white;
+  border: 1.5px solid white;
+  color: var(--purple-primary);
   padding: 10px 24px;
   border-radius: 25px;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-primary);
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -150,15 +150,15 @@
 }
 
 .btn-signup:hover {
-  background: #F0F0F0;
+  background: #f9fafb;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  color: #1F1F1F;
+  color: var(--purple-secondary);
   text-decoration: none;
 }
 
 .btn-signup:focus {
-  outline: 2px solid #4ECDC4;
+  outline: 2px solid white;
   outline-offset: 2px;
 }
 
@@ -166,7 +166,7 @@
   display: none;
   background: transparent;
   border: 1.5px solid rgba(255, 255, 255, 0.3);
-  color: #FFFFFF;
+  color: white;
   padding: 8px 12px;
   border-radius: 20px;
   cursor: pointer;
@@ -181,7 +181,7 @@
 }
 
 .mobile-toggle:focus {
-  outline: 2px solid #4ECDC4;
+  outline: 2px solid white;
   outline-offset: 2px;
 }
 
@@ -189,7 +189,7 @@
   display: block;
   width: 18px;
   height: 2px;
-  background: #FFFFFF;
+  background: white;
   margin: 3px 0;
   transition: 0.3s;
   border-radius: 1px;
@@ -201,10 +201,10 @@
   top: calc(100% + 12px);
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, #2C2C2C 0%, #1F1F1F 100%);
+  background: var(--gradient-purple-primary);
   border-radius: 25px;
   padding: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px var(--purple-primary-30);
   z-index: 1001; 
 }
 
@@ -216,9 +216,9 @@
 }
 
 .mobile-nav-link {
-  color: #FFFFFF;
+  color: white;
   text-decoration: none;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-primary);
   font-size: 1rem;
   font-weight: 500;
   padding: 14px 20px;
@@ -228,19 +228,19 @@
 }
 
 .mobile-nav-link:hover {
-  color: #FFFFFF;
+  color: white;
   background: rgba(255, 255, 255, 0.1);
   text-decoration: none;
 }
 
 .mobile-nav-link:focus {
-  outline: 2px solid #4ECDC4;
+  outline: 2px solid white;
   outline-offset: 2px;
 }
 
 .mobile-nav-link.active {
-  color: #4ECDC4;
-  background: rgba(78, 205, 196, 0.15);
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .mobile-action-buttons {
@@ -269,7 +269,6 @@
 
 .header-card:has(.mobile-toggle:checked) .mobile-toggle span:nth-child(2),
 .header-card.mobile-menu-open .mobile-toggle span:nth-child(2) {
-  opacity: 0;
 }
 
 .header-card:has(.mobile-toggle:checked) .mobile-toggle span:nth-child(3),
@@ -279,31 +278,38 @@
 
 @keyframes slideDown {
   from {
-    opacity: 0;
     transform: translateY(-10px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
 
 body {
   margin: 0;
-  padding-top: 0; 
+  padding-top: 140px; /* Add padding to prevent content from hiding behind fixed header */
 }
-
-
 
 @media (max-width: 768px) {
   .header-container {
     min-height: 80px;
-    padding: 16px;
+    padding: 0;
+    position: fixed; /* Changed from sticky to fixed */
+    top: 0;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: 0;
+    transform: none; /* Prevent any transforms */
   }
 
   .header-card {
     padding: 12px 20px;
     border-radius: 30px;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(139, 92, 246, 1) 50%, rgba(168, 85, 247, 1) 70%, rgba(139, 69, 219, 1) 100%);
+    transform: none; /* Prevent any transforms */
   }
 
   .desktop-nav,
@@ -317,48 +323,125 @@ body {
 
   .logo-brand {
     font-size: 1.25rem;
+    color: #2d1b69;
+  }
+
+  body {
+    padding-top: 100px;
   }
 }
 
 @media (max-width: 480px) {
+
+  
   .header-container {
-    min-height: 70px;
-    padding: 12px;
+    margin: 0px;
+    width: 100vw;
+    position: fixed; /* Ensure it's fixed */
+    transform: none; /* Prevent any transforms */
   }
 
   .header-card {
-    padding: 10px 16px;
-    border-radius: 25px;
+    margin:0px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0;
+background: linear-gradient(
+  135deg,
+  rgba(196, 127, 254, 0.015) 0%,   /* almost white with a tiny hint */
+  rgba(135, 40, 212, 0.012) 50%,  
+  rgba(81, 77, 223, 0.01) 100%     /* faintest purple undertone */
+);
+
+
+
+    transform: none; /* Prevent any transforms */
+      position: relative;
+      align-items: center;
+      justify-content: center;
+
   }
 
   .logo-brand {
     font-size: 1.1rem;
+    color: #2d1b69;
   }
 
   .mobile-menu {
     padding: 20px;
     border-radius: 20px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 1) 0%, rgba(168, 85, 247, 1) 50%, rgba(139, 69, 219, 1) 100%);
+  }
+
+  body {
+    padding-top: 90px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   .header-container {
-    padding: 18px;
+    padding: 0;
+    width: 100vw;
+    position: fixed; /* Ensure it's fixed */
+    transform: none; /* Prevent any transforms */
   }
   
   .logo-brand {
     font-size: 1.3rem;
+    color: #2d1b69;
+  }
+
+  .header-card {
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(139, 92, 246, 1) 50%, rgba(168, 85, 247, 1) 70%, rgba(139, 69, 219, 1) 100%);
+    transform: none; /* Prevent any transforms */
+  }
+}
+
+@media (min-width: 769px) {
+  .header-container {
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    transform: none; /* Prevent any transforms */
+  }
+
+  .header-card {
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(139, 92, 246, 1) 50%, rgba(168, 85, 247, 1) 70%, rgba(139, 69, 219, 1) 100%);
+    transform: none; /* Prevent any transforms */
+  }
+
+  .logo-brand {
+    color: #2d1b69;
+  }
+
+  body {
+    padding-top: 140px;
   }
 }
 
 @media (min-width: 1200px) {
   .header-container {
-    padding: 24px;
+    padding: 0;
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    transform: none; /* Prevent any transforms */
   }
   
   .header-card {
-    max-width: 1000px;
+    width: 100%;
     padding: 18px 36px;
+    margin: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(139, 92, 246, 1) 50%, rgba(168, 85, 247, 1) 70%, rgba(139, 69, 219, 1) 100%);
+    transform: none; /* Prevent any transforms */
   }
   
   .nav-link-item {
@@ -370,6 +453,14 @@ body {
   .btn-signup {
     padding: 12px 28px;
     font-size: 0.95rem;
+  }
+
+  .logo-brand {
+    color: #2d1b69;
+  }
+
+  body {
+    padding-top: 160px;
   }
 }
 
@@ -387,21 +478,11 @@ body {
   .btn-signup:hover {
     transform: none;
   }
-
-  .header-container {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-  
-  .header-container::before {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
 }
 
 @media (prefers-contrast: high) {
   .header-card {
-    border: 2px solid #FFFFFF;
+    border: 2px solid white;
   }
   
   .nav-link-item,
@@ -411,7 +492,7 @@ body {
   
   .nav-link-item.active,
   .mobile-nav-link.active {
-    border: 2px solid #4ECDC4;
+    border: 2px solid white;
   }
 }
 
@@ -426,12 +507,10 @@ html {
   scroll-padding-top: 140px; 
 }
 
-
 .mobile-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(4px, 4px);
 }
 .mobile-toggle.open span:nth-child(2) {
-  opacity: 0;
 }
 .mobile-toggle.open span:nth-child(3) {
   transform: rotate(-45deg) translate(4px, -4px);
@@ -443,7 +522,7 @@ html {
   top: 100%;
   left: 0;
   width: 100%;
-  background: linear-gradient(135deg, #2C2C2C 0%, #1F1F1F 100%);
+  background: var(--gradient-purple-primary);
   border-radius: 0 0 20px 20px;
   padding: 20px;
   animation: slideDown 0.3s ease-out;
@@ -451,7 +530,7 @@ html {
 
 @media (max-width: 768px) {
   .mobile-menu {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px var(--purple-primary-30);
     border-radius: 0 0 25px 25px;
   }
   .mobile-nav-link {
@@ -462,4 +541,11 @@ html {
   .mobile-action-buttons {
     gap: 10px;
   }
+}
+
+/* Additional rules to ensure header stays completely fixed */
+.header-container,
+.header-card {
+  will-change: auto; /* Prevent browser optimizations that might cause movement */
+  backface-visibility: hidden; /* Prevent 3D transform issues */
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Eye, BarChart, Brain } from "lucide-react";
+// Import the custom CSS file
 import "../styles/CoreCapabilitiesSection.css";
 
 export default function CoreCapabilitiesSection() {
@@ -14,7 +15,6 @@ export default function CoreCapabilitiesSection() {
         "Real-time tracking capabilities",
         "Custom object recognition",
       ],
-      color: "teal",
     },
     {
       icon: <BarChart className="capability-icon" />,
@@ -26,7 +26,6 @@ export default function CoreCapabilitiesSection() {
         "Real-time charts",
         "Custom dashboards",
       ],
-      color: "teal",
     },
     {
       icon: <Brain className="capability-icon" />,
@@ -38,12 +37,11 @@ export default function CoreCapabilitiesSection() {
         "Predictive analytics",
         "Automated recommendations",
       ],
-      color: "teal",
     },
   ];
 
   return (
-<section className="section core-capabilities-section">
+    <section className="core-capabilities-section">
       <div className="core-capabilities-container">
         <div className="core-capabilities-header">
           <h2 className="core-capabilities-title">Core Capabilities</h2>
@@ -56,14 +54,16 @@ export default function CoreCapabilitiesSection() {
         <div className="core-capabilities-grid">
           {coreCapabilities.map((capability, index) => (
             <div key={index} className="capability-card">
-             <div className="outericon"> <div className={`capability-icon-container ${capability.color}`}>
-                {capability.icon}
-              </div></div>
-              <h3 className="capability-title text-center">{capability.title}</h3>
+              <div className="capability-icon-container-wrapper">
+                <div className="capability-icon-container">
+                  {capability.icon}
+                </div>
+              </div>
+              <h3 className="capability-title">{capability.title}</h3>
               <p className="capability-description">{capability.description}</p>
               <ul className="capability-features">
                 {capability.features.map((feature, idx) => (
-                  <li key={idx} className="capability-feature ">
+                  <li key={idx} className="capability-feature">
                     <div className="feature-bullet"></div>
                     <span className="feature-text">{feature}</span>
                   </li>

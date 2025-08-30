@@ -10,7 +10,7 @@ export default function WhyChooseSection() {
         <div className="row mb-3 mb-md-5">
           <div className="col-lg-6 text-center text-lg-start mb-3 mb-lg-0">
             <h2 className="titleText fw-normal text-dark mb-1 mb-md-2">Why Choose</h2>
-            <h2 className="titleText fw-bold mb-0" style={{ color: "#14b8a6" }}>
+            <h2 className="titleText fw-bold mb-0" style={{ color: "rgb(81, 77, 223)" }}>
               videometrics.ai
             </h2>
           </div>
@@ -45,7 +45,7 @@ export default function WhyChooseSection() {
                 className="position-absolute top-0 start-0 w-100 h-100"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)",
+                    "linear-gradient(135deg, rgba(81, 77, 223, 0.1) 0%, rgba(135, 40, 212, 0.1) 100%)",
                 }}
               ></div>
             </div>
@@ -54,7 +54,7 @@ export default function WhyChooseSection() {
           <div className="col-lg-6 order-2 order-lg-2">
             <div className="ps-lg-4">
               <div className="mb-3 mb-md-4 text-center text-lg-start">
-                <h3 className="statNumber fw-bold mb-1" style={{ color: "#14b8a6",fontSize: "2rem" }}>
+                <h3 className="statNumber fw-bold mb-1" style={{ color: "rgb(81, 77, 223)",fontSize: "2rem" }}>
                   99.8%
                 </h3>
                 <h6 className="text-dark fw-semibold mb-2 fs-6 fs-md-5">
@@ -68,7 +68,7 @@ export default function WhyChooseSection() {
               </div>
 
               <div className="mb-3 mb-md-4 text-center text-lg-start">
-                <h3 className="statNumber fw-bold mb-1" style={{ color: "#14b8a6",fontSize: "2rem" }}>
+                <h3 className="statNumber fw-bold mb-1" style={{ color: "rgb(81, 77, 223)",fontSize: "2rem" }}>
                   50ms
                 </h3>
                 <h6 className="text-dark fw-semibold mb-2 fs-6 fs-md-5">Processing Speed</h6>
@@ -81,7 +81,7 @@ export default function WhyChooseSection() {
               </div>
 
               <div className="mb-3 mb-md-4 text-center text-lg-start">
-                <h3 className="statNumber fw-bold mb-1" style={{ color: "#14b8a6",fontSize: "2rem" }}>
+                <h3 className="statNumber fw-bold mb-1" style={{ color: "rgb(81, 77, 223)",fontSize: "2rem" }}>
                   24/7
                 </h3>
                 <h6 className="text-dark fw-semibold mb-2 fs-6 fs-md-5">
@@ -95,7 +95,7 @@ export default function WhyChooseSection() {
               </div>
 
               <div className="mb-0 text-center text-lg-start">
-                <h3 className="statNumber fw-bold mb-1" style={{ color: "#14b8a6",fontSize: "2rem" }}>
+                <h3 className="statNumber fw-bold mb-1" style={{ color: "rgb(81, 77, 223)",fontSize: "2rem" }}>
                   40%
                 </h3>
                 <h6 className="text-dark fw-semibold mb-2 fs-6 fs-md-5">Cost Reduction</h6>
@@ -121,7 +121,7 @@ export default function WhyChooseSection() {
                         width: "48px",
                         height: "48px",
                         background:
-                          "linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%)",
+                          "linear-gradient(135deg, rgb(81, 77, 223) 0%, rgb(135, 40, 212) 100%)",
                       }}
                     >
                       <svg
@@ -155,7 +155,7 @@ export default function WhyChooseSection() {
                       style={{
                         width: "6px",
                         height: "6px",
-                        backgroundColor: "#14b8a6",
+                        backgroundColor: "rgb(81, 77, 223)",
                       }}
                     ></span>
                     <span className="text-muted small fw-medium">

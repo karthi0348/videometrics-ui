@@ -1,26 +1,33 @@
 import Link from 'next/link';
-
-import './globals.css';
+"use client";
 import Header from '@/app/components/Header';
-
 import Footer from '@/app/components/Footer';
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { usePathname } from "next/navigation";
 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap', 
+  variable: '--font-inter', 
+});
 
-export const metadata = {
-  title: 'VideoMetrics.ai',
-};
+const disableHeaderAndFooter = ['/auth/login', '/auth/register', '/auth/forgot-password'];
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const pathname = usePathname();
+  const shouldRenderHeaderAndFooter = !disableHeaderAndFooter.includes(pathname);
+
   return (
     <html lang="en">
-      <body className="bg-white text-gray-900">
-        <Header />
-        <main className="px-1">{children}</main>
-        <Footer />
+      <body className={inter.className}>
+        {shouldRenderHeaderAndFooter && <Header />}
+        <main>{children}</main>
+        {shouldRenderHeaderAndFooter && <Footer />}
       </body>
     </html>
   );

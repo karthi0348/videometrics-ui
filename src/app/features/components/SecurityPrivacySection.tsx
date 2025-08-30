@@ -1,3 +1,4 @@
+// SecurityPrivacySection.tsx
 import React from "react";
 import { Lock, Shield, UserCheck } from "lucide-react";
 import "../styles/SecurityPrivacySection.css";
@@ -25,7 +26,7 @@ export default function SecurityPrivacySection() {
   ];
 
   return (
-    <section className={`section security-privacy-section`}>
+    <section className="section security-privacy-section">
       <div className="container">
         <div className="header">
           <h2 className="privacytitle">Enterprise-Grade Security & Privacy</h2>
