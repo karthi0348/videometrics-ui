@@ -16,6 +16,7 @@
   background: white;
   border-radius: 10px;
   padding: 16px 32px;
+  background: linear-gradient(135deg, #d0d0d8 50%, #d0d0d8 50%, #8870c2 100% ) !important;
   box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
@@ -88,7 +89,7 @@
 .nav-link-item.active {
     color: var(--purple-dark);
 
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(117, 8, 153, 0.15);
 }
 
 .action-buttons {
@@ -343,6 +344,7 @@ body {
 
   .header-card {
     margin:0px;
+    padding:25px;
     border-radius: 10px;
     width: 100%;
     margin: 0;
@@ -352,9 +354,6 @@ background: linear-gradient(
   rgba(135, 40, 212, 0.012) 50%,  
   rgba(81, 77, 223, 0.01) 100%     /* faintest purple undertone */
 );
-
-
-
     transform: none; /* Prevent any transforms */
       position: relative;
       align-items: center;
@@ -413,7 +412,7 @@ background: linear-gradient(
   .header-card {
     width: 100%;
     margin: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(139, 92, 246, 1) 50%, rgba(168, 85, 247, 1) 70%, rgba(139, 69, 219, 1) 100%);
+    background:linear-gradient(135deg, #f5f3ff 0%, #d0d0d8 50%, #8870c2 100%);
     transform: none; /* Prevent any transforms */
   }
 
