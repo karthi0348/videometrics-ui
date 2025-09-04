@@ -118,7 +118,7 @@ export default function SignupPage(): JSX.Element {
 
   return (
     <div className="auth-container">
-      <div className="auth-card">
+      <div className="auth-cards">
         <div className="auth-header">
       <Link href="/" className="logo-brand">
         <Image
@@ -143,10 +143,10 @@ export default function SignupPage(): JSX.Element {
           )}
 
           <form onSubmit={handleSubmit} className="auth-form">
-            <div className="form-group">
-              <label htmlFor="username" className="form-label">Username</label>
-              <div className="input-group">
-                <span className="input-icon">
+            <div className="form-groups">
+              <label htmlFor="username" className="form-labels">Username</label>
+              <div className="input-groups">
+                <span className="input-icons">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                     <circle cx="12" cy="7" r="4"/>
@@ -156,7 +156,7 @@ export default function SignupPage(): JSX.Element {
                   type="text"
                   id="username"
                   name="username"
-                  className="form-control"
+                  className="form-controls"
                   placeholder="johndoe"
                   value={formData.username}
                   onChange={handleInputChange}
@@ -165,10 +165,10 @@ export default function SignupPage(): JSX.Element {
               </div>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="fullName" className="form-label">Full Name</label>
-              <div className="input-group">
-                <span className="input-icon">
+            <div className="form-groups">
+              <label htmlFor="fullName" className="form-labels">Full Name</label>
+              <div className="input-groups">
+                <span className="input-icons">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                     <circle cx="12" cy="7" r="4"/>
@@ -178,7 +178,7 @@ export default function SignupPage(): JSX.Element {
                   type="text"
                   id="fullName"
                   name="fullName"
-                  className="form-control"
+                  className="form-controls"
                   placeholder="John Doe"
                   value={formData.fullName}
                   onChange={handleInputChange}
@@ -187,10 +187,10 @@ export default function SignupPage(): JSX.Element {
               </div>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="email" className="form-label">Email</label>
-              <div className="input-group">
-                <span className="input-icon">
+            <div className="form-groups">
+              <label htmlFor="email" className="form-labels">Email</label>
+              <div className="input-groups">
+                <span className="input-icons">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="2" y="4" width="20" height="16" rx="2"/>
                     <path d="m2 7 10 6 10-6"/>
@@ -200,7 +200,7 @@ export default function SignupPage(): JSX.Element {
                   type="email"
                   id="email"
                   name="email"
-                  className="form-control"
+                  className="form-controls"
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={handleInputChange}
@@ -209,10 +209,10 @@ export default function SignupPage(): JSX.Element {
               </div>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="password" className="form-label">Password</label>
-              <div className="input-group">
-                <span className="input-icon">
+            <div className="form-groups">
+              <label htmlFor="password" className="form-labels">Password</label>
+              <div className="input-groups">
+                <span className="input-icons">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                     <circle cx="12" cy="16" r="1"/>
@@ -223,7 +223,7 @@ export default function SignupPage(): JSX.Element {
                   type={showPassword ? "text" : "password"}
                   id="password"
                   name="password"
-                  className="form-control"
+                  className="form-controls"
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={handleInputChange}
@@ -249,10 +249,10 @@ export default function SignupPage(): JSX.Element {
               </div>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
-              <div className="input-group">
-                <span className="input-icon">
+            <div className="form-groups">
+              <label htmlFor="confirmPassword" className="form-labels">Confirm Password</label>
+              <div className="input-groups">
+                <span className="input-icons">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                     <circle cx="12" cy="16" r="1"/>
@@ -263,7 +263,7 @@ export default function SignupPage(): JSX.Element {
                   type={showConfirmPassword ? "text" : "password"}
                   id="confirmPassword"
                   name="confirmPassword"
-                  className="form-control"
+                  className="form-controls"
                   placeholder="••••••••"
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
@@ -289,7 +289,7 @@ export default function SignupPage(): JSX.Element {
               </div>
             </div>
 
-            <div className="form-check">
+            <div className="form-checks">
               <input
                 type="checkbox"
                 id="agreeToTerms"
@@ -299,12 +299,12 @@ export default function SignupPage(): JSX.Element {
                 onChange={handleInputChange}
                 required
               />
-              <label htmlFor="agreeToTerms" className="form-check-label">
-                I agree to the <Link href="/terms" className="auth-link">terms of service</Link> and <Link href="/privacy" className="auth-link">privacy policy</Link>
+              <label htmlFor="agreeToTerms" className="form-check-labels">
+               I agree to the <Link href="/terms" className="auth-link">terms of service</Link> and <Link href="/privacy" className="auth-link">privacy policy</Link>
               </label>
             </div>
 
-            <button type="submit" className="btn-submit" disabled={isLoading}>
+            <button type="submit" className="btn-submits" disabled={isLoading}>
               {isLoading ? 'Signing Up...' : 'Sign Up'}
             </button>
           </form>

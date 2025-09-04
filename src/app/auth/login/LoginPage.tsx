@@ -165,7 +165,7 @@ export default function LoginPage(): JSX.Element {
 
   return (
     <div className="auth-container">
-      <div className="auth-card">
+      <div className="auth-cards">
        <div className="auth-header">
       <Link href="/" className="logo-brand">
         <Image
@@ -184,10 +184,10 @@ export default function LoginPage(): JSX.Element {
           <form onSubmit={handleSubmit} className="auth-form">
             {error && <div className="error-message">{error}</div>}
 
-            <div className="form-group">
-              <label htmlFor="username" className="form-label">Username</label>
-              <div className="input-group">
-                <span className="input-icon">
+            <div className="form-groups">
+              <label htmlFor="username" className="form-labels">Username</label>
+              <div className="input-groups">
+                <span className="input-icons">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                     <circle cx="12" cy="7" r="4"/>
@@ -197,7 +197,7 @@ export default function LoginPage(): JSX.Element {
                   type="text"
                   id="username"
                   name="username"
-                  className="form-control"
+                  className="form-controls"
                   placeholder="Enter Your Name"
                   value={formData.username}
                   onChange={handleInputChange}
@@ -206,10 +206,10 @@ export default function LoginPage(): JSX.Element {
               </div>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="password" className="form-label">Password</label>
-              <div className="input-group">
-                <span className="input-icon">
+            <div className="form-groups">
+              <label htmlFor="password" className="form-labels">Password</label>
+              <div className="input-groups">
+                <span className="input-icons">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                     <circle cx="12" cy="16" r="1"/>
@@ -220,7 +220,7 @@ export default function LoginPage(): JSX.Element {
                   type={showPassword ? "text" : "password"}
                   id="password"
                   name="password"
-                  className="form-control"
+                  className="form-controls"
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={handleInputChange}
@@ -254,14 +254,14 @@ export default function LoginPage(): JSX.Element {
                   type="checkbox"
                   id="rememberMe"
                   name="rememberMe"
-                  className="form-check-input"
+                  className="form-check-inputs"
                   checked={formData.rememberMe}
                   onChange={handleInputChange}
                 />
-                <label htmlFor="rememberMe" className="form-check-label">
+                <label htmlFor="rememberMe" className="form-check-labels">
                   Remember me
                 </label>
-                <Link href="/auth/forgot-password" className="auth-flink">
+                <Link href="/auth/forgot-password" className="auth-links">
                 Forgot Password?
               </Link>
               </div>
@@ -269,7 +269,7 @@ export default function LoginPage(): JSX.Element {
 
             </div>
             
-            <button type="submit" className="btn-submit" disabled={loading}>
+            <button type="submit" className="btn-submits" disabled={loading}>
               {loading ? "Logging In..." : "Log In"}
             </button>
           </form>
