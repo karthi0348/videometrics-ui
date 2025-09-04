@@ -51,8 +51,9 @@ export default function LoginPage(): JSX.Element {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Handle logout message from child window
+  // Single useEffect to handle all initialization and message listening
   useEffect(() => {
+    // Handle logout message from child window
     const handleMessage = (event: MessageEvent) => {
       console.log('Message received:', event.data, 'from origin:', event.origin);
       
@@ -71,8 +72,8 @@ export default function LoginPage(): JSX.Element {
           rememberMe: false
         });
         setError(null);
-        setLoading(false); // Reset loading state
-        setShowPassword(false); // Reset password visibility
+        setLoading(false);
+        setShowPassword(false);
         
         console.log('Successfully logged out and reset form');
       }
@@ -80,15 +81,11 @@ export default function LoginPage(): JSX.Element {
 
     window.addEventListener('message', handleMessage);
     
+    // Cleanup function
     return () => {
       window.removeEventListener('message', handleMessage);
     };
-  }, []);
-
-  // Also reset loading state when component mounts (in case of page refresh)
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  }, []); // Empty dependency array - runs only once on mount
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value, type, checked } = e.target;
@@ -147,6 +144,7 @@ export default function LoginPage(): JSX.Element {
         // Check if the window is still open
         if (otherAppWindow.closed) {
           clearInterval(messageInterval);
+          setLoading(false); // Reset loading when window is closed
           return;
         }
 
@@ -157,13 +155,11 @@ export default function LoginPage(): JSX.Element {
         }, targetOrigin);
 
       }, 500); // Send the message every 500ms
-      // --- END NEW LOGIC ---
 
     } catch (err) {
       console.error('Error during login:', err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred.");
-    } finally {
-      // Note: We don't set loading to false here, as the new window opens
+      setLoading(false); // Make sure to reset loading on error
     }
   };
 
@@ -202,7 +198,7 @@ export default function LoginPage(): JSX.Element {
                   id="username"
                   name="username"
                   className="form-control"
-                  placeholder="johndoe"
+                  placeholder="Enter Your Name"
                   value={formData.username}
                   onChange={handleInputChange}
                   required
@@ -233,6 +229,7 @@ export default function LoginPage(): JSX.Element {
                 <button
                   type="button"
                   className="password-toggle"
+                  style={{ position: 'absolute', right: '1rem', background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--purple-secondary, #8b5cf6)', padding: 0, height: '1.25rem', width: '1.25rem', zIndex: 10 }}
                   onClick={() => setShowPassword(!showPassword)}
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >

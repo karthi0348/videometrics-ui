@@ -297,3 +297,14 @@ section {
   background-color: var(--purple-light-30);
   color: var(--purple-dark);
 }
+
+main{
+  margin-top: -40px;
+}
+h1{
+  font-size: 100px;
+}
+
+.input-group{
+border-radius: 10px !important;
+}

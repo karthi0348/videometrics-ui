@@ -3,8 +3,8 @@
   background: linear-gradient(135deg, #f8fafc 0%, #e8d5ff 50%, #f1f5f9 100%);
   font-kerning: normal;
   font-variant-ligatures: none;
-  padding: 40px !important;
-  margin-top: 80px !important;
+  padding: 100px ;
+ 
   
 }
 
@@ -43,7 +43,7 @@
   visibility: visible;
   transform: translateY(0);
   will-change: auto;
-  padding-top: 40px;
+  padding-bottom: 40px 40px 100px;
 }
 
 .highlight {
@@ -112,9 +112,7 @@
 }
 
 @media (max-width: 480px) {
-  .contact-hero-section {
-    margin-top: 40px !important;
-  }
+ 
 
   .contacttitle {
     font-size: clamp(2rem, 6vw, 3rem);
@@ -205,11 +203,7 @@
 } */
 
 @media (min-width: 1400px) {
-  .contact-hero-section {
-    padding: 40px;
-    margin-top: 6rem;
-  }
-
+ 
   .contacttitle {
     font-size: 4rem;
     margin-bottom: 2.5rem;
@@ -265,8 +259,7 @@
 @media print {
   .contact-hero-section {
     background: none;
-    padding: 2rem 1rem;
-    margin-top: 0;
+    padding: 2rem 1rem; 
   }
 
   .contact-hero-section::before {

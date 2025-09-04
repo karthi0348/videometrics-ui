@@ -295,7 +295,7 @@ body {
   .header-container {
     min-height: 80px;
     padding: 0;
-    position: fixed; /* Changed from sticky to fixed */
+    /* position: fixed;  */
     top: 0;
     width: 100vw;
     left: 0;
@@ -338,7 +338,7 @@ body {
   .header-container {
     margin: 0px;
     width: 100vw;
-    position: fixed; /* Ensure it's fixed */
+    /* position: fixed; */
     transform: none; /* Prevent any transforms */
   }
 
@@ -381,7 +381,7 @@ background: linear-gradient(
   .header-container {
     padding: 0;
     width: 100vw;
-    position: fixed; /* Ensure it's fixed */
+    /* position: fixed;  */
     transform: none; /* Prevent any transforms */
   }
   
@@ -400,7 +400,7 @@ background: linear-gradient(
 
 @media (min-width: 769px) {
   .header-container {
-    position: fixed;
+    /* position: fixed; */
     width: 100vw;
     left: 0;
     right: 0;
@@ -428,7 +428,7 @@ background: linear-gradient(
 @media (min-width: 1200px) {
   .header-container {
     padding: 0;
-    position: fixed;
+    /* position: fixed; */
     width: 100vw;
     left: 0;
     right: 0;

@@ -4,7 +4,7 @@
   overflow: hidden;
   align-items: center;
   background: linear-gradient(135deg, #f3f0ff 0%, #faf5ff 50%, #f8fafc 100%);
-  min-height: 60vh;
+ 
   display: flex;
   align-items: center;
 }
@@ -161,7 +161,7 @@
 @media (max-width: 374px) {
   .featuresHeroSection {
     padding: 1.5rem 0.75rem 2.5rem 0.75rem;
-    min-height: 50vh;
+   
     font-weight: bold;
   }
 
@@ -231,7 +231,7 @@
 @media (min-width: 480px) {
   .featuresHeroSection {
     padding: 2.5rem 1.5rem 3.5rem 1.5rem;
-    min-height: 60vh;
+   
   }
 
   .featuresHeroContainer {
@@ -263,7 +263,7 @@
 @media (min-width: 640px) {
   .featuresHeroSection {
     padding: 3rem 2rem 4rem 2rem;
-    min-height: 65vh;
+  
   }
 
   .featuresHeroContainer {
@@ -293,7 +293,7 @@
 @media (min-width: 768px) {
   .featuresHeroSection {
     padding: 4rem 2rem 5rem 2rem;
-    min-height: 70vh;
+ 
   }
 
   .featuresHeroContainer {
@@ -315,7 +315,7 @@
 @media (min-width: 1024px) {
   .featuresHeroSection {
     padding: 5rem 2rem 6rem 2rem;
-    min-height: 75vh;
+    
   }
 
   .featuresHeroContainer {
@@ -345,7 +345,7 @@
 @media (min-width: 1280px) {
   .featuresHeroSection {
     padding: 6rem 2rem 7rem 2rem;
-    min-height: 80vh;
+  
   }
 
   .featuresHeroContainer {
@@ -394,7 +394,7 @@
 @media (max-height: 500px) and (orientation: landscape) and (max-width: 1023px) {
   .featuresHeroSection {
     padding: 1.5rem 1rem 2rem 1rem;
-    min-height: 100vh;
+    
   }
 
   .featuresHeroTitle {
@@ -419,7 +419,7 @@
 @media (max-height: 400px) {
   .featuresHeroSection {
     padding: 1rem 1rem 1.5rem 1rem;
-    min-height: 100vh;
+    
   }
 
   .featuresHeroTitle {
