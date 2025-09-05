@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState, FormEvent, ChangeEvent, JSX, useEffect } from "react";
-import "../styles/auth.css";
+import "../styles/login.css"; // Updated import
 import { API_ENDPOINTS } from "../../../config/api"; 
 import Image from "next/image";
 
@@ -164,30 +164,30 @@ export default function LoginPage(): JSX.Element {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-cards">
-       <div className="auth-header">
-      <Link href="/" className="logo-brand">
-        <Image
-          src="/images/Videometrics.png"   // put your logo under /public/images/
-          alt="Videometrics Logo"
-          width={400}   // adjust size as needed
-          height={100}
-          priority
-        />
-      </Link>
-    </div>
+    <div className="login-container">
+      <div className="login-card">
+        <div className="login-header">
+          <Link href="/" className="logo-brand">
+            <Image
+              src="/images/Videometrics.png"
+              alt="Videometrics Logo"
+              width={400}
+              height={100}
+              priority
+            />
+          </Link>
+        </div>
         
-        <div className="auth-form-container">
-          <p className="auth-subtitle">Log in to your VideoMetrics.ai account</p>
+        <div className="login-form-wrapper">
+          <p className="login-subtitle">Log in to your VideoMetrics.ai account</p>
           
-          <form onSubmit={handleSubmit} className="auth-form">
-            {error && <div className="error-message">{error}</div>}
+          <form onSubmit={handleSubmit} className="login-form">
+            {error && <div className="login-error">{error}</div>}
 
-            <div className="form-groups">
-              <label htmlFor="username" className="form-labels">Username</label>
-              <div className="input-groups">
-                <span className="input-icons">
+            <div className="login-form-group">
+              <label htmlFor="username" className="login-form-label">Username</label>
+              <div className="login-input-group">
+                <span className="login-input-icon">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                     <circle cx="12" cy="7" r="4"/>
@@ -197,7 +197,7 @@ export default function LoginPage(): JSX.Element {
                   type="text"
                   id="username"
                   name="username"
-                  className="form-controls"
+                  className="login-input"
                   placeholder="Enter Your Name"
                   value={formData.username}
                   onChange={handleInputChange}
@@ -206,10 +206,10 @@ export default function LoginPage(): JSX.Element {
               </div>
             </div>
 
-            <div className="form-groups">
-              <label htmlFor="password" className="form-labels">Password</label>
-              <div className="input-groups">
-                <span className="input-icons">
+            <div className="login-form-group">
+              <label htmlFor="password" className="login-form-label">Password</label>
+              <div className="login-input-group">
+                <span className="login-input-icon">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                     <circle cx="12" cy="16" r="1"/>
@@ -220,7 +220,7 @@ export default function LoginPage(): JSX.Element {
                   type={showPassword ? "text" : "password"}
                   id="password"
                   name="password"
-                  className="form-controls"
+                  className="login-input"
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={handleInputChange}
@@ -228,8 +228,7 @@ export default function LoginPage(): JSX.Element {
                 />
                 <button
                   type="button"
-                  className="password-toggle"
-                  style={{ position: 'absolute', right: '1rem', background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--purple-secondary, #8b5cf6)', padding: 0, height: '1.25rem', width: '1.25rem', zIndex: 10 }}
+                  className="login-password-toggle"
                   onClick={() => setShowPassword(!showPassword)}
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
@@ -247,35 +246,32 @@ export default function LoginPage(): JSX.Element {
               </div>
             </div>
             
-            <div className="d-flex justify-content-between align-items-center mb-3">
-              {/* Form check is for the checkbox and label */}
-              <div className="form-check">
+            <div className="login-actions-row">
+              <div className="login-remember-section">
                 <input
                   type="checkbox"
                   id="rememberMe"
                   name="rememberMe"
-                  className="form-check-inputs"
+                  className="login-checkbox"
                   checked={formData.rememberMe}
                   onChange={handleInputChange}
                 />
-                <label htmlFor="rememberMe" className="form-check-labels">
+                <label htmlFor="rememberMe" className="login-checkbox-label">
                   Remember me
                 </label>
-                <Link href="/auth/forgot-password" className="auth-links">
+              </div>
+              <Link href="/auth/forgot-password" className="login-forgot-link">
                 Forgot Password?
               </Link>
-              </div>
-              {/* The "Forgot Password?" link is now its own element */}
-
             </div>
             
-            <button type="submit" className="btn-submits" disabled={loading}>
+            <button type="submit" className="login-submit-btn" disabled={loading}>
               {loading ? "Logging In..." : "Log In"}
             </button>
           </form>
 
-          <p className="auth-footer">
-            Dont have an account? <Link href="/auth/register" className="auth-link">Sign up</Link>
+          <p className="login-footer">
+            Don't have an account? <Link href="/auth/register" className="login-link">Sign up</Link>
           </p>
         </div>
       </div>

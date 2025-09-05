@@ -123,17 +123,16 @@
   }
 
   .subcontacttitle {
-    font-size: 0.875rem;
-    max-width: 100%;
+    font-size: 0.9375rem;
+
   }
 }
 
 @media (min-width: 480px) and (max-width: 575px) {
   .contacttitle {
-    font-size: clamp(2rem, 6vw, 3rem);
-    margin: 0 auto 1.5rem;
+      font-size: clamp(2rem, 6vw, 3rem);
     color: var(--purple-dark);
-    line-height: 1.1;
+    line-height: 0.8;
     max-width: 800px;
     animation: fadeInUp 0.8s ease-out 0.1s both;
   }
