@@ -2,11 +2,10 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState, FormEvent, ChangeEvent, JSX, useEffect } from "react";
-import "../styles/login.css"; // Updated import
+import "../styles/login.css";
 import { API_ENDPOINTS } from "../../../config/api"; 
 import Image from "next/image";
 
-// Interfaces for data types
 interface LoginFormData {
   username: string;
   password: string;
@@ -51,21 +50,16 @@ export default function LoginPage(): JSX.Element {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Single useEffect to handle all initialization and message listening
   useEffect(() => {
-    // Handle logout message from child window
     const handleMessage = (event: MessageEvent) => {
       console.log('Message received:', event.data, 'from origin:', event.origin);
       
-      // Accept messages from any origin for logout (you can restrict this if needed)
       if (event.data && event.data.type === 'LOGOUT') {
         console.log('Logout message received from child window');
-        // Clear any stored tokens or user data
         localStorage.removeItem('authToken');
         localStorage.removeItem('user');
         sessionStorage.clear();
         
-        // Reset all states
         setFormData({
           username: "",
           password: "",
@@ -81,11 +75,10 @@ export default function LoginPage(): JSX.Element {
 
     window.addEventListener('message', handleMessage);
     
-    // Cleanup function
     return () => {
       window.removeEventListener('message', handleMessage);
     };
-  }, []); // Empty dependency array - runs only once on mount
+  }, []); 
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value, type, checked } = e.target;
@@ -139,12 +132,10 @@ export default function LoginPage(): JSX.Element {
         return;
       }
 
-      // Polling mechanism to ensure the message is received
       const messageInterval = setInterval(() => {
-        // Check if the window is still open
         if (otherAppWindow.closed) {
           clearInterval(messageInterval);
-          setLoading(false); // Reset loading when window is closed
+          setLoading(false); 
           return;
         }
 
@@ -154,12 +145,12 @@ export default function LoginPage(): JSX.Element {
           user: data.user
         }, targetOrigin);
 
-      }, 500); // Send the message every 500ms
+      }, 500); 
 
     } catch (err) {
       console.error('Error during login:', err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred.");
-      setLoading(false); // Make sure to reset loading on error
+      setLoading(false); 
     }
   };
 
@@ -271,7 +262,7 @@ export default function LoginPage(): JSX.Element {
           </form>
 
           <p className="login-footer">
-            Don't have an account? <Link href="/auth/register" className="login-link">Sign up</Link>
+            Do not have an account? <Link href="/auth/register" className="login-link">Sign up</Link>
           </p>
         </div>
       </div>

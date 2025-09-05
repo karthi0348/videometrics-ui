@@ -6,7 +6,6 @@ import "../styles/signup.css";
 import { API_ENDPOINTS } from "../../../config/api"; 
 import Image from "next/image";
 
-// Interface for the data sent to the API
 interface ApiPayload {
   username: string;
   email: string;
@@ -14,7 +13,6 @@ interface ApiPayload {
   full_name: string;
 }
 
-// Interface for the local form data
 interface SignupFormData {
   username: string;
   fullName: string;
@@ -24,7 +22,6 @@ interface SignupFormData {
   agreeToTerms: boolean;
 }
 
-// Interface for a validation error response
 interface ApiError {
   detail: {
     loc: (string | number)[];
@@ -34,7 +31,7 @@ interface ApiError {
 }
 
 export default function SignupPage(): JSX.Element {
-  const router = useRouter(); // Initialize the router
+  const router = useRouter(); 
 
   const [formData, setFormData] = useState<SignupFormData>({
     username: "",
@@ -74,7 +71,6 @@ export default function SignupPage(): JSX.Element {
       return;
     }
 
-    // --- API Integration Logic ---
     try {
       const payload: ApiPayload = {
         username: formData.username,
@@ -83,7 +79,7 @@ export default function SignupPage(): JSX.Element {
         full_name: formData.fullName,
       };
 
-      const response = await fetch(API_ENDPOINTS.REGISTER, { // Use the imported endpoint
+      const response = await fetch(API_ENDPOINTS.REGISTER, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -93,10 +89,8 @@ export default function SignupPage(): JSX.Element {
       });
 
       if (response.ok) {
-        // Registration successful!
         setMessage({ text: "Registration successful! Redirecting to login...", type: 'success' });
         
-        // Use router.push() to navigate to the login page after a delay
         setTimeout(() => {
           router.push('/auth/login');
         }, 1500); 
@@ -121,9 +115,9 @@ export default function SignupPage(): JSX.Element {
         <div className="signup-header">
           <Link href="/" className="signup-brand">
             <Image
-              src="/images/Videometrics.png"   // put your logo under /public/images/
+              src="/images/Videometrics.png"  
               alt="Videometrics Logo"
-              width={400}   // adjust size as needed
+              width={400}   
               height={100}
               priority
             />
@@ -134,7 +128,6 @@ export default function SignupPage(): JSX.Element {
           <h2 className="signup-title">Create an account</h2>
           <p className="signup-subtitle">Enter your information to get started with VideoMetrics.ai</p>
 
-          {/* Display messages based on state */}
           {message && (
             <div className={`signup-alert ${message.type === 'success' ? 'signup-alert-success' : 'signup-alert-error'}`} role="alert">
               {message.text}
