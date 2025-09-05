@@ -129,7 +129,7 @@ export default function LoginPage(): JSX.Element {
       localStorage.setItem('user', JSON.stringify(data.user));
 
       // Open a new window and store a reference to it
-      const targetOrigin = 'http://localhost:3001';
+      const targetOrigin = 'https://videometrics-dashboard.vercel.app/';
       const otherAppWindow = window.open(targetOrigin, '_blank');
       
       // If the window was blocked or failed to open
