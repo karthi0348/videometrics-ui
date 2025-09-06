@@ -1,6 +1,6 @@
 import React from "react";
 import "@/app/globals.css";
-import "../styles/ContactHero.css";
+import "../styles/ContactHero.css"; 
 
 interface ContactHeroProps {
   title?: string;
@@ -14,18 +14,18 @@ export default function ContactHero({
   className = "",
 }: ContactHeroProps) {
   return (
-    <section className={`hero-contact-wrapper ${className}`}>
-      <div className="hero-contact-container">
-        <h1 className="hero-contact-heading">
+    <section className={`contact-hero-section ${className}`}>
+      <div className="container">
+        <h1 className="contacttitle">
           {title.includes("Touch") ? (
             <>
-              Get in <span className="hero-highlight-text">Touch</span>
+              Get in <span className="highlight">Touch</span>
             </>
           ) : (
             title
           )}
         </h1>
-        <p className="hero-contact-description">{subtitle}</p>
+        <p className="subcontacttitle">{subtitle}</p>
       </div>
     </section>
   );
