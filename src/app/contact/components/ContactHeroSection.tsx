@@ -1,5 +1,4 @@
 import React from "react";
-import "@/app/globals.css";
 import "../styles/ContactHero.css"; 
 
 interface ContactHeroProps {
