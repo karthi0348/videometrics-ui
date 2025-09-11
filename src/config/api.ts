@@ -1,8 +1,5 @@
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? '/api' 
-  : 'http://172.174.114.7:8000';
+export const API_BASE_URL = 'http://172.174.114.7:8000';
 
-  
 export const API_ENDPOINTS = {
   LOGIN: `${API_BASE_URL}/auth/login`,
   REGISTER: `${API_BASE_URL}/auth/register`,

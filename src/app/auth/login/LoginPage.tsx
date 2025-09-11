@@ -88,71 +88,87 @@ export default function LoginPage(): JSX.Element {
     }));
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
-    e.preventDefault();
-    setLoading(true);
+ const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+  e.preventDefault();
+  setLoading(true);
+  setError(null);
+
+  const loginEndpoint = API_ENDPOINTS.LOGIN;
+
+  try {
+    const response = await fetch(loginEndpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify({
+        username: formData.username,
+        password: formData.password,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData: ApiError = await response.json();
+      const errorMessage = errorData.detail.map((err) => err.msg).join(", ");
+      throw new Error(
+        errorMessage || "Login failed. Please check your credentials."
+      );
+    }
+
+    const data: ApiResponse = await response.json();
+    console.log("✅ Login successful:", data);
+
+    // Save in localStorage
+    localStorage.setItem("authToken", data.access_token);
+    localStorage.setItem("user", JSON.stringify(data.user));
+
+    // Reset the form + state before navigation
+    setFormData({ username: "", password: "", rememberMe: false });
+    setShowPassword(false);
     setError(null);
+    setLoading(false);
 
-    const loginEndpoint = API_ENDPOINTS.LOGIN;
+    // Open new app in port 3001
+    const targetOrigin = "http://localhost:3001";
+    const otherAppWindow = window.open(targetOrigin, "_blank");
 
-    try {
-      const response = await fetch(loginEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'accept': 'application/json'
-        },
-        body: JSON.stringify({
-          username: formData.username,
-          password: formData.password
-        }),
-      });
+    if (!otherAppWindow) {
+      setError(
+        "Could not open the video metrics application. Please check your browser's pop-up settings."
+      );
+      return;
+    }
 
-      if (!response.ok) {
-        const errorData: ApiError = await response.json();
-        const errorMessage = errorData.detail.map(err => err.msg).join(', ');
-        throw new Error(errorMessage || "Login failed. Please check your credentials.");
-      }
-
-      const data: ApiResponse = await response.json();
-      console.log('Login successful:', data);
-
-      // Store token for future use
-      localStorage.setItem('authToken', data.access_token);
-      localStorage.setItem('user', JSON.stringify(data.user));
-
-      // Open a new window and store a reference to it
-      const targetOrigin = 'https://videometrics-dashboard.vercel.app/';
-      const otherAppWindow = window.open(targetOrigin, '_blank');
-      
-      // If the window was blocked or failed to open
-      if (!otherAppWindow) {
-        setError('Could not open the video metrics application. Please check your browser\'s pop-up settings.');
-        setLoading(false);
+    // Send token/user data to the other app
+    const messageInterval = setInterval(() => {
+      if (otherAppWindow.closed) {
+        clearInterval(messageInterval);
         return;
       }
 
-      const messageInterval = setInterval(() => {
-        if (otherAppWindow.closed) {
-          clearInterval(messageInterval);
-          setLoading(false); 
-          return;
-        }
+      otherAppWindow.postMessage(
+        {
+          type: "AUTH_MESSAGE",
+          token: data.access_token,
+          user: data.user,
+        },
+        targetOrigin
+      );
+    }, 500);
 
-        otherAppWindow.postMessage({
-          type: 'AUTH_TOKEN',
-          accessToken: data.access_token,
-          user: data.user
-        }, targetOrigin);
+    // ✅ Optionally navigate user to dashboard in the same app
+    // router.push("/dashboard");
 
-      }, 500); 
+  } catch (err) {
+    console.error("❌ Error during login:", err);
+    setError(
+      err instanceof Error ? err.message : "An unexpected error occurred."
+    );
+    setLoading(false);
+  }
+};
 
-    } catch (err) {
-      console.error('Error during login:', err);
-      setError(err instanceof Error ? err.message : "An unexpected error occurred.");
-      setLoading(false); 
-    }
-  };
 
   return (
     <div className="login-container">

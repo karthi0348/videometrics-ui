@@ -29,16 +29,8 @@ const defaultFaqs: FAQ[] = [
     answer:
       "Yes, we provide technical support to all our customers. The level of support depends on your subscription plan.",
   },
-  {
-    question: "Can I visit your office?",
-    answer:
-      "Yes, we welcome visitors to our Alpharetta, GA office. Please contact us in advance to schedule a meeting with our team.",
-  },
-  {
-    question: "What are your business hours?",
-    answer:
-      "Our business hours are Monday through Friday, 9:00 AM to 6:00 PM EST. We're closed on weekends and major holidays.",
-  },
+
+
   {
     question: "Do you offer international support?",
     answer:
