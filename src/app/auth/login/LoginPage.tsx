@@ -129,7 +129,6 @@ export default function LoginPage(): JSX.Element {
     setError(null);
     setLoading(false);
 
-    // Open new app in port 3001
     const targetOrigin = "http://localhost:3001";
     const otherAppWindow = window.open(targetOrigin, "_blank");
 
@@ -140,7 +139,6 @@ export default function LoginPage(): JSX.Element {
       return;
     }
 
-    // Send token/user data to the other app
     const messageInterval = setInterval(() => {
       if (otherAppWindow.closed) {
         clearInterval(messageInterval);

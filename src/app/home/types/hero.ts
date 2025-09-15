@@ -1,6 +1,5 @@
 export interface HeroSectionProps {
   className?: string;
-  percentage:any
 }
 
 export interface NavItem {
