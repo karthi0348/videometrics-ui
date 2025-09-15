@@ -664,3 +664,163 @@
     width: 250px;
   }
 }
+
+/* Add these styles to your existing hero.css file */
+
+/* Chart Headers */
+.chart-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.chart-header h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Pie Chart Container */
+.pie-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+/* SVG Pie Chart */
+.pie-chart svg {
+  overflow: visible;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Pie Slices Animation */
+.pie-slice {
+  opacity: 0;
+  transform-origin: 0 0;
+  animation: pieSliceIn 0.6s ease-out forwards;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pie-slice:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+@keyframes pieSliceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Center circle for donut charts */
+.pie-center {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 1s forwards;
+}
+
+/* Legend Styles */
+.pie-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 200px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0;
+  animation: slideInUp 0.4s ease-out forwards;
+}
+
+.legend-color {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments for pie charts */
+@media (max-width: 768px) {
+  .pie-chart.main-pie svg {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .pie-chart.secondary-pie svg {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .chart-header h3 {
+    font-size: 0.8rem;
+  }
+  
+  .legend-label {
+    font-size: 0.7rem;
+  }
+}
+
+/* Additional animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Enhanced glow effects for hovering over floating pie charts */
+.floating-pie-chart:hover svg {
+  filter: drop-shadow(0 8px 32px rgba(59, 130, 246, 0.6)) !important;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Smooth transitions for interactive elements */
+.pie-legend .legend-item:hover .legend-color {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
