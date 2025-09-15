@@ -19,22 +19,29 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
     { value: 10, color: '#6b7280', label: 'Error' }
   ];
 
+  // Data for the additional pie chart from the image
+  const additionalPieData = [
+    { value: 50, color: '#3b82f6', label: 'Category A' },
+    { value: 30, color: '#06b6d4', label: 'Category B' },
+    { value: 20, color: '#10b981', label: 'Category C' }
+  ];
+
   // Function to create SVG path for pie slice
   const createPieSlice = (startAngle: number, endAngle: number, radius: number, innerRadius: number = 0) => {
     const startAngleRad = (startAngle * Math.PI) / 180;
     const endAngleRad = (endAngle * Math.PI) / 180;
-    
+
     const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
-    
+
     const x1 = Math.cos(startAngleRad) * radius;
     const y1 = Math.sin(startAngleRad) * radius;
     const x2 = Math.cos(endAngleRad) * radius;
     const y2 = Math.sin(endAngleRad) * radius;
-    
+
     if (innerRadius === 0) {
       return [
-        "M", 0, 0, 
-        "L", x1, y1, 
+        "M", 0, 0,
+        "L", x1, y1,
         "A", radius, radius, 0, largeArcFlag, 1, x2, y2,
         "Z"
       ].join(" ");
@@ -43,9 +50,9 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
       const y3 = Math.sin(endAngleRad) * innerRadius;
       const x4 = Math.cos(startAngleRad) * innerRadius;
       const y4 = Math.sin(startAngleRad) * innerRadius;
-      
+
       return [
-        "M", x1, y1, 
+        "M", x1, y1,
         "A", radius, radius, 0, largeArcFlag, 1, x2, y2,
         "L", x3, y3,
         "A", innerRadius, innerRadius, 0, largeArcFlag, 0, x4, y4,
@@ -58,17 +65,17 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
   const renderPieChart = (data: typeof mainPieData, size: number, innerRadius: number = 0, className: string = '') => {
     let currentAngle = -90; // Start from top
     const total = data.reduce((sum, item) => sum + item.value, 0);
-    
+
     return (
       <div className={`pie-chart ${className}`}>
         <svg width={size} height={size} viewBox={`-${size/2} -${size/2} ${size} ${size}`}>
           {data.map((slice, index) => {
             const sliceAngle = (slice.value / total) * 360;
             const endAngle = currentAngle + sliceAngle;
-            
+
             const path = createPieSlice(currentAngle, endAngle, size/2 - 10, innerRadius);
             currentAngle = endAngle;
-            
+
             return (
               <path
                 key={index}
@@ -81,8 +88,7 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
               />
             );
           })}
-          
-          {/* Center circle for donut chart */}
+
           {innerRadius > 0 && (
             <circle
               cx="0"
@@ -93,8 +99,7 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
             />
           )}
         </svg>
-        
-        {/* Legend */}
+
         <div className="pie-legend">
           {data.map((slice, index) => (
             <div key={index} className="legend-item" style={{ animationDelay: `${index * 0.1 + 0.5}s` }}>
@@ -134,7 +139,7 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
 
           <div className="hero-description">
             <p className="description-text">
-              VideoMetrics.ai transforms CCTV and drone footage into real-time insights to help 
+              VideoMetrics.ai transforms CCTV and drone footage into real-time insights to help
               businesses optimize operations and make smarter decisions.
             </p>
           </div>
@@ -158,9 +163,13 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
               [
                 { value: 60, color: '#3b82f6', label: 'Active' },
                 { value: 40, color: '#1e40af', label: 'Idle' }
-              ], 
+              ],
               120, 30, 'tertiary-pie'
             )}
+          </div>
+
+          <div className="floating-pie-chart additional-pie-container">
+            {renderPieChart(additionalPieData, 150, 40, 'additional-pie')}
           </div>
 
           <div className="floating-element floating-element-1" />
