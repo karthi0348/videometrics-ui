@@ -129,7 +129,7 @@ export default function LoginPage(): JSX.Element {
     setError(null);
     setLoading(false);
 
-    const targetOrigin = "http://localhost:3001";
+    const targetOrigin = "http://172.174.114.7:3001/";
     const otherAppWindow = window.open(targetOrigin, "_blank");
 
     if (!otherAppWindow) {
