@@ -225,6 +225,10 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+   font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-family: var(--font-primary);
 }
 
 .info-icon {
@@ -257,12 +261,6 @@
   font-family: var(--font-primary);
 }
 
-.info-details {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  font-family: var(--font-primary);
-}
 
 .detail-line-spacing {
   margin-top: 0.25rem;
