@@ -1,32 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   typescript: {
+  typescript: {
     ignoreBuildErrors: true,
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'media.istockphoto.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.shutterstock.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.prod.website-files.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+  eslint: {
+    ignoreDuringBuilds: true,
   },
-}
-module.exports = {
-  reactStrictMode: true,
-}
-module.exports = nextConfig
+};
+
+module.exports = nextConfig;
