@@ -119,11 +119,9 @@ export default function LoginPage(): JSX.Element {
     const data: ApiResponse = await response.json();
     console.log("✅ Login successful:", data);
 
-    // Save in localStorage
     localStorage.setItem("authToken", data.access_token);
     localStorage.setItem("user", JSON.stringify(data.user));
 
-    // Reset the form + state before navigation
     setFormData({ username: "", password: "", rememberMe: false });
     setShowPassword(false);
     setError(null);
