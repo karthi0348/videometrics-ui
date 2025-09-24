@@ -63,7 +63,6 @@ export default function SignupPage(): JSX.Element {
     setIsLoading(true);
     setMessage(null);
 
-    // --- Client-side validation ---
     if (formData.password !== formData.confirmPassword) {
       setMessage({ text: "Passwords don't match!", type: "error" });
       setIsLoading(false);
