@@ -42,7 +42,6 @@ export default function ContactFormSection({
             </p>
 
             <form action={apiEndpoint} method="POST" className="contact-form">
-              {/* First Name and Last Name */}
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="firstName" className="form-label">
