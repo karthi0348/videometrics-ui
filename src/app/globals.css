@@ -139,7 +139,9 @@ section {
     margin-bottom: 40px !important;
   }
 }
-
+.info-details p{
+  margin-bottom: 0 !important;
+}
 /* Primary Button - Purple Theme */
 .btn-primary {
   display: inline-flex;
