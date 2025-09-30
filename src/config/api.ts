@@ -1,4 +1,5 @@
-export const API_BASE_URL = 'http://172.174.114.7:8000';
+// export const API_BASE_URL = 'http://172.174.114.7:8000';
+export const API_BASE_URL = 'https://videometricsbackend.salmonrock-70d8a746.eastus.azurecontainerapps.io';
 
 export const API_ENDPOINTS = {
   LOGIN: `${API_BASE_URL}/auth/login`,

@@ -127,7 +127,7 @@ export default function LoginPage(): JSX.Element {
     setError(null);
     setLoading(false);
 
-    const targetOrigin = "http://172.174.114.7:3001/";
+    const targetOrigin = "https://videometricsdash.salmonrock-70d8a746.eastus.azurecontainerapps.io/";
     const otherAppWindow = window.open(targetOrigin, "_blank");
 
     if (!otherAppWindow) {
