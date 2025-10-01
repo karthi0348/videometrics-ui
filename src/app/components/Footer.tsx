@@ -16,7 +16,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({
-  companyName = "videometrics.ai",
+  companyName = "videometrics",
   companyDescription = "Advanced video analytics platform for business intelligence and operational insights.",
   links = [
     { label: "Contact", href: "/contact" }

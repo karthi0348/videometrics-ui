@@ -10,7 +10,7 @@ const HowItWorksHero: React.FC<HowItWorksHeroProps> = ({ className = "" }) => {
   return (
     <section className={`${styles.hero} ${className}`}>
       <div className={styles.heroContainer}>
-        <h1 className={styles.heroTitle}>How VideoMetrics.ai Works</h1>
+        <h1 className={styles.heroTitle}>How VideoMetrics Works</h1>
         <p className={styles.heroDescription}>
           Transform your video data into actionable business intelligence  with our powerful yet simple analytics platform.
         </p>

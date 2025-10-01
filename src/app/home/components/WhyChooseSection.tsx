@@ -11,7 +11,7 @@ export default function WhyChooseSection() {
           <div className="col-lg-6 text-center text-lg-start mb-3 mb-lg-0">
             <h2 className="titleText fw-normal text-dark mb-1 mb-md-2">Why Choose</h2>
             <h2 className="titleText fw-bold mb-0" style={{ color: "rgb(81, 77, 223)" }}>
-              videometrics.ai
+              videometrics
             </h2>
           </div>
           <div className="col-lg-6">
@@ -27,7 +27,7 @@ export default function WhyChooseSection() {
           <div className="col-lg-6 mb-3 mb-lg-0 order-1 order-lg-1">
             <div className="position-relative rounded overflow-hidden shadow-lg">
               <Image
-                src="/images/drone.png"
+                src="/images/droneman.png"
                 alt="Professional using drone for video surveillance"
                 className="img-fluid w-100 responsive-image"
                 style={{ 
@@ -74,7 +74,7 @@ export default function WhyChooseSection() {
                 <h6 className="text-dark fw-semibold mb-2 fs-6 fs-md-5">Processing Speed</h6>
                 <p className="text-muted fs-6 fs-md-5 lh-base">
                   With ultra-fast edge and cloud-based processing,
-                  VideoMetrics.ai delivers insights in under 50
+                  VideoMetrics delivers insights in under 50
                   milliseconds—ideal for time-sensitive operations and instant
                   decision-making.
                 </p>
