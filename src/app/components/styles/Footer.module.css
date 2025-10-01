@@ -77,6 +77,9 @@
   visibility: visible;
 }
 
+
+
+
 .linksList {
   list-style: none;
   padding: 0;
@@ -455,4 +458,52 @@
     color: #000;
     text-decoration: underline;
   }
+}
+
+
+/* Contact Section */
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--purple-primary);
+  margin: 0;
+}
+
+.address {
+  font-style: normal;
+  color: #4b09ce;
+  line-height: 1.6;
+}
+
+.address p {
+  margin: 0;
+}
+
+.emailGroup {
+  display: flex;
+  color: #4b09ce;
+}
+
+.emailLink {
+  color: var(--purple-primary);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.emailLink:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }

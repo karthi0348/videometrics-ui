@@ -2,26 +2,31 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './styles/Footer.module.css';
 
-interface FooterLink {
-  label: string;
-  href: string;
-}
-
 interface FooterProps {
   companyName?: string;
   companyDescription?: string;
-  links?: FooterLink[];
+  officeAddress?: {
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+  };
+  email?: string;
   copyrightYear?: number;
   className?: string;
 }
 
 const Footer: React.FC<FooterProps> = ({
   companyName = "videometrics",
-  companyDescription = "Advanced video analytics platform for business intelligence and operational insights.",
-  links = [
-    { label: "Contact", href: "/contact" }
-  ],
-  copyrightYear = 2024,
+  companyDescription = "Transform video data into actionable business intelligence. Our advanced analytics platform extracts operational insights from your video streams, enabling data-driven decisions across your organization.",
+  officeAddress = {
+    street: "5450 McGinnis Village Place, Suite No. 111",
+    city: "Alpharetta",
+    state: "GA",
+    zip: "30005"
+  },
+  email = "contact@videometrics.com",
+  copyrightYear = 2025,
   className = ""
 }) => {
   return (
@@ -40,24 +45,29 @@ const Footer: React.FC<FooterProps> = ({
                 </p>
               </div>
 
-              <div className={styles.linksSection}>
-                <h3 className={styles.sectionTitle}>
-                  Company
-                </h3>
-                <nav className={styles.navigation} role="navigation" aria-label="Footer navigation">
-                  <ul className={styles.linksList}>
-                    {links.map((link, index) => (
-                      <li key={`${link.label}-${index}`} className={styles.linkItem}>
-                        <Link 
-                          href={link.href}
-                          className={styles.footerLink}
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
+              <div className={styles.contactSection}>
+                <div className={styles.contactGroup}>
+                  <h3 className={styles.sectionTitle}>
+                    Contact
+                  </h3>
+                  <address className={styles.address}>
+                    <p>{officeAddress.street}</p>
+                    {officeAddress.city}, {officeAddress.state} - {officeAddress.zip}
+                  </address>
+
+                  <div className={styles.emailGroup}>
+                    Email:<a 
+                    href={`mailto:${email}`}
+                    className={styles.emailLink}
+                  >
+                    {email}
+                  </a>
+                 
+                  
+                </div>
+                </div>
+
+                
               </div>
             </div>
           </div>
