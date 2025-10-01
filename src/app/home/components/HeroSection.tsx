@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeroSectionProps } from "@/app/home/types/hero";
+import Link from 'next/link';
 import "../styles/hero.css";
 
 export default function HeroSection({ className = "" }: HeroSectionProps) {
@@ -334,17 +335,19 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
 
           <div className="hero-description">
             <p className="description-text">
-              VideoMetrics.ai transforms CCTV and drone footage into real-time insights to help
+              VideoMetrics transforms CCTV and drone footage into real-time insights to help
               businesses optimize operations and make smarter decisions.
             </p>
           </div>
 
           <div className="hero-cta">
-            <button className="cta-button">
-              <span className="cta-text">Schedule Demo</span>
-              <div className="cta-background" />
-              <div className="cta-shimmer" />
-            </button>
+            <Link href="/contact">
+              <button className="cta-button">
+                <span className="cta-text">Schedule Demo</span>
+                <div className="cta-background" />
+                <div className="cta-shimmer" />
+              </button>
+            </Link>
           </div>
         </div>
 

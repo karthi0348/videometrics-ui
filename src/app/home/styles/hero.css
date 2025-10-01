@@ -882,3 +882,34 @@
     filter: contrast(1.2);
   }
 }
+
+.cta-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+  background: var(--purple-dark);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+  min-width: 140px;
+  white-space: nowrap;
+  text-decoration: none; /* Ensure no underline */
+}
+
+.cta-link .cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px var(--purple-primary-30);
+  background: var(--purple-tertiary);
+}
+
+.cta-link .cta-button:active {
+  transform: translateY(0);
+}

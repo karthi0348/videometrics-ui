@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import "../styles/FeaturesCTASection.css";
 
 export default function CTASection() {
@@ -14,17 +15,21 @@ export default function CTASection() {
         </h2>
         
         <p className="cta-subtitle animate-fade-in-up-delay">
-          Start turning your video footage into actionable insights today with <strong>Videometrics.ai</strong>.
+          Start turning your video footage into actionable insights today with <strong>Videometrics</strong>.
         </p>
         
         <div className="cta-buttons animate-fade-in-up-delay-2">
-          <button className="cta-button-primary">
-            Free Trial
-          </button>
+          <Link href="/contact" className="cta-link">
+            <button className="cta-button-primary">
+              Free Trial
+            </button>
+          </Link>
           
-          <button className="cta-button-tertiary">
-            Schedule Demo
-          </button>
+          <Link href="/contact" className="cta-link">
+            <button className="cta-button-tertiary">
+              Schedule Demo
+            </button>
+          </Link>
         </div>
 
       </div>

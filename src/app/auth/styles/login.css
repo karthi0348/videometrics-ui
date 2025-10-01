@@ -156,9 +156,9 @@ body {
   min-width: clamp(1rem, 2.5vw, 1.1rem);
   min-height: clamp(1rem, 2.5vw, 1.1rem);
   margin-right: 0.75rem;
-  border: 1px solid rgba(156, 163, 175, 0.2);
+  border: 1px solid rgba(21, 191, 38, 0.2);
+  color: #f5f3ff;
   border-radius: 0.3rem;
-  appearance: none;
   cursor: pointer;
   position: relative;
   transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -170,16 +170,6 @@ body {
   border-color: var(--purple-primary, #8b5cf6);
 }
 
-.login-checkbox:checked::before {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>');
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: clamp(0.8rem, 2vw, 1rem);
-  height: clamp(0.8rem, 2vw, 1rem);
-}
 
 .login-checkbox-label {
   font-size: clamp(0.8rem, 2vw, 0.9rem);
