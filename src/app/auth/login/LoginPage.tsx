@@ -58,6 +58,8 @@ export default function LoginPage(): JSX.Element {
         console.log('Logout message received from child window');
         localStorage.removeItem('authToken');
         localStorage.removeItem('user');
+        sessionStorage.removeItem('authToken');
+        sessionStorage.removeItem('user');
         sessionStorage.clear();
         
         setFormData({
@@ -88,82 +90,144 @@ export default function LoginPage(): JSX.Element {
     }));
   };
 
- const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
-  e.preventDefault();
-  setLoading(true);
-  setError(null);
-
-  const loginEndpoint = API_ENDPOINTS.LOGIN;
-
-  try {
-    const response = await fetch(loginEndpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        accept: "application/json",
-      },
-      body: JSON.stringify({
-        username: formData.username,
-        password: formData.password,
-      }),
-    });
-
-    if (!response.ok) {
-      const errorData: ApiError = await response.json();
-      const errorMessage = errorData.detail.map((err) => err.msg).join(", ");
-      throw new Error(
-        errorMessage || "Login failed. Please check your credentials."
-      );
-    }
-
-    const data: ApiResponse = await response.json();
-    console.log("✅ Login successful:", data);
-
-    localStorage.setItem("authToken", data.access_token);
-    localStorage.setItem("user", JSON.stringify(data.user));
-
-    setFormData({ username: "", password: "", rememberMe: false });
-    setShowPassword(false);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    setLoading(true);
     setError(null);
-    setLoading(false);
 
-    const targetOrigin = "https://videometricsdash.salmonrock-70d8a746.eastus.azurecontainerapps.io";
-    const otherAppWindow = window.open(targetOrigin, "_blank");
+    const loginEndpoint = API_ENDPOINTS.LOGIN;
 
-    if (!otherAppWindow) {
-      setError(
-        "Could not open the video metrics application. Please check your browser's pop-up settings."
-      );
-      return;
-    }
+    try {
+      const response = await fetch(loginEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          accept: "application/json",
+        },
+        body: JSON.stringify({
+          username: formData.username,
+          password: formData.password,
+        }),
+      });
 
-    const messageInterval = setInterval(() => {
-      if (otherAppWindow.closed) {
-        clearInterval(messageInterval);
-        return;
+      if (!response.ok) {
+        // Handle 401 Unauthorized specifically for wrong credentials
+        if (response.status === 401) {
+          throw new Error("Incorrect username or password. Please try again.");
+        }
+        
+        // Handle other errors
+        const errorData: ApiError = await response.json();
+        const errorMessage = errorData.detail.map((err) => err.msg).join(", ");
+        throw new Error(
+          errorMessage || "Login failed. Please check your credentials."
+        );
       }
 
-      otherAppWindow.postMessage(
-        {
-          type: "AUTH_MESSAGE",
-          token: data.access_token,
-          user: data.user,
-        },
-        targetOrigin
+      const data: ApiResponse = await response.json();
+      console.log("✅ Login successful:", data);
+
+      // Store auth data based on "Remember Me" preference
+      if (formData.rememberMe) {
+        // Use localStorage for persistent storage (survives browser close)
+        localStorage.setItem("authToken", data.access_token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+      } else {
+        // Use sessionStorage for temporary storage (cleared when browser closes)
+        sessionStorage.setItem("authToken", data.access_token);
+        sessionStorage.setItem("user", JSON.stringify(data.user));
+      }
+
+      setFormData({ username: "", password: "", rememberMe: false });
+      setShowPassword(false);
+      setError(null);
+      setLoading(false);
+
+      const targetOrigin = "https://videometricsdash.salmonrock-70d8a746.eastus.azurecontainerapps.io";
+      const otherAppWindow = window.open(targetOrigin, "_blank");
+
+      if (!otherAppWindow) {
+        setError(
+          "Could not open the video metrics application. Please check your browser's pop-up settings."
+        );
+        return;
+      }
+       
+      let messageSent = false;
+      // Wait for child window to signal it's ready
+      const handleReadyMessage = (event: MessageEvent) => {
+        if (event.origin !== targetOrigin) return;
+        
+        if (event.data && event.data.type === 'READY' && !messageSent) {
+          console.log('Child window is ready, sending auth data');
+          messageSent = true;
+          
+          otherAppWindow.postMessage(
+            {
+              type: "AUTH_MESSAGE",
+              token: data.access_token,
+              user: data.user,
+            },
+            targetOrigin
+          );
+        }
+          
+        // Stop listening after receiving AUTH_STORED confirmation
+        if (event.data && event.data.type === 'AUTH_STORED') {
+          console.log('Auth data confirmed stored, cleaning up');
+          window.removeEventListener('message', handleReadyMessage);
+        }
+      };
+
+      window.addEventListener('message', handleReadyMessage);
+
+      // Fallback: If no READY message received within 5 seconds, send anyway
+      const fallbackTimeout = setTimeout(() => {
+        if (!messageSent && !otherAppWindow.closed) {
+          console.log('Fallback: Sending auth data without READY signal');
+          messageSent = true;
+          
+          otherAppWindow.postMessage(
+            {
+              type: "AUTH_MESSAGE",
+              token: data.access_token,
+              user: data.user,
+            },
+            targetOrigin
+          );
+        }
+      }, 5000);
+
+      // Cleanup after 10 seconds
+      setTimeout(() => {
+        window.removeEventListener('message', handleReadyMessage);
+        clearTimeout(fallbackTimeout);
+      }, 10000);
+
+      const messageInterval = setInterval(() => {
+        if (otherAppWindow.closed) {
+          clearInterval(messageInterval);
+          return;
+        }
+
+        otherAppWindow.postMessage(
+          {
+            type: "AUTH_MESSAGE",
+            token: data.access_token,
+            user: data.user,
+          },
+          targetOrigin
+        );
+      }, 500);
+
+    } catch (err) {
+      console.error("❌ Error during login:", err);
+      setError(
+        err instanceof Error ? err.message : "An unexpected error occurred."
       );
-    }, 500);
-
-
-
-  } catch (err) {
-    console.error("❌ Error during login:", err);
-    setError(
-      err instanceof Error ? err.message : "An unexpected error occurred."
-    );
-    setLoading(false);
-  }
-};
-
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="login-container">

@@ -9,7 +9,7 @@ interface ContactHeroProps {
 
 export default function ContactHero({
   title = "Get in Touch",
-  subtitle = "Have questions about VideoMetrics.ai? Our team is here to help you.",
+  subtitle = "Have questions about VideoMetrics? Our team is here to help you.",
   className = "",
 }: ContactHeroProps) {
   return (
