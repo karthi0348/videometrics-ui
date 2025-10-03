@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState, FormEvent, ChangeEvent, JSX, useEffect } from "react";
+import React, { useState, FormEvent, ChangeEvent, JSX, useEffect, useRef } from "react";
 import "../styles/login.css";
 import { API_ENDPOINTS } from "../../../config/api"; 
 import Image from "next/image";
@@ -49,6 +49,9 @@ export default function LoginPage(): JSX.Element {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  
+  // Keep track of active child windows
+  const childWindowsRef = useRef<Set<Window>>(new Set());
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
@@ -56,12 +59,19 @@ export default function LoginPage(): JSX.Element {
       
       if (event.data && event.data.type === 'LOGOUT') {
         console.log('Logout message received from child window');
+        
+        // Clear all auth data from both storages
+        localStorage.removeItem('token');
+        localStorage.removeItem('accessToken');
         localStorage.removeItem('authToken');
         localStorage.removeItem('user');
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('accessToken');
         sessionStorage.removeItem('authToken');
         sessionStorage.removeItem('user');
         sessionStorage.clear();
         
+        // Reset form state
         setFormData({
           username: "",
           password: "",
@@ -80,7 +90,7 @@ export default function LoginPage(): JSX.Element {
     return () => {
       window.removeEventListener('message', handleMessage);
     };
-  }, []); 
+  }, []);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value, type, checked } = e.target;
@@ -131,10 +141,14 @@ export default function LoginPage(): JSX.Element {
       if (formData.rememberMe) {
         // Use localStorage for persistent storage (survives browser close)
         localStorage.setItem("authToken", data.access_token);
+        localStorage.setItem("token", data.access_token);
+        localStorage.setItem("accessToken", data.access_token);
         localStorage.setItem("user", JSON.stringify(data.user));
       } else {
         // Use sessionStorage for temporary storage (cleared when browser closes)
         sessionStorage.setItem("authToken", data.access_token);
+        sessionStorage.setItem("token", data.access_token);
+        sessionStorage.setItem("accessToken", data.access_token);
         sessionStorage.setItem("user", JSON.stringify(data.user));
       }
 
@@ -152,8 +166,13 @@ export default function LoginPage(): JSX.Element {
         );
         return;
       }
+
+      // Track this window
+      childWindowsRef.current.add(otherAppWindow);
        
       let messageSent = false;
+      let messageInterval: NodeJS.Timeout | null = null;
+      
       // Wait for child window to signal it's ready
       const handleReadyMessage = (event: MessageEvent) => {
         if (event.origin !== targetOrigin) return;
@@ -162,10 +181,17 @@ export default function LoginPage(): JSX.Element {
           console.log('Child window is ready, sending auth data');
           messageSent = true;
           
+          // Clear the polling interval once we get READY signal
+          if (messageInterval) {
+            clearInterval(messageInterval);
+            messageInterval = null;
+          }
+          
           otherAppWindow.postMessage(
             {
               type: "AUTH_MESSAGE",
               token: data.access_token,
+              accessToken: data.access_token,
               user: data.user,
             },
             targetOrigin
@@ -176,37 +202,19 @@ export default function LoginPage(): JSX.Element {
         if (event.data && event.data.type === 'AUTH_STORED') {
           console.log('Auth data confirmed stored, cleaning up');
           window.removeEventListener('message', handleReadyMessage);
+          if (fallbackTimeout) clearTimeout(fallbackTimeout);
+          if (cleanupTimeout) clearTimeout(cleanupTimeout);
+          if (messageInterval) clearInterval(messageInterval);
         }
       };
 
       window.addEventListener('message', handleReadyMessage);
 
-      // Fallback: If no READY message received within 5 seconds, send anyway
-      const fallbackTimeout = setTimeout(() => {
-        if (!messageSent && !otherAppWindow.closed) {
-          console.log('Fallback: Sending auth data without READY signal');
-          messageSent = true;
-          
-          otherAppWindow.postMessage(
-            {
-              type: "AUTH_MESSAGE",
-              token: data.access_token,
-              user: data.user,
-            },
-            targetOrigin
-          );
-        }
-      }, 5000);
-
-      // Cleanup after 10 seconds
-      setTimeout(() => {
-        window.removeEventListener('message', handleReadyMessage);
-        clearTimeout(fallbackTimeout);
-      }, 10000);
-
-      const messageInterval = setInterval(() => {
+      // Start polling messages immediately (every 500ms)
+      messageInterval = setInterval(() => {
         if (otherAppWindow.closed) {
-          clearInterval(messageInterval);
+          if (messageInterval) clearInterval(messageInterval);
+          childWindowsRef.current.delete(otherAppWindow);
           return;
         }
 
@@ -214,11 +222,44 @@ export default function LoginPage(): JSX.Element {
           {
             type: "AUTH_MESSAGE",
             token: data.access_token,
+            accessToken: data.access_token,
             user: data.user,
           },
           targetOrigin
         );
       }, 500);
+
+      // Fallback: If no READY message received within 3 seconds, stop polling
+      const fallbackTimeout = setTimeout(() => {
+        if (!messageSent) {
+          console.log('No READY signal received, stopping message polling');
+          if (messageInterval) {
+            clearInterval(messageInterval);
+            messageInterval = null;
+          }
+        }
+      }, 3000);
+
+      // Cleanup after 10 seconds
+      const cleanupTimeout = setTimeout(() => {
+        console.log('Final cleanup of message listeners');
+        window.removeEventListener('message', handleReadyMessage);
+        if (fallbackTimeout) clearTimeout(fallbackTimeout);
+        if (messageInterval) clearInterval(messageInterval);
+      }, 10000);
+
+      // Clean up closed windows periodically
+      const windowCheckInterval = setInterval(() => {
+        childWindowsRef.current.forEach(win => {
+          if (win.closed) {
+            childWindowsRef.current.delete(win);
+          }
+        });
+        
+        if (childWindowsRef.current.size === 0) {
+          clearInterval(windowCheckInterval);
+        }
+      }, 2000);
 
     } catch (err) {
       console.error("❌ Error during login:", err);
