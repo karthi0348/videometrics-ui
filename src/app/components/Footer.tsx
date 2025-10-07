@@ -20,6 +20,7 @@ const Footer: React.FC<FooterProps> = ({
   companyName = "videometrics",
   companyDescription = "Transform video data into actionable business intelligence. Our advanced analytics platform extracts operational insights from your video streams, enabling data-driven decisions across your organization.",
   officeAddress = {
+
     street: "5450 McGinnis Village Place, Suite No. 111",
     city: "Alpharetta",
     state: "GA",
@@ -45,14 +46,19 @@ const Footer: React.FC<FooterProps> = ({
                 </p>
               </div>
 
+             
               <div className={styles.contactSection}>
                 <div className={styles.contactGroup}>
                   <h3 className={styles.sectionTitle}>
                     Contact
                   </h3>
+                
                   <address className={styles.address}>
+                      <p className={styles.companyContactName}>
+                    Datakare Solutions LLC,
+                  </p>
                     <p>{officeAddress.street}</p>
-                    {officeAddress.city}, {officeAddress.state} - {officeAddress.zip}
+                    {officeAddress.city}, {officeAddress.state} - {officeAddress.zip}.
                   </address>
 
                   <div className={styles.emailGroup}>
