@@ -1,96 +1,77 @@
+/* Call to Action Section */
 .hctaSection {
-  background: var(--gradient-purple-primary);
-  max-width: 1700px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  padding: 80px 20px;
   position: relative;
   overflow: hidden;
-  border-radius: var(--section-border-radius-desktop, 24px);
-  box-shadow: 0 4px 20px var(--purple-primary-30);
-  padding-top: 40px !important;
 }
 
 .hctaContainer {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Left Content Section */
+.hctaLeftSection {
+  flex: 1;
+  max-width: 600px;
   z-index: 2;
 }
 
-.hctaLeftSection {
-  flex: 1;
-  max-width: 500px;
-}
-
 .hctaHeading {
-  font-size: clamp(28px, 5vw, 48px);
-  font-weight: 500;
-  color: white;
-  line-height: 1.1;
-  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  line-height: 1.2;
 }
 
 .hctaParagraph {
-  color: white;
-  font-size: clamp(16px, 2.5vw, 18px);
-  line-height: 1.5;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 32px;
-  font-weight: 400;
-  max-width: 450px;
-  opacity: 0.9;
-  font-family: var(--font-primary);
+  line-height: 1.6;
 }
 
 .hctaParagraph strong {
   font-weight: 600;
+  color: #ffffff;
 }
 
 .hctaButton {
-  background-color: white;
-  color: var(--purple-primary);
-  padding: 16px 32px;
-  border-radius: 24px;
-  font-size: 16px;
-  font-weight: 500;
+  background: linear-gradient(to right, #0f42bb, #8416af);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 16px 40px;
   border: none;
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: var(--font-primary);
-  min-height: 48px;
-  min-width: 140px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .hctaButton:hover {
-  background-color: #f9fafb;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  color: var(--purple-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  background-color: #f8f9fa;
 }
 
-.hctaButton:focus-visible {
-  outline: 2px solid white;
-  outline-offset: 2px;
-}
-
-.hctaButton:active {
-  transform: translateY(0);
-}
-
-.hctaButton:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
+/* Right Icons Section */
 .hctaIconsSection {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 40px;
-  margin-left: 60px;
+  flex-shrink: 0;
+  z-index: 2;
 }
 
+/* Bar Chart Icon */
 .barChartIcon {
   display: flex;
   align-items: flex-end;
@@ -99,298 +80,169 @@
 }
 
 .bar {
-  background: linear-gradient(to top, white, rgba(255, 255, 255, 0.8));
-  border-radius: 6px;
-  width: 24px;
-  opacity: 0.9;
-  animation: barGrow 1.5s ease-out;
+  width: 32px;
+  background: linear-gradient(to right, #0f42bb, #8416af);
+  border-radius: 6px 6px 0 0;
+  animation: barGrow 1.5s ease-out forwards;
+  transform-origin: bottom;
 }
 
-.bar1 { height: 45px; animation-delay: 0.1s; }
-.bar2 { height: 70px; animation-delay: 0.2s; }
-.bar3 { height: 110px; animation-delay: 0.3s; }
-.bar4 { height: 85px; animation-delay: 0.4s; }
+.bar1 {
+  height: 50%;
+  animation-delay: 0.1s;
+}
+
+.bar2 {
+  height: 75%;
+  animation-delay: 0.2s;
+}
+
+.bar3 {
+  height: 95%;
+  animation-delay: 0.3s;
+}
+
+.bar4 {
+  height: 65%;
+  animation-delay: 0.4s;
+}
 
 @keyframes barGrow {
-  from { height: 0; opacity: 0; }
-  to { opacity: 0.9; }
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
 
+/* Pie Chart Icon */
 .pieChartIcon {
   width: 120px;
   height: 120px;
-  animation: fadeIn 1s ease-out 0.5s both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pieSvg {
   width: 100%;
   height: 100%;
-  opacity: 0.9;
+  animation: pieRotate 2s ease-out;
 }
 
-.pieSvg circle {
-  animation: drawCircle 2s ease-out 0.5s both;
-  stroke: white;
-}
-
-@keyframes drawCircle {
-  from { stroke-dasharray: 0 283; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 0.9; transform: scale(1); }
-}
-
-@keyframes sectionFadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hctaSection {
-  animation: sectionFadeIn 0.6s ease-out;
-}
-
-/* Hover effects for visual elements */
-.barChartIcon:hover .bar {
-  transform: scaleY(1.1);
-  transition: transform 0.3s ease;
-}
-
-.pieChartIcon:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-/* ==============================================
-   MOBILE RESPONSIVE BREAKPOINTS
-   ============================================== */
-
-/* Mobile (320px - 575px) */
-@media (max-width: 575.98px) {
-  .hctaSection {
-    margin-top: 40px;
-    border-radius: var(--section-border-radius-mobile, 16px);
-    margin: 1px;
+@keyframes pieRotate {
+  from {
+    transform: rotate(-90deg);
+    opacity: 0;
   }
-  .CallToAction{
-  padding: 0px !important;
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
 }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hctaContainer {
+    gap: 40px;
+  }
+
+  .hctaHeading {
+    font-size: 2.5rem;
+  }
+
+  .hctaIconsSection {
+    gap: 30px;
+  }
+
+  .barChartIcon {
+    height: 100px;
+    gap: 10px;
+  }
+
+  .bar {
+    width: 28px;
+  }
+
+  .pieChartIcon {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hctaSection {
+    padding: 60px 20px;
+  }
+
   .hctaContainer {
     flex-direction: column;
     text-align: center;
-    gap: 32px;
+    gap: 40px;
   }
-  
+
   .hctaLeftSection {
     max-width: 100%;
   }
-  
+
   .hctaHeading {
-    margin-bottom: 16px;
-  }
-  
-  .hctaParagraph {
-    max-width: 100%;
-    margin-bottom: 24px;
+    font-size: 2rem;
   }
 
-  .hctaButton {
-    padding: 16px 32px;
-    font-size: 16px;
-    width: 100%;
-    max-width: 280px;
+  .hctaParagraph {
+    font-size: 1rem;
   }
-  
+
   .hctaIconsSection {
-    margin-left: 0;
-    justify-content: center;
-    gap: 32px;
+    gap: 30px;
   }
-  
+
   .barChartIcon {
     height: 80px;
     gap: 8px;
   }
-  
+
   .bar {
-    width: 16px;
+    width: 24px;
   }
-  
-  .bar1 { height: 28px; }
-  .bar2 { height: 44px; }
-  .bar3 { height: 68px; }
-  .bar4 { height: 52px; }
-  
+
   .pieChartIcon {
     width: 80px;
     height: 80px;
   }
 }
 
-/* Small Tablets (576px - 767px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (max-width: 480px) {
   .hctaSection {
-    border-radius: var(--section-border-radius-tablet, 20px);
-  }
-  
-  .hctaContainer {
-    padding: var(--section-padding-tablet, 48px) var(--section-side-padding-tablet, 32px);
-    flex-direction: column;
-    gap: 36px;
-    text-align: center;
+    padding: 40px 16px;
   }
 
-  .hctaButton {
-    padding: 14px 28px;
-    min-width: 180px;
-  }
-  
-  .hctaIconsSection {
-    margin-left: 0;
-    gap: 36px;
-  }
-  
-  .barChartIcon {
-    height: 90px;
-  }
-  
-  .bar {
-    width: 18px;
-  }
-  
-  .bar1 { height: 32px; }
-  .bar2 { height: 50px; }
-  .bar3 { height: 76px; }
-  .bar4 { height: 58px; }
-  
-  .pieChartIcon {
-    width: 90px;
-    height: 90px;
-  }
-}
-
-/* Medium Tablets (768px - 991px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .hctaContainer {
-    padding: var(--section-padding-tablet, 48px) var(--section-side-padding-tablet, 32px);
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-  
-  .hctaIconsSection {
-    margin-left: 0;
-    gap: 40px;
-  }
-}
-
-/* Large Desktop (1024px+) */
-@media (min-width: 1024px) {
-  .hctaContainer {
-    flex-direction: row;
-    text-align: left;
-    padding: var(--section-padding-desktop, 64px) var(--section-side-padding-desktop, 48px);
-  }
-  
-  .hctaIconsSection {
-    margin-left: 60px;
-  }
-
-  .hctaButton {
-    width: auto;
-  }
-}
-
-/* ==============================================
-   ACCESSIBILITY & PERFORMANCE
-   ============================================== */
-
-/* Reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .bar,
-  .pieChartIcon,
-  .pieSvg circle,
-  .hctaButton,
-  .hctaSection {
-    animation: none;
-    transition: none;
-  }
-  
-  .hctaButton:hover,
-  .hctaButton:active,
-  .barChartIcon:hover .bar,
-  .pieChartIcon:hover {
-    transform: none;
-  }
-}
-
-/* High contrast mode */
-@media (prefers-contrast: high) {
-  .hctaSection {
-    border: 2px solid #000;
-  }
-  
-  .hctaButton {
-    border: 2px solid #000;
-  }
-  
-  .hctaHeading,
-  .hctaParagraph {
-    color: white;
-  }
-}
-
-/* Dark theme - using same colors */
-@media (prefers-color-scheme: dark) {
-  .hctaSection {
-    background: var(--gradient-purple-primary);
-    padding-top: 40px;
-  }
-  
   .hctaHeading {
-    color: white;
+    font-size: 1.75rem;
   }
-  
-  .hctaParagraph {
-    color: white;
-  }
-  
-  .hctaButton {
-    background-color: white;
-    color: var(--purple-primary);
-  }
-  
-  .hctaButton:hover {
-    background-color: #f9fafb;
-    color: var(--purple-secondary);
-  }
-  
-  .hctaButton:focus-visible {
-    outline-color: white;
-  }
-}
 
-/* Print styles */
-@media print {
-  .hctaSection {
-    background: white !important;
-    border: 1px solid #000 !important;
-    box-shadow: none !important;
-  }
-  
-  .hctaHeading,
-  .hctaParagraph {
-    color: #000 !important;
-  }
-  
   .hctaButton {
-    background: white !important;
-    color: #000 !important;
-    border: 1px solid #000 !important;
+    font-size: 1rem;
+    padding: 14px 32px;
   }
-  
+
   .hctaIconsSection {
-    display: none !important;
+    gap: 20px;
+  }
+
+  .barChartIcon {
+    height: 70px;
+    gap: 6px;
+  }
+
+  .bar {
+    width: 20px;
+  }
+
+  .pieChartIcon {
+    color: aqua;
+    width: 70px;
+    height: 70px;
   }
 }
