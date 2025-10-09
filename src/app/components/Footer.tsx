@@ -26,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({
     state: "GA",
     zip: "30005"
   },
-  email = "contact@videometrics.com",
+  email = "contact@videometrics.ai",
   copyrightYear = 2025,
   className = ""
 }) => {
