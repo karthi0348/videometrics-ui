@@ -52,9 +52,9 @@ export default function Header() {
           <Link href="/auth/login" className="btn-login">
             Login
           </Link>
-          <Link href="/auth/register" className="btn-signup">
+          {/* <Link href="/auth/register" className="btn-signup">
             Sign up
-          </Link>
+          </Link> */}
         </div>
 
         <button
@@ -88,9 +88,9 @@ export default function Header() {
               <Link href="/auth/login" className="btn-login" onClick={() => setIsOpen(false)}>
                 Login
               </Link>
-              <Link href="/auth/register" className="btn-signup" onClick={() => setIsOpen(false)}>
+              {/* <Link href="/auth/register" className="btn-signup" onClick={() => setIsOpen(false)}>
                 Sign up
-              </Link>
+              </Link> */}
             </div>
           </div>
         )}

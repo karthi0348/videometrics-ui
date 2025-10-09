@@ -14,7 +14,7 @@ const HowItWorksHero: React.FC<HowItWorksHeroProps> = ({ className = "" }) => {
         <p className={styles.heroDescription}>
           Transform your video data into actionable business intelligence  with our powerful yet simple analytics platform.
         </p>
-        <Link href="/auth/register" className={styles.heroCtaButton}>
+        <Link href="/auth/login" className={styles.heroCtaButton}>
           Get Started
           <svg
             className={styles.heroCtaIcon}
